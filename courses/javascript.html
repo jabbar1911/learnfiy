@@ -7,12 +7,35 @@
     <title>Learnify | Simplify Learning</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+    </style>
 </head>
 
-
 <body>
+
     <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
         <div class="container-fluid">
 
@@ -73,7 +96,6 @@
                 <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
                     Join for Free
                 </button>
-
 
             </div>
 
@@ -201,7 +223,1661 @@
             </div>
         </div>
     </div>
-    <h1>JavaScript</h1>
+    <!-- Hero -->
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Learn Python – From Basics to Real Projects</h1>
+            <p class="lead mb-0">Master Python programming from the fundamentals to real-world projects.
+                Learn variables, loops, functions, OOP, file handling, and build practical applications.
+                Perfect for beginners preparing for coding, development, and problem-solving.</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Course Introduction</h2>
+            <p class="mt-3">
+                This Learnify Python course teaches you Python from the absolute basics to real-world applications.
+                Start with variables and data types, then move into loops, functions, data structures, OOP, file
+                handling,
+                modules, and mini-projects.
+                Perfect for beginners who want to learn programming, automation, backend development, or prepare for
+                coding
+                interviews.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Why Learn HTML -->
+        <section>
+            <h2 class="section-title">Why Learn Python?
+            </h2>
+            <ul>
+                <li><strong>Beginner-Friendly</strong> — Simple, readable syntax makes Python easy for new learners.
+                </li>
+                <li><strong>Most Versatile Language</strong> — Used in web apps, automation, data science, AI,
+                    cybersecurity, and more.</li>
+                <li><strong>High Demand</strong> — Python developers are highly sought after in companies worldwide.
+                </li>
+                <li><strong>Strong Community</strong> — Huge ecosystem of libraries, tutorials, forums, and community
+                    support.</li>
+
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- What You'll Learn -->
+        <section>
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>Python Basics</strong> — Variables, data types, input/output, and core syntax.</li>
+
+                        <li><strong>Control Flow</strong> — if-else, loops, logical conditions, and decision making.
+                        </li>
+
+                        <li><strong>Functions</strong> — Defining functions, arguments, return values, and modular
+                            coding.
+                        </li>
+
+                        <li><strong>Data Structures</strong> — Lists, tuples, sets, dictionaries, and when to use each.
+                        </li>
+
+                        <li><strong>Object-Oriented Programming (OOP)</strong> — Classes, objects, inheritance,
+                            polymorphism, and encapsulation.</li>
+                        <li><strong>File Handling</strong> — Reading and writing files, working with text, CSV, and
+                            JSON.
+                        </li>
+                        <li><strong>Error Handling</strong> — Try/except, exceptions, and writing safe programs.</li>
+
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+
+
+
+                        <li><strong>Modules & Packages</strong> — Importing libraries, using built-in modules, and
+                            creating
+                            your own.</li>
+
+                        <li><strong>Python Libraries</strong> — Introduction to important libraries like NumPy, Pandas,
+                            Matplotlib (basic level).</li>
+
+                        <li><strong>Working With APIs</strong> — Fetching data from web APIs and basic JSON handling.
+                        </li>
+
+                        <li><strong>Automation Basics</strong> — Using Python scripts to automate simple tasks.</li>
+
+                        <li><strong>Mini Projects</strong> — Build small programs using all concepts learned.</li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Syllabus Accordion -->
+        <section>
+            <h2 class="section-title">Course Syllabus</h2>
+            <div class="accordion" id="pythonAccordion">
+
+                <!-- Module 1 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse1">
+                            Module 1: Introduction to Python
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse1" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+
+                            <ul class="learning-list">
+
+                                <!-- What is Python -->
+                                <li>
+                                    <strong>What is Python?</strong><br>
+                                    Python is a high-level, beginner-friendly programming language used for web
+                                    development,
+                                    machine learning, automation, data science, cybersecurity, software testing, and
+                                    much
+                                    more.
+                                </li>
+
+                                <!-- Features -->
+                                <li>
+                                    <strong>Features of Python:</strong><br>
+                                    Python is popular because of its simplicity, huge community, and versatile
+                                    applications.
+                                    <ul>
+                                        <li><strong>Easy to Learn</strong> — English-like syntax.</li>
+                                        <li><strong>Interpreted Language</strong> — No compiling required.</li>
+                                        <li><strong>Cross-Platform</strong> — Works on Windows, macOS, Linux.</li>
+                                        <li><strong>Large Standard Library</strong> — Many built-in modules.</li>
+                                        <li><strong>Object-Oriented</strong> — Supports classes & objects.</li>
+                                        <li><strong>Huge Community</strong> — Tons of tutorials and libraries.</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Installation -->
+                                <li>
+                                    <strong>Installing Python & VS Code:</strong><br>
+                                    Steps to set up your development environment:
+                                    <ul>
+                                        <li>Download Python from <em>python.org</em></li>
+                                        <li>Check: <strong>Add Python to PATH</strong></li>
+                                        <li>Install VS Code from <em>code.visualstudio.com</em></li>
+                                        <li>Install VS Code: <strong>Python extension</strong></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Running Programs -->
+                                <li>
+                                    <strong>Running Python Programs:</strong><br>
+                                    You can run Python in multiple ways:
+                                    <ul>
+                                        <li>Command Prompt / Terminal:
+                                            <pre><code>python file.py</code></pre>
+                                        </li>
+                                        <li>VS Code: Run button / Debugging</li>
+                                        <li>Online Editors: Replit, Programiz, Google Colab</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Syntax & Indentation -->
+                                <li>
+                                    <strong>Basic Syntax & Indentation:</strong><br>
+                                    Python uses indentation instead of curly braces to define code blocks.
+                                    <pre><code>if 10 > 5:
+    print("10 is greater")</code></pre>
+                                </li>
+
+                                <!-- Hello World -->
+                                <li>
+                                    <strong>Hello World Program:</strong><br>
+                                    Your first Python program:
+                                    <pre><code>print("Hello, Python!")</code></pre>
+                                </li>
+
+                                <!-- Keywords & Identifiers -->
+                                <li>
+                                    <strong>Keywords & Identifiers:</strong><br>
+                                    <ul>
+                                        <li><strong>Keywords</strong> — Reserved words like <code>if</code>,
+                                            <code>for</code>, <code>class</code>
+                                        </li>
+                                        <li><strong>Identifiers</strong> — Names for variables, functions, classes</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Comments -->
+                                <li>
+                                    <strong>Comments in Python:</strong><br>
+                                    Used to explain code:
+                                    <pre><code># This is a single-line comment
+
+"""
+This is a multi-line
+comment in Python
+"""</code></pre>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 2 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse2">
+                            Module 2: Variables, Data Types & Input
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse2" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Variables -->
+                                <li>
+                                    <strong>What Are Variables?</strong><br>
+                                    Variables store data in memory. You assign values using the <code>=</code> operator.
+                                    <pre><code>x = 10
+name = "Learnify"</code></pre>
+                                </li>
+
+                                <!-- Naming Rules -->
+                                <li>
+                                    <strong>Variable Naming Rules:</strong>
+                                    <ul>
+                                        <li>Must start with a letter or underscore</li>
+                                        <li>Cannot start with a number</li>
+                                        <li>No special characters (%, $, @, etc.)</li>
+                                        <li>Case-sensitive (age ≠ Age)</li>
+                                        <li>Use meaningful names</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Data Types -->
+                                <li>
+                                    <strong>Basic Data Types in Python:</strong>
+                                    <ul>
+                                        <li><code>int</code> — Whole numbers (10, -4)</li>
+                                        <li><code>float</code> — Decimal numbers (3.14, 9.5)</li>
+                                        <li><code>str</code> — Text ("Hello")</li>
+                                        <li><code>bool</code> — True or False</li>
+                                    </ul>
+
+                                    Example:
+                                    <pre><code>a = 10
+b = 3.5
+c = "Learnify"
+d = True</code></pre>
+                                </li>
+
+                                <!-- Type Conversion -->
+                                <li>
+                                    <strong>Type Conversion (Casting):</strong><br>
+                                    Convert one data type to another using functions:
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered table-sm">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Function</th>
+                                                    <th>Converts To</th>
+                                                    <th>Example</th>
+                                                    <th>Output</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>int()</code></td>
+                                                    <td>Integer</td>
+                                                    <td><code>int("10")</code></td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>float()</code></td>
+                                                    <td>Float</td>
+                                                    <td><code>float(5)</code></td>
+                                                    <td>5.0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>str()</code></td>
+                                                    <td>String</td>
+                                                    <td><code>str(25)</code></td>
+                                                    <td>"25"</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>bool()</code></td>
+                                                    <td>Boolean</td>
+                                                    <td><code>bool(1)</code></td>
+                                                    <td>True</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <pre><code>a = "100"
+b = int(a)
+print(b + 50)      # 150</code></pre>
+                                </li>
+
+                                <!-- Arithmetic Operators -->
+                                <li>
+                                    <strong>Arithmetic Operators:</strong>
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered table-sm">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Operator</th>
+                                                    <th>Meaning</th>
+                                                    <th>Example</th>
+                                                    <th>Output</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>+</code></td>
+                                                    <td>Addition</td>
+                                                    <td>5 + 3</td>
+                                                    <td>8</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>-</code></td>
+                                                    <td>Subtraction</td>
+                                                    <td>10 - 4</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>*</code></td>
+                                                    <td>Multiplication</td>
+                                                    <td>6 * 2</td>
+                                                    <td>12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>/</code></td>
+                                                    <td>Division</td>
+                                                    <td>7 / 2</td>
+                                                    <td>3.5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>%</code></td>
+                                                    <td>Modulus</td>
+                                                    <td>10 % 3</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>//</code></td>
+                                                    <td>Floor Division</td>
+                                                    <td>10 // 3</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>**</code></td>
+                                                    <td>Power</td>
+                                                    <td>2 ** 3</td>
+                                                    <td>8</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <pre><code>x = 5
+y = 2
+print(x ** y)      # 25</code></pre>
+                                </li>
+
+                                <!-- Relational Operators -->
+                                <li>
+                                    <strong>Relational (Comparison) Operators:</strong>
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered table-sm">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Operator</th>
+                                                    <th>Meaning</th>
+                                                    <th>Example</th>
+                                                    <th>Output</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>==</code></td>
+                                                    <td>Equal</td>
+                                                    <td>5 == 5</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>!=</code></td>
+                                                    <td>Not Equal</td>
+                                                    <td>5 != 3</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>></code></td>
+                                                    <td>Greater Than</td>
+                                                    <td>7 > 2</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code><</code></td>
+                                                    <td>Less Than</td>
+                                                    <td>3 < 8</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>>=</code></td>
+                                                    <td>Greater or Equal</td>
+                                                    <td>5 >= 5</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code><=</code></td>
+                                                    <td>Less or Equal</td>
+                                                    <td>4 <= 6</td>
+                                                    <td>True</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <!-- Logical Operators -->
+                                <li>
+                                    <strong>Logical Operators:</strong>
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered table-sm">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Operator</th>
+                                                    <th>Meaning</th>
+                                                    <th>Example</th>
+                                                    <th>Output</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>and</code></td>
+                                                    <td>Both conditions true</td>
+                                                    <td>x > 5 and x < 20</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>or</code></td>
+                                                    <td>Any one true</td>
+                                                    <td>x < 5 or x==10</td>
+                                                    <td>True</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>not</code></td>
+                                                    <td>Reverses condition</td>
+                                                    <td>not True</td>
+                                                    <td>False</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <pre><code>x = 10
+print(x > 5 and x < 20)    # True</code></pre>
+                                </li>
+
+                                <!-- Input & Output -->
+                                <li>
+                                    <strong>Input & Output:</strong><br>
+                                    Get user input with <code>input()</code> and display messages with
+                                    <code>print()</code>.
+                                    <pre><code>name = input("Enter your name: ")
+print("Hello,", name)</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 3 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse3">
+                            Module 3: Conditional Statements
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse3" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- if Statement -->
+                                <li>
+                                    <strong>if Statement:</strong><br>
+                                    Used to run a block of code only when a condition is true.
+                                    <pre><code>age = 18
+if age >= 18:
+    print("You are eligible")</code></pre>
+                                </li>
+
+                                <!-- if-else -->
+                                <li>
+                                    <strong>if-else Statement:</strong><br>
+                                    Executes one block if condition is true, otherwise runs the else block.
+                                    <pre><code>num = 5
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")</code></pre>
+                                </li>
+
+                                <!-- elif -->
+                                <li>
+                                    <strong>elif Ladder:</strong><br>
+                                    Used when multiple conditions must be checked one after another.
+                                    <pre><code>marks = 72
+
+if marks >= 90:
+    print("A Grade")
+elif marks >= 75:
+    print("B Grade")
+elif marks >= 60:
+    print("C Grade")
+else:
+    print("D Grade")</code></pre>
+                                </li>
+
+                                <!-- Nested Conditions -->
+                                <li>
+                                    <strong>Nested Conditions:</strong><br>
+                                    An <code>if</code> statement inside another <code>if</code> block.
+                                    <pre><code>username = "admin"
+password = "1234"
+
+if username == "admin":
+    if password == "1234":
+        print("Login Successful")
+    else:
+        print("Incorrect Password")
+else:
+    print("Incorrect Username")</code></pre>
+                                </li>
+
+                                <!-- Real Examples -->
+                                <li>
+                                    <strong>Real-World Examples:</strong><br>
+
+                                    <ul>
+                                        <li>
+                                            <strong>1. Grading System</strong>
+                                            <pre><code>score = int(input("Enter score: "))
+
+if score >= 90:
+    print("Excellent")
+elif score >= 70:
+    print("Good")
+elif score >= 50:
+    print("Pass")
+else:
+    print("Fail")</code></pre>
+                                        </li>
+
+                                        <li>
+                                            <strong>2. Login Check</strong>
+                                            <pre><code>user = input("Username: ")
+pwd = input("Password: ")
+
+if user == "admin" and pwd == "1234":
+    print("Welcome!")
+else:
+    print("Invalid credentials")</code></pre>
+                                        </li>
+
+                                        <li>
+                                            <strong>3. Check if Number is Positive/Negative</strong>
+                                            <pre><code>n = int(input("Enter number: "))
+
+if n > 0:
+    print("Positive")
+elif n < 0:
+    print("Negative")
+else:
+    print("Zero")</code></pre>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 4 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse4">
+                            Module 4: Loops in Python
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse4" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- while Loop -->
+                                <li>
+                                    <strong>while Loop:</strong><br>
+                                    Repeats a block of code as long as the condition remains true.
+                                    <pre><code>i = 1
+while i <= 5:
+    print(i)
+    i += 1</code></pre>
+                                </li>
+
+                                <!-- for Loop -->
+                                <li>
+                                    <strong>for Loop:</strong><br>
+                                    Used to loop through a sequence like range, string, list, tuple, etc.
+                                    <pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+
+                                    Looping through a string:
+                                    <pre><code>for ch in "Learnify":
+    print(ch)</code></pre>
+                                </li>
+
+                                <!-- break, continue, pass -->
+                                <li>
+                                    <strong>Loop Control Statements:</strong>
+                                    <ul>
+                                        <li><strong>break</strong> — Stops the loop immediately</li>
+                                        <li><strong>continue</strong> — Skips the current iteration</li>
+                                        <li><strong>pass</strong> — Placeholder (does nothing)</li>
+                                    </ul>
+
+                                    Examples:
+                                    <pre><code># break
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)</code></pre>
+
+                                    <pre><code># continue
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)</code></pre>
+
+                                    <pre><code># pass
+for i in range(5):
+    pass  # Used to avoid errors in empty blocks</code></pre>
+                                </li>
+
+                                <!-- range() Function -->
+                                <li>
+                                    <strong>range() Function:</strong><br>
+                                    Used to generate a sequence of numbers.
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered table-sm">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Syntax</th>
+                                                    <th>Description</th>
+                                                    <th>Example</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>range(n)</code></td>
+                                                    <td>0 to n-1</td>
+                                                    <td><code>range(5)</code> → 0 1 2 3 4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>range(start, end)</code></td>
+                                                    <td>start to end-1</td>
+                                                    <td><code>range(2, 6)</code> → 2 3 4 5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>range(start, end, step)</code></td>
+                                                    <td>Custom increment</td>
+                                                    <td><code>range(1, 10, 2)</code> → 1 3 5 7 9</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+
+                                <!-- Loops with Strings & Lists -->
+                                <li>
+                                    <strong>Loops with Strings & Lists:</strong>
+
+                                    <p><strong>Loop through each character in a string:</strong></p>
+                                    <pre><code>for ch in "Python":
+    print(ch)</code></pre>
+
+                                    <p><strong>Loop through a list:</strong></p>
+                                    <pre><code>fruits = ["apple", "banana", "mango"]
+for item in fruits:
+    print(item)</code></pre>
+
+                                    <p><strong>Loop with index using enumerate:</strong></p>
+                                    <pre><code>for i, value in enumerate(fruits):
+    print(i, value)</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 5 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse5">
+                            Module 5: Functions & Modular Programming
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse5" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Defining Functions -->
+                                <li>
+                                    <strong>Defining Functions:</strong><br>
+                                    Functions help you reuse code and make your program organized.
+                                    <pre><code>def greet():
+    print("Hello, Learnify!")</code></pre>
+
+                                    Calling the function:
+                                    <pre><code>greet()</code></pre>
+                                </li>
+
+                                <!-- Arguments & Return Values -->
+                                <li>
+                                    <strong>Arguments & Return Values:</strong><br>
+                                    Functions can accept inputs and return outputs.
+                                    <pre><code>def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)   # 8</code></pre>
+                                </li>
+
+                                <!-- Default & Keyword Arguments -->
+                                <li>
+                                    <strong>Default & Keyword Arguments:</strong>
+
+                                    <p><strong>Default Arguments:</strong> Used when a value is not given.</p>
+                                    <pre><code>def greet(name="User"):
+    print("Hello", name)</code></pre>
+
+                                    <p><strong>Keyword Arguments:</strong> Passing arguments by name.</p>
+                                    <pre><code>def student(name, age):
+    print(name, age)
+
+student(age=21, name="Amit")</code></pre>
+                                </li>
+
+                                <!-- Recursion Basics -->
+                                <li>
+                                    <strong>Recursion Basics:</strong><br>
+                                    A function calling itself to solve problems like factorial, Fibonacci, etc.
+
+                                    <pre><code>def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))   # 120</code></pre>
+                                </li>
+
+                                <!-- Importing Modules -->
+                                <li>
+                                    <strong>Importing Modules:</strong><br>
+                                    Modules help you use built-in or external functions.
+
+                                    <pre><code>import math
+print(math.sqrt(16))   # 4.0</code></pre>
+
+                                    Import with alias:
+                                    <pre><code>import math as m
+print(m.pi)</code></pre>
+
+                                    Import only specific items:
+                                    <pre><code>from math import sqrt, floor
+print(sqrt(25))</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 6 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse6">
+                            Module 6: Lists, Tuples & Sets
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse6" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- List Basics -->
+                                <li>
+                                    <strong>List Basics:</strong><br>
+                                    Lists store multiple items and allow changes (mutable).
+                                    <pre><code>fruits = ["apple", "banana", "mango"]
+print(fruits[0])      # apple
+print(fruits[-1])     # mango</code></pre>
+                                </li>
+
+                                <!-- List Methods -->
+                                <li>
+                                    <strong>List Methods:</strong><br>
+                                    Useful operations to modify lists:
+                                    <pre><code>nums = [3, 1, 4]
+
+nums.append(5)     # [3, 1, 4, 5]
+nums.insert(1, 10) # [3, 10, 1, 4, 5]
+nums.remove(3)     # [10, 1, 4, 5]
+nums.sort()        # [1, 4, 5, 10]
+nums.reverse()     # [10, 5, 4, 1]</code></pre>
+
+                                    Slicing example:
+                                    <pre><code>marks = [10, 20, 30, 40]
+print(marks[1:3])   # [20, 30]</code></pre>
+                                </li>
+
+                                <!-- Tuples -->
+                                <li>
+                                    <strong>Tuples (Immutable Lists):</strong><br>
+                                    Cannot be changed (immutable), but faster than lists.
+                                    <pre><code>colors = ("red", "green", "blue")
+print(colors[0])     # red</code></pre>
+                                </li>
+
+                                <!-- Sets -->
+                                <li>
+                                    <strong>Set Basics & Operations:</strong><br>
+                                    Sets store unique values (no duplicates).
+                                    <pre><code>myset = {1, 2, 3, 3}
+print(myset)     # {1, 2, 3}</code></pre>
+
+                                    Set operations:
+                                    <pre><code>a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a.union(b))        # {1, 2, 3, 4, 5}
+print(a.intersection(b)) # {3}
+print(a.difference(b))   # {1, 2}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 7 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="py7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse7">
+                            Module 7: Dictionaries & Advanced Collections
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse7" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Dictionary Basics -->
+                                <li>
+                                    <strong>Dictionary Basics:</strong><br>
+                                    Stores data in <strong>key–value</strong> format.
+                                    <pre><code>student = {
+    "name": "Rahul",
+    "age": 20,
+    "grade": "A"
+}
+
+print(student["name"])   # Rahul
+print(student.get("age")) # 20</code></pre>
+                                </li>
+
+                                <!-- Add / Update / Remove -->
+                                <li>
+                                    <strong>Adding / Updating / Removing Items:</strong>
+                                    <pre><code>student["city"] = "Hyderabad"   # Add
+student["age"] = 21            # Update
+student.pop("grade")           # Remove
+
+print(student)                 #{'name': 'Rahul', 'age': 21, 'city': 'Hyderabad'}</code></pre>
+                                </li>
+
+                                <!-- Dictionary Methods -->
+                                <li>
+                                    <strong>Dictionary Methods:</strong>
+                                    <pre><code>info = {"a": 10, "b": 20}
+
+print(info.keys())      # dict_keys(['a', 'b'])
+print(info.values())    # dict_values([10, 20])
+print(info.items())     # dict_items([('a', 10), ('b', 20)])
+
+info.update({"c": 30})
+print(info)             # {'a': 10, 'b': 20, 'c': 30}</code></pre>
+                                </li>
+
+                                <!-- Nested Dictionaries -->
+                                <li>
+                                    <strong>Nested Dictionaries:</strong><br>
+                                    A dictionary inside another dictionary.
+                                    <pre><code>users = {
+    "user1": {"name": "Amit", "age": 25},
+    "user2": {"name": "Sana", "age": 22}
+}
+
+print(users["user1"]["name"])  # Amit</code></pre>
+                                </li>
+
+                                <!-- Use Cases -->
+                                <li>
+                                    <strong>Practical Use Cases:</strong>
+                                    <ul>
+                                        <li>Storing user profiles</li>
+                                        <li>Configuration settings</li>
+                                        <li>JSON-like structured data</li>
+                                        <li>Counting frequency of words/items</li>
+                                    </ul>
+
+                                    Example (word counter):
+                                    <pre><code>text = "apple banana apple"
+count = {}
+
+for word in text.split():
+    count[word] = count.get(word, 0) + 1
+
+print(count)   # {'apple': 2, 'banana': 1}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 8 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="pyHeading8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse8">
+                            Module 8: Strings & String Functions
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse8" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- String Basics -->
+                                <li>
+                                    <strong>String Basics:</strong>
+                                    <p>Strings are sequences of characters written inside quotes.</p>
+                                    <pre><code>name = "Learnify"
+print(name)</code></pre>
+                                </li>
+
+                                <!-- Indexing & Slicing -->
+                                <li>
+                                    <strong>Indexing & Slicing:</strong>
+                                    <pre><code>text = "Python"
+print(text[0])     # P (indexing)
+print(text[1:4])   # yth (slicing)
+print(text[-1])    # n (negative indexing)</code></pre>
+                                </li>
+
+                                <!-- String Methods -->
+                                <li>
+                                    <strong>String Methods:</strong>
+                                    <pre><code>msg = "hello learnify"
+print(msg.upper())      # HELLO LEARNIFY
+print(msg.title())      # Hello Learnify
+print(msg.replace("hello", "welcome"))</code></pre>
+                                </li>
+
+                                <!-- String Formatting -->
+                                <li>
+                                    <strong>String Formatting (f-strings):</strong>
+                                    <pre><code>name = "Rahul"
+age = 21
+print(f"My name is {name} and I am {age} years old.")</code></pre>
+                                </li>
+
+                                <!-- Practical Text Processing -->
+                                <li>
+                                    <strong>Practical Text Processing:</strong>
+                                    <p>Useful for modifying text, cleaning data, or creating messages.</p>
+                                    <pre><code>sentence = "  Python is Awesome!  "
+clean = sentence.strip().lower()
+print(clean)   # python is awesome!</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 9 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="pyHeading9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse9">
+                            Module 9: File Handling
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse9" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Opening & Closing Files -->
+                                <li>
+                                    <strong>Opening & Closing Files:</strong>
+                                    <p>Open files using <code>open()</code> and close using <code>close()</code> or
+                                        <code>with</code> block.
+                                    </p>
+                                    <pre><code>file = open("demo.txt", "r")
+content = file.read()
+file.close()</code></pre>
+
+                                    <p><strong>Using with (recommended):</strong></p>
+                                    <pre><code>with open("demo.txt", "r") as f:
+    content = f.read()</code></pre>
+                                </li>
+
+                                <!-- Read / Write / Append -->
+                                <li>
+                                    <strong>Read / Write / Append Modes:</strong>
+                                    <pre><code># Read mode
+open("file.txt", "r")
+
+# Write mode (overwrites)
+open("file.txt", "w")
+
+# Append mode (adds to end)
+open("file.txt", "a")</code></pre>
+                                </li>
+
+                                <!-- Working with Text Files -->
+                                <li>
+                                    <strong>Working with Text Files:</strong>
+                                    <pre><code># Write to file
+with open("data.txt", "w") as f:
+    f.write("Welcome to Learnify!")
+
+# Read file
+with open("data.txt", "r") as f:
+    print(f.read())</code></pre>
+                                </li>
+
+                                <!-- CSV & JSON -->
+                                <li>
+                                    <strong>Handling CSV & JSON Files:</strong>
+                                    <pre><code>import json, csv
+
+# JSON
+data = {"name": "Rahul", "age": 20}
+with open("data.json", "w") as f:
+    json.dump(data, f)
+
+# CSV
+with open("data.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["Name", "Age"])
+    writer.writerow(["Rahul", 20])</code></pre>
+                                </li>
+
+                                <!-- Error Handling -->
+                                <li>
+                                    <strong>Error Handling in File Operations:</strong>
+                                    <pre><code>try:
+    with open("info.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("File not found!")
+except Exception as e:
+    print("Error:", e)</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 10 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="pyHeading10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse10">
+                            Module 10: Object-Oriented Programming (OOP)
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse10" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- What is OOP -->
+                                <li>
+                                    <strong>What is OOP?</strong>
+                                    <p>
+                                        OOP (Object-Oriented Programming) is a programming method where we structure
+                                        programs
+                                        using <strong>objects</strong>. Objects contain data (variables) and behavior
+                                        (functions).
+                                    </p>
+                                    <p>
+                                        Python supports OOP and makes programs easier to read, reuse, and maintain.
+                                    </p>
+                                </li>
+
+                                <!-- Class and Object -->
+                                <li>
+                                    <strong>Class & Object:</strong>
+                                    <p><strong>Class</strong> → A blueprint/model to create objects.</p>
+                                    <p><strong>Object</strong> → A real instance created from a class.</p>
+
+                                    <pre><code>class Student:
+    name = "Rahul"     # Attribute
+
+s1 = Student()         # Creating object
+print(s1.name)</code></pre>
+                                </li>
+
+                                <!-- Constructor -->
+                                <li>
+                                    <strong>Constructors (<code>__init__</code>):</strong>
+                                    <p>The constructor is a special method that runs automatically when an object is
+                                        created.</p>
+
+                                    <pre><code>class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Rahul", 20)
+print(s1.name, s1.age)</code></pre>
+                                </li>
+
+                                <!-- Methods & Attributes -->
+                                <li>
+                                    <strong>Methods & Attributes:</strong>
+                                    <p><strong>Attributes</strong> → Variables inside a class.</p>
+                                    <p><strong>Methods</strong> → Functions inside a class.</p>
+
+                                    <pre><code>class Calculator:
+    def add(self, a, b):     # Method
+        return a + b
+
+c = Calculator()
+print(c.add(5, 3))</code></pre>
+                                </li>
+
+                                <!-- OOP Concepts -->
+                                <li>
+                                    <strong>Major OOP Concepts (4 Pillars):</strong>
+                                    <ul>
+
+                                        <!-- Encapsulation -->
+                                        <li>
+                                            <strong>1. Encapsulation</strong><br>
+                                            Binding data + methods together and restricting access using <code>_</code>
+                                            or
+                                            <code>__</code>.
+
+                                            <pre><code>class Person:
+    def __init__(self):
+        self.__salary = 50000   # Private variable
+
+p = Person()
+# print(p.__salary)  # Error: cannot access private variable</code></pre>
+                                        </li>
+
+                                        <!-- Inheritance -->
+                                        <li>
+                                            <strong>2. Inheritance</strong><br>
+                                            One class can inherit properties from another class.
+
+                                            <pre><code>class Animal:
+    def sound(self):
+        print("Some sound")
+
+class Dog(Animal):      # Inheriting Animal
+    pass
+
+d = Dog()
+d.sound()</code></pre>
+                                        </li>
+
+                                        <!-- Polymorphism -->
+                                        <li>
+                                            <strong>3. Polymorphism</strong><br>
+                                            Same function name, different implementation.
+
+                                            <pre><code>class Bird:
+    def fly(self):
+        print("Bird is flying")
+
+class Penguin:
+    def fly(self):
+        print("Penguins cannot fly")
+
+def check(obj):
+    obj.fly()
+
+check(Bird())
+check(Penguin())</code></pre>
+                                        </li>
+
+                                        <!-- Abstraction -->
+                                        <li>
+                                            <strong>4. Abstraction</strong><br>
+                                            Hiding complex details and showing only important parts.
+
+                                            <pre><code>from abc import ABC, abstractmethod
+
+class Car(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+class Tesla(Car):
+    def start(self):
+        print("Tesla started")
+
+t = Tesla()
+t.start()</code></pre>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                                <!-- Real-World Example -->
+                                <li>
+                                    <strong>Real-World Example: Student Management</strong>
+                                    <pre><code>class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def display(self):
+        print(self.name, self.marks)
+
+s = Student("Jabbar", 90)
+s.display()</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 11 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="pyHeading11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse11">
+                            Module 11: Python Libraries (math, random, datetime, os, sys)
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse11" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- math library -->
+                                <li>
+                                    <strong>1. math Library</strong><br>
+                                    Used for mathematical calculations such as square roots, powers, trigonometry,
+                                    constants.
+
+                                    <pre><code>import math
+
+print(math.sqrt(25))      # 5.0
+print(math.pow(2, 3))     # 8.0
+print(math.pi)            # 3.14159
+print(math.floor(4.9))    # 4
+print(math.ceil(4.1))     # 5</code></pre>
+                                </li>
+
+                                <!-- random library -->
+                                <li>
+                                    <strong>2. random Library</strong><br>
+                                    Used to generate random numbers — useful in games, testing, simulations.
+
+                                    <pre><code>import random
+
+print(random.randint(1, 10))     # Random number from 1–10
+print(random.choice(["Python", "HTML", "CSS"]))  # Random choice
+print(random.random())           # Random float (0 to 1)</code></pre>
+                                </li>
+
+                                <!-- datetime library -->
+                                <li>
+                                    <strong>3. datetime Library</strong><br>
+                                    Helps work with dates and time (current date, formatting, adding days, etc.)
+
+                                    <pre><code>from datetime import datetime, timedelta
+
+now = datetime.now()
+print(now)                          # Current date & time
+print(now.strftime("%d-%m-%Y"))     # Format date
+
+future = now + timedelta(days=7)
+print(future)                       # Date after 7 days</code></pre>
+                                </li>
+
+                                <!-- os and sys -->
+                                <li>
+                                    <strong>4. os & sys Libraries</strong><br>
+                                    These let you interact with the operating system.
+
+                                    <p><strong>os →</strong> working with files, folders, paths</p>
+                                    <p><strong>sys →</strong> system-level information</p>
+
+                                    <pre><code>import os
+import sys
+
+print(os.getcwd())        # Current working directory
+print(os.listdir())       # List files/folders
+print(sys.version)        # Python version</code></pre>
+                                </li>
+
+                                <!-- Mini Projects -->
+                                <li>
+                                    <strong>5. Practical Mini Projects:</strong>
+                                    <ul>
+                                        <li>Password Generator</li>
+                                        <li>Dice Roller</li>
+                                        <li>Day Countdown Calculator</li>
+                                        <li>Folder Scanner using os.listdir()</li>
+                                    </ul>
+
+                                    <p><strong>Example: Random Password Generator</strong></p>
+
+                                    <pre><code>import random
+import string
+
+chars = string.ascii_letters + string.digits
+password = "".join(random.choice(chars) for i in range(8))
+
+print("Generated Password:", password)</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 12 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="pyHeading12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#pyCollapse12">
+                            Module 12: Final Python Project
+                        </button>
+                    </h2>
+
+                    <div id="pyCollapse12" class="accordion-collapse collapse" data-bs-parent="#pythonAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Project Planning -->
+                                <li>
+                                    <strong>1. Project Planning:</strong>
+                                    <p>Before writing code, define what your project will do and how users will interact
+                                        with it.</p>
+                                    <ul>
+                                        <li>Choose a project idea (calculator, to-do app, password vault, etc.)</li>
+                                        <li>List all required features</li>
+                                        <li>Break the project into small tasks (modules)</li>
+                                        <li>Decide input and output formats</li>
+                                    </ul>
+
+                                    <pre><code># Example: To-Do Manager Planning
+Features:
+- Add task
+- Remove task
+- View tasks
+- Save tasks in a file</code></pre>
+                                </li>
+
+                                <!-- Combining All Concepts -->
+                                <li>
+                                    <strong>2. Combining All Concepts:</strong>
+                                    <p>This module brings together everything learned in previous modules:</p>
+                                    <ul>
+                                        <li>Variables & Data Types</li>
+                                        <li>Loops, Conditions</li>
+                                        <li>Functions & Modules</li>
+                                        <li>Lists, Dictionaries</li>
+                                        <li>File Handling</li>
+                                        <li>Error Handling</li>
+                                    </ul>
+
+                                    <pre><code># Example: Combining concepts
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+
+def show_tasks():
+    for t in tasks:
+        print("-", t)</code></pre>
+                                </li>
+
+                                <!-- Debugging & Testing -->
+                                <li>
+                                    <strong>3. Debugging & Testing:</strong>
+                                    <p>Testing ensures your program works correctly and handles bad input safely.</p>
+                                    <ul>
+                                        <li>Use print statements for checking values</li>
+                                        <li>Test with valid and invalid inputs</li>
+                                        <li>Use try–except blocks for errors</li>
+                                    </ul>
+
+                                    <pre><code># Example: handling invalid input
+try:
+    num = int(input("Enter a number: "))
+    print("Square:", num * num)
+except ValueError:
+    print("Invalid input! Please enter a number.")</code></pre>
+                                </li>
+
+                                <!-- Code Optimization -->
+                                <li>
+                                    <strong>4. Code Optimization:</strong>
+                                    <p>Improve performance, readability, and structure of the code.</p>
+                                    <ul>
+                                        <li>Avoid repeated code → use functions</li>
+                                        <li>Use list comprehensions when possible</li>
+                                        <li>Keep functions short and clear</li>
+                                        <li>Use meaningful variable names</li>
+                                    </ul>
+
+                                    <pre><code># Before
+squares = []
+for i in range(10):
+    squares.append(i*i)
+
+# After (optimized)
+squares = [i*i for i in range(10)]</code></pre>
+                                </li>
+
+                                <!-- Final Python Application -->
+                                <li>
+                                    <strong>5. Building Your Final Python Application:</strong>
+                                    <p>This is the final outcome of the course — a complete Python project using all
+                                        concepts.</p>
+
+                                    <strong>Example Final Project Options:</strong>
+                                    <ul>
+                                        <li>✓ Student Record System</li>
+                                        <li>✓ To-Do Manager with File Storage</li>
+                                        <li>✓ Password Generator + File Storage</li>
+                                        <li>✓ Calculator (Basic + Scientific)</li>
+                                        <li>✓ Expense Tracker</li>
+                                    </ul>
+
+                                    <pre><code># Example: Final Project Structure
+
+# main.py
+from todo import add_task, show_tasks
+
+while True:
+    print("\n1. Add Task\n2. View Tasks\n3. Exit")
+    choice = input("Choose: ")
+
+    if choice == "1":
+        task = input("Enter task: ")
+        add_task(task)
+
+    elif choice == "2":
+        show_tasks()
+
+    elif choice == "3":
+        break
+
+# todo.py
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+
+def show_tasks():
+    for t in tasks:
+        print("-", t)</code></pre>
+
+                                    <p class="text-success fw-semibold mt-2">
+                                        ✔ By completing this module, students will finish a full Python project ready
+                                        for
+                                        their portfolio.
+                                    </p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <hr>
+
+
+        <section>
+            <h2 class="section-title">Quick Examples</h2>
+
+            <div class="row g-3 mt-2">
+
+                <!-- Basic Python Program -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Basic Python Program</h5>
+                        <pre><code>print("Hello, Learnify!")</code></pre>
+                    </div>
+                </div>
+
+                <!-- Variables Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Variables Example</h5>
+                        <pre><code>x = 10
+y = 5
+print(x + y)   # 15</code></pre>
+                    </div>
+                </div>
+
+                <!-- Input Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Input Example</h5>
+                        <pre><code>name = input("Enter your name: ")
+print("Hello,", name)</code></pre>
+                    </div>
+                </div>
+
+                <!-- List Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">List Example</h5>
+                        <pre><code>fruits = ["apple", "banana", "mango"]
+print(fruits[0])   # apple</code></pre>
+                    </div>
+                </div>
+
+                <!-- Function Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Function Example</h5>
+                        <pre><code>def add(a, b):
+    return a + b
+
+print(add(3, 7))   # 10</code></pre>
+                    </div>
+                </div>
+
+                <!-- Dictionary Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Dictionary Example</h5>
+                        <pre><code>student = {"name": "Rahul", "age": 20}
+print(student["name"])   # Rahul</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr>
+
+
+
+
+        <hr>
+
+        <!-- Outcomes -->
+        <section>
+            <h2 class="section-title">What You'll Be Able To Do</h2>
+
+            <ul class="learning-list">
+                <li>Write Python programs from basic to advanced</li>
+                <li>Build real applications using functions & data structures</li>
+                <li>Work with files, automation scripts, and modules</li>
+                <li>Use Python libraries like math, random, datetime, os</li>
+                <li>Apply OOP concepts to create structured applications</li>
+                <li>Build portfolio-level projects (To-Do App, Student System, Tools)</li>
+                <li>Debug, test, and optimize Python code effectively</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">FAQ</h2>
+            <div class="accordion" id="faqHtml">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                    <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">No, this course starts from zero.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                    <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">VS Code is recommended for beginners.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div> <!-- container -->
 
 
 
@@ -236,10 +1912,10 @@
                 <div class="col-md-3">
                     <h6 class="fw-bold mb-3">Popular Courses</h6>
                     <ul class="list-unstyled small">
-                        <li><a href="./courses/python.html" class="text-white text-decoration-none">Python</a></li>
-                        <li><a href="./courses/html.html" class="text-white text-decoration-none">HTML</a></li>
-                        <li><a href="./courses/css.html" class="text-white text-decoration-none">CSS</a></li>
-                        <li><a href="./courses/javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                        <li><a href="./python.html" class="text-white text-decoration-none">Python</a></li>
+                        <li><a href="./html.html" class="text-white text-decoration-none">HTML</a></li>
+                        <li><a href="./css.html" class="text-white text-decoration-none">CSS</a></li>
+                        <li><a href="./javascript.html" class="text-white text-decoration-none">JavaScript</a>
                         </li>
                     </ul>
                 </div>
@@ -266,7 +1942,7 @@
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="bi bi-people-fill me-2"></i>
                                     <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
-                                        class="text-white text-decoration-none">
+                                        class="text-white text-decoration-none text-nowrap">
                                         Shaik Abdul Jabbar
                                     </a>
                                 </li>
@@ -274,7 +1950,7 @@
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="bi bi-people-fill me-2"></i>
                                     <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
-                                        class="text-white text-decoration-none">
+                                        class="text-white text-decoration-none text-nowrap">
                                         Panyala Nandini
                                     </a>
                                 </li>
@@ -282,7 +1958,7 @@
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="bi bi-people-fill me-2"></i>
                                     <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
-                                        target="_blank" class="text-white text-decoration-none">
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
                                         N Anil Kumar
                                     </a>
                                 </li>
@@ -337,11 +2013,10 @@
 
         </div>
     </footer>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
 
 
 </body>
