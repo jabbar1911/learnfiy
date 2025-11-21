@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learnify | Simplify Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="../index.html">Home</a>
+                    </li>
+
+                    <!-- Courses Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                            <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                            <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
+                            <li><a class="dropdown-item" href="./css.html">CSS</a></li>
+                            <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
+                            <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
+                            <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Instructors -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Instructors</a>
+                    </li>
+
+
+                </ul>
+
+                <!-- Login / Signup -->
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Log In
+                </button>
+
+                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    Join for Free
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </nav>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Log In
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Don't have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
+                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-person-plus me-2"></i> Create Your Account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Choose a strong password">
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                                <input type="password" class="form-control" placeholder="Re-enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Create Account
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Already have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                data-bs-dismiss="modal">Log In</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero -->
+    <header class="hero text-center py-5 bg-light">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Learn Bootstrap – Build Responsive Websites Faster</h1>
+            <p class="lead mb-0">
+                Master Bootstrap 5 components, grid systems, utilities, layouts, and responsive design.
+                Learn how to create modern UI, navbars, cards, forms, and fully responsive websites
+                without writing complex CSS. Perfect for beginners and frontend learners.
+            </p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Course Introduction</h2>
+            <p class="mt-3">
+                This Learnify Bootstrap course teaches you how to build professional and fully responsive
+                websites using Bootstrap 5. You will learn layout systems, components, utilities, responsive
+                design, and how to build modern UI without writing complex CSS.
+                Perfect for beginners who want to design clean websites quickly and efficiently.
+            </p>
+        </section>
+
+        <hr>
+
+
+        <!-- Why Learn HTML -->
+        <section>
+            <h2 class="section-title">Why Learn Bootstrap?</h2>
+            <ul>
+                <li><strong>Faster Development</strong> — Build websites quickly using ready-made components.</li>
+
+                <li><strong>Responsive by Default</strong> — Every layout automatically adapts to all screen sizes.</li>
+
+                <li><strong>No Deep CSS Required</strong> — Style pages easily using Bootstrap utilities.</li>
+
+                <li><strong>Industry Standard</strong> — Used widely in companies and real-world web development.</li>
+
+                <li><strong>Huge Component Library</strong> — Navbars, cards, buttons, modals, forms, grids, and more.
+                </li>
+            </ul>
+        </section>
+
+        <hr>
+
+
+
+
+        <!-- What You'll Learn -->
+        <section>
+            <h2 class="section-title">What You'll Learn</h2>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>Bootstrap Basics</strong> — Containers, setup, breakpoints, CDN vs files.</li>
+
+                        <li><strong>Bootstrap Grid System</strong> — Rows, columns, responsive layouts.</li>
+
+                        <li><strong>Utilities</strong> — Spacing, colors, display, borders, flex, typography.</li>
+
+                        <li><strong>Bootstrap Components</strong> — Buttons, alerts, cards, badges, list groups.</li>
+
+                        <li><strong>Forms</strong> — Form controls, validation, input groups, layouts.</li>
+                        <li><strong>Flexbox & Grid</strong> — Responsive layouts without writing CSS.</li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <ul>
+
+                        <li><strong>Navbar & Header Design</strong> — Build modern navigation bars.</li>
+
+                        <li><strong>Modals & Offcanvas</strong> — Build interactive UI components.</li>
+
+                        <li><strong>Bootstrap Icons</strong> — Use vector icons and utility classes.</li>
+
+                        <li><strong>Real Projects</strong> — Create landing pages, product cards, pricing
+                            sections, and complete responsive websites.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <hr>
+
+        <!-- Syllabus Accordion -->
+        <section>
+            <h2 class="section-title">Course Syllabus</h2>
+            <div class="accordion" id="bootstrapAccordion">
+
+                <!-- Module 1 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse1">
+                            Module 1: Introduction to Bootstrap
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse1" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- What is Bootstrap -->
+                                <li>
+                                    <strong>What is Bootstrap?</strong><br>
+                                    Bootstrap is a powerful CSS framework used to build <strong>responsive,
+                                        mobile-first</strong>
+                                    websites quickly. It provides ready-made UI components like buttons, forms, cards,
+                                    layouts,
+                                    and navigation bars.
+                                </li>
+
+                                <!-- Why Use Bootstrap -->
+                                <li>
+                                    <strong>Why Use Bootstrap?</strong>
+                                    <ul>
+                                        <li><strong>Fast Development</strong> — Pre-built components save hours of
+                                            coding.
+                                        </li>
+                                        <li><strong>Responsive by Default</strong> — Works on all screen sizes
+                                            automatically.</li>
+                                        <li><strong>Consistent UI</strong> — Gives a professional and uniform look.</li>
+                                        <li><strong>Customizable</strong> — Override styles with your own CSS.</li>
+                                        <li><strong>Widely Used</strong> — Trusted by developers & companies worldwide.
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- CDN vs Local -->
+                                <li>
+                                    <strong>CDN vs Local Installation:</strong>
+                                    <ul>
+                                        <li><strong>CDN</strong> — Best for quick projects. Add Bootstrap by linking
+                                            CDN.
+                                        </li>
+                                        <li><strong>Local</strong> — Download Bootstrap files and use offline.</li>
+                                    </ul>
+
+                                    <pre><code>&lt;!-- Bootstrap CSS CDN --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Bootstrap JS CDN --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Containers -->
+                                <li>
+                                    <strong>Bootstrap Containers:</strong>
+                                    <ul>
+                                        <li><code>.container</code> — Fixed width container.</li>
+                                        <li><code>.container-fluid</code> — Full-width container.</li>
+                                        <li><code>.container-md</code>, <code>.container-lg</code> — Fluid on small
+                                            screens,
+                                            fixed on larger screens.</li>
+                                    </ul>
+
+                                    <pre><code>&lt;div class="container"&gt;
+    Content here
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt;
+    Full-width section
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Breakpoints -->
+                                <li>
+                                    <strong>Bootstrap Breakpoints (Mobile-first):</strong>
+                                    <table class="table table-bordered mt-2">
+                                        <tr>
+                                            <th>Breakpoint</th>
+                                            <th>Prefix</th>
+                                            <th>Size</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra Small</td>
+                                            <td>None</td>
+                                            <td>&lt;576px</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Small</td>
+                                            <td>sm</td>
+                                            <td>≥576px</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medium</td>
+                                            <td>md</td>
+                                            <td>≥768px</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Large</td>
+                                            <td>lg</td>
+                                            <td>≥992px</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra Large</td>
+                                            <td>xl</td>
+                                            <td>≥1200px</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXL</td>
+                                            <td>xxl</td>
+                                            <td>≥1400px</td>
+                                        </tr>
+                                    </table>
+                                </li>
+
+                                <!-- Example -->
+                                <li>
+                                    <strong>Example Code:</strong>
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container mt-4"&gt;
+        &lt;h1 class="text-primary"&gt;Welcome to Bootstrap&lt;/h1&gt;
+        &lt;p&gt;This page uses the Bootstrap grid and utilities.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 2 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse2">
+                            Module 2: Bootstrap Grid System
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse2" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- WHAT IS GRID -->
+                                <li>
+                                    <strong>What is the Bootstrap Grid?</strong><br>
+                                    Bootstrap uses a <strong>12-column flexbox grid</strong> to build responsive
+                                    layouts.
+                                    Every screen size adjusts automatically.
+
+                                    <br><br><strong>Example (Real Layout):</strong>
+                                    <div class="container border p-2 mt-2">
+                                        <div class="row">
+                                            <div class="col bg-light p-2 m-1">Column 1</div>
+                                            <div class="col bg-light p-2 m-1">Column 2</div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col"&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- BREAKPOINTS -->
+                                <li>
+                                    <strong>Responsive Breakpoints:</strong><br>
+                                    These values decide how layout behaves on different screen sizes.
+
+                                    <pre><code>xs  : &lt; 576px
+sm  : ≥ 576px
+md  : ≥ 768px
+lg  : ≥ 992px
+xl  : ≥ 1200px
+xxl : ≥ 1400px
+</code></pre>
+                                </li>
+
+                                <!-- CONTAINER TYPES -->
+                                <li>
+                                    <strong>Container Types:</strong>
+
+                                    <br><br><strong>Real Examples:</strong>
+                                    <div class="container bg-light p-2 mt-1">.container (Fixed Width)</div>
+                                    <div class="container-fluid bg-light p-2 mt-1">.container-fluid (Full Width)</div>
+
+                                    <pre><code>&lt;div class="container"&gt;Fixed width&lt;/div&gt;
+&lt;div class="container-fluid"&gt;Full width&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- 12 COLUMN RULE -->
+                                <li>
+                                    <strong>12-Column Rule:</strong><br>
+                                    Every row has 12 parts. You divide them as needed.
+
+                                    <br><br><strong>Real Example:</strong>
+                                    <div class="container mt-2">
+                                        <div class="row">
+                                            <div class="col-3 bg-light p-2 m-1">3 cols</div>
+                                            <div class="col-8 bg-light p-2 m-1">8 cols</div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="col-3"&gt;3 cols&lt;/div&gt;
+&lt;div class="col-9"&gt;9 cols&lt;/div&gt;
+</code></pre>
+                                </li>
+                                <!-- RESPONSIVE COLUMNS -->
+                                <li>
+                                    <strong>Responsive Columns:</strong><br>
+                                    Columns change automatically based on screen size using classes like:
+                                    <code>col-sm-*</code>, <code>col-md-*</code>, <code>col-lg-*</code>.
+
+                                    <br><br><strong>Real Example (Auto-adjusting grid):</strong>
+
+                                    <div class="row mt-2 text-center">
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 1</div>
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 2</div>
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 3</div>
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 4</div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Box 1&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Box 2&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Box 3&lt;/div&gt;
+    &lt;div class="col-12 col-sm-6 col-md-4 col-lg-3"&gt;Box 4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                    <br><strong>How it behaves:</strong>
+                                    <ul>
+                                        <li><strong>col-12</strong> → full width on mobile</li>
+                                        <li><strong>col-sm-6</strong> → 2 columns on small screens</li>
+                                        <li><strong>col-md-4</strong> → 3 columns on tablets</li>
+                                        <li><strong>col-lg-3</strong> → 4 columns on large screens</li>
+                                    </ul>
+                                </li>
+
+
+                                <!-- AUTO LAYOUT -->
+                                <li>
+                                    <strong>Auto Layout / Equal Columns:</strong><br>
+                                    Columns share equal width without specifying size.
+
+                                    <br><br><strong>Real Example:</strong>
+                                    <div class="row mt-2">
+                                        <div class="col bg-light p-2 m-1">A</div>
+                                        <div class="col bg-light p-2 m-1">B</div>
+                                        <div class="col bg-light p-2 m-1">C</div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="col"&gt;A&lt;/div&gt;
+&lt;div class="col"&gt;B&lt;/div&gt;
+&lt;div class="col"&gt;C&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- OFFSET -->
+                                <li>
+                                    <strong>Offset Columns (Shift Right):</strong>
+
+                                    <br><br><strong>Real Example:</strong>
+                                    <div class="row mt-2">
+                                        <div class="col-4 offset-2 bg-light p-2 m-1">Shifted Right</div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="col-4 offset-2"&gt;Shifted right&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- GUTTERS -->
+                                <li>
+                                    <strong>Gutters (Spacing Between Columns):</strong>
+                                    <pre><code>.g-0 → no gap
+.g-2 → small gap
+.g-3 → medium gap
+.g-5 → large gap
+</code></pre>
+
+                                    <br><strong>Real Example:</strong>
+                                    <div class="row g-3 mt-2">
+                                        <div class="col bg-light p-2 m-1">One</div>
+                                        <div class="col bg-light p-2 m-1">Two</div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row g-3"&gt;...&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- NESTING -->
+                                <li>
+                                    <strong>Nesting Columns:</strong><br>
+                                    Columns can contain rows.
+
+                                    <br><br><strong>Real Example:</strong>
+                                    <div class="row mt-2">
+                                        <div class="col-8 bg-light p-2">
+                                            Outer
+                                            <div class="row mt-1">
+                                                <div class="col-6 bg-white p-2">Inner 1</div>
+                                                <div class="col-6 bg-white p-2">Inner 2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="col-8"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-6"&gt;Inner 1&lt;/div&gt;
+        &lt;div class="col-6"&gt;Inner 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- REAL WORLD -->
+                                <li>
+                                    <strong>Real-World Layout Example:</strong><br><br>
+
+                                    <div class="container mt-2 p-2 border">
+                                        <div class="row">
+                                            <div class="col-lg-3 bg-light p-3">Sidebar</div>
+                                            <div class="col-lg-9 bg-white p-3">Main Content</div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="col-lg-3"&gt;Sidebar&lt;/div&gt;
+&lt;div class="col-lg-9"&gt;Main Content&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 3 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse3">
+                            Module 3: Flexbox Utilities
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse3" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+                                <!-- What is Flexbox -->
+                                <li>
+                                    <strong>What is Flexbox?</strong><br>
+                                    Flexbox is a modern layout system used by Bootstrap to align, center, and distribute
+                                    content easily.
+                                    It is perfect for building responsive UI layouts like navbars, headers, cards, and
+                                    dashboards.
+                                </li>
+
+
+                                <!-- Core Flex Classes -->
+                                <li>
+                                    <strong>Core Flexbox Classes:</strong>
+                                    <pre><code>d-flex               → Enables flexbox
+flex-row            → Horizontal layout
+flex-column         → Vertical layout
+flex-wrap           → Wrap items
+flex-fill           → Fill available space
+</code></pre>
+
+                                    <!-- LIVE MODERN UI -->
+                                    <div class="d-flex gap-3 mt-3">
+                                        <div class="p-3 bg-white shadow-sm rounded border">Item 1</div>
+                                        <div class="p-3 bg-white shadow-sm rounded border">Item 2</div>
+                                        <div class="p-3 bg-white shadow-sm rounded border">Item 3</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Flex Direction -->
+                                <li>
+                                    <strong>Flex Direction:</strong>
+                                    <pre><code>&lt;div class="d-flex flex-row"&gt;Row&lt;/div&gt;
+&lt;div class="d-flex flex-column"&gt;Column&lt;/div&gt;
+</code></pre>
+
+                                    <!-- LIVE EXAMPLE -->
+                                    <div class="d-flex flex-column gap-2 mt-3">
+                                        <div class="p-2 bg-light border rounded">Column 1</div>
+                                        <div class="p-2 bg-light border rounded">Column 2</div>
+                                    </div>
+
+                                    <br>Responsive versions:
+                                    <pre><code>flex-sm-column
+flex-md-row
+flex-lg-row-reverse
+</code></pre>
+                                </li>
+
+
+                                <!-- Justify Content -->
+                                <li>
+                                    <strong>Horizontal Alignment (justify-content):</strong>
+                                    <pre><code>justify-content-start
+justify-content-center
+justify-content-end
+justify-content-between
+justify-content-around
+justify-content-evenly
+</code></pre>
+
+                                    <!-- LIVE EXAMPLE -->
+                                    <div
+                                        class="d-flex justify-content-between mt-3 p-3 bg-white border rounded shadow-sm">
+                                        <div class="p-2 bg-primary text-white rounded">A</div>
+                                        <div class="p-2 bg-danger text-white rounded">B</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Align Items -->
+                                <li>
+                                    <strong>Vertical Alignment (align-items):</strong>
+                                    <pre><code>align-items-start
+align-items-center
+align-items-end
+</code></pre>
+
+                                    <!-- LIVE UI -->
+                                    <div class="d-flex align-items-center bg-white rounded border shadow-sm mt-3"
+                                        style="height:100px;">
+                                        <div class="p-2 bg-success text-white rounded">Vertically Centered</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Align Self -->
+                                <li>
+                                    <strong>Align Self (per individual item):</strong>
+                                    <pre><code>align-self-start
+align-self-center
+align-self-end
+</code></pre>
+
+                                    <!-- LIVE UI -->
+                                    <div class="d-flex bg-light p-3 rounded border mt-3" style="height:120px;">
+                                        <div class="p-2 bg-info text-white rounded align-self-start">Top</div>
+                                        <div class="p-2 bg-warning rounded align-self-center mx-3">Middle</div>
+                                        <div class="p-2 bg-danger text-white rounded align-self-end">Bottom</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Flex Grow -->
+                                <li>
+                                    <strong>Flex Grow / Shrink / Fill:</strong>
+                                    <pre><code>flex-grow-1      → Expand and fill space
+flex-shrink-0    → Prevent shrink
+flex-fill        → Items share equal width
+</code></pre>
+
+                                    <!-- LIVE UI -->
+                                    <div class="d-flex gap-3 mt-3">
+                                        <div class="p-3 bg-primary text-white rounded shadow-sm flex-grow-1">Grow</div>
+                                        <div class="p-3 bg-secondary text-white rounded shadow-sm">Normal</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Gap -->
+                                <li>
+                                    <strong>Gap between flex items:</strong>
+                                    <pre><code>gap-1  → Small
+gap-3  → Medium
+gap-5  → Large
+</code></pre>
+
+                                    <!-- LIVE -->
+                                    <div class="d-flex gap-4 mt-3">
+                                        <div class="p-2 bg-dark text-white rounded">1</div>
+                                        <div class="p-2 bg-dark text-white rounded">2</div>
+                                        <div class="p-2 bg-dark text-white rounded">3</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Responsive Flexbox -->
+                                <li>
+                                    <strong>Responsive Flexbox Control:</strong>
+                                    <pre><code>d-sm-flex
+d-md-flex
+flex-sm-column
+flex-lg-row
+</code></pre>
+
+                                    <!-- LIVE UI -->
+                                    <div class="d-flex flex-column flex-md-row gap-3 mt-3">
+                                        <div class="p-3 bg-info text-white rounded shadow-sm">Item 1</div>
+                                        <div class="p-3 bg-info text-white rounded shadow-sm">Item 2</div>
+                                    </div>
+                                </li>
+
+
+                                <!-- Responsive Header -->
+                                <li>
+                                    <strong>Responsive Header Using Flexbox:</strong>
+
+                                    <!-- LIVE UI -->
+                                    <header
+                                        class="d-flex justify-content-between align-items-center p-3 bg-white border rounded shadow-sm mt-3">
+                                        <h3 class="m-0 fw-bold">Learnify</h3>
+
+                                        <nav class="d-none d-md-flex gap-4">
+                                            <a href="#" class="text-decoration-none">Home</a>
+                                            <a href="#" class="text-decoration-none">Courses</a>
+                                            <a href="#" class="text-decoration-none">About</a>
+                                        </nav>
+
+                                        <button class="btn btn-primary">Login</button>
+                                    </header>
+                                </li>
+
+
+                                <!-- Flex Navbar -->
+                                <li>
+                                    <strong>Flexbox Navigation Bar:</strong>
+
+                                    <!-- LIVE UI -->
+                                    <div
+                                        class="d-flex justify-content-between align-items-center bg-white p-3 border rounded shadow-sm mt-3">
+                                        <div class="fw-bold">LOGO</div>
+
+                                        <ul class="d-flex gap-4 list-unstyled m-0">
+                                            <li><a href="#" class="text-decoration-none">Home</a></li>
+                                            <li><a href="#" class="text-decoration-none">Courses</a></li>
+                                            <li><a href="#" class="text-decoration-none">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use <code>d-flex</code> for alignment and layout control.</li>
+                                        <li>Use <code>gap</code> instead of margins.</li>
+                                        <li>Use responsive flex utilities to handle mobile-first layouts.</li>
+                                        <li>Flexbox is ideal for navbars, headers, dashboards, and card layouts.</li>
+                                        <li>Combine Flexbox + Grid for powerful designs.</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 4 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse4">
+                            Module 4: Bootstrap Utilities
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse4" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Spacing Utilities -->
+                                <li>
+                                    <strong>Spacing Utilities (Margin & Padding):</strong><br>
+                                    Bootstrap uses <code>m-*</code> for margin and <code>p-*</code> for padding.
+                                    <pre><code>m-0      → remove margin
+mt-4     → margin-top: 1.5rem
+p-3      → padding: 1rem
+px-4     → padding-left & right
+my-2     → vertical margin
+</code></pre>
+
+                                    Example:
+                                    <pre><code>&lt;div class="p-3 mt-4 bg-light"&gt;
+    Spacing example
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Color & Background Utilities -->
+                                <li>
+                                    <strong>Colors & Background Utilities:</strong><br>
+
+                                    <pre><code>text-primary
+text-success
+text-danger
+
+bg-light
+bg-dark
+bg-primary
+bg-warning
+    </code></pre>
+
+                                    <!-- Explanation + Examples -->
+                                    <p class="text-primary">text-primary → This is blue text.</p>
+                                    <p class="text-success">text-success → This is green text (success message).</p>
+                                    <p class="text-danger">text-danger → This is red text (error text).</p>
+
+                                    <div class="bg-light p-3 mt-2">bg-light → Light grey background box.</div>
+                                    <div class="bg-dark text-white p-3 mt-2">bg-dark → Dark background with white text.
+                                    </div>
+                                    <div class="bg-primary text-white p-3 mt-2">bg-primary → Blue background box.</div>
+                                    <div class="bg-warning p-3 mt-2">bg-warning → Yellow warning box.</div>
+
+                                </li>
+
+                                <!-- Borders -->
+                                <li>
+                                    <strong>Border Utilities:</strong>
+                                    <pre><code>border
+border-top
+border-bottom
+border-primary
+rounded
+rounded-circle
+rounded-pill
+    </code></pre>
+
+                                    <!-- Border Example -->
+                                    <p class="mb-1"><strong>Example:</strong></p>
+                                    <div class="border border-primary rounded p-3 mb-3">
+                                        Box with border
+                                    </div>
+                                </li>
+
+
+                                <!-- Shadow -->
+                                <li>
+                                    <strong>Shadow Utilities:</strong><br>
+                                    <pre><code>shadow-sm    → small shadow
+shadow       → normal shadow
+shadow-lg    → large shadow
+    </code></pre>
+
+                                    <!-- Shadow Example -->
+                                    <p class="mb-1"><strong>Example:</strong></p>
+                                    <div class="shadow p-4 bg-white rounded mb-3">
+                                        Card with shadow
+                                    </div>
+                                </li>
+
+
+                                <!-- Display Utilities -->
+                                <li>
+                                    <strong>Display Utilities:</strong>
+                                    <pre><code>d-none          → hide element
+d-block         → block element
+d-inline        → inline element
+d-flex          → display flex
+d-md-flex       → flex from medium screens+
+d-lg-block      → block from large screens+
+    </code></pre>
+
+                                    <!-- Display Example -->
+                                    <p class="mb-1"><strong>Responsive Example:</strong></p>
+                                    <div class="d-none d-md-block mb-3">
+                                        Visible only on md screens and above
+                                    </div>
+                                </li>
+
+
+                                <!-- Float utilities -->
+                                <li>
+                                    <strong>Float & Clearfix Utilities:</strong>
+                                    <pre><code>float-start
+float-end
+float-none
+clearfix
+    </code></pre>
+
+                                    <!-- Float Example -->
+                                    <div class="border p-2 clearfix mb-3">
+                                        <span class="float-start">Left float</span>
+                                        <span class="float-end">Right float</span>
+                                    </div>
+                                </li>
+
+
+                                <!-- Text & Alignment -->
+                                <li>
+                                    <strong>Text Alignment Utilities:</strong>
+                                    <pre><code>text-start
+text-center
+text-end
+text-md-center   → center from md screens+
+    </code></pre>
+
+                                    <!-- Text Example -->
+                                    <p class="text-center">This text is centered.</p>
+                                    <p class="text-md-center">This text centers on md+ screens.</p>
+                                </li>
+
+
+                                <!-- Width / Height -->
+                                <li>
+                                    <strong>Width & Height Utilities:</strong>
+                                    <pre><code>w-25   w-50   w-75   w-100
+h-25   h-50   h-75   h-100
+mw-100 → max-width:100%
+    </code></pre>
+
+                                    <!-- Width Example -->
+                                    <div class="bg-primary text-white p-2 w-50 mb-3">
+                                        50% width box
+                                    </div>
+                                </li>
+
+
+                                <!-- Opacity -->
+                                <li>
+                                    <strong>Opacity Utilities:</strong>
+                                    <pre><code>opacity-25
+opacity-50
+opacity-75
+opacity-100
+    </code></pre>
+
+                                    <!-- Opacity Example -->
+                                    <div class="bg-success text-white p-2 opacity-50">
+                                        50% opacity box
+                                    </div>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use utilities instead of writing new CSS when possible</li>
+                                        <li>Use spacing utilities <code>mt-*, p-*</code> to reduce custom CSS</li>
+                                        <li>Use responsive utilities like <code>d-md-flex</code></li>
+                                        <li>Utility classes make the layout fast, consistent, and clean</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 5 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse5">
+                            Module 5: Components – Buttons, Badges, Alerts
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse5" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- BUTTONS -->
+                                <li>
+                                    <strong>Buttons:</strong><br>
+                                    Bootstrap provides ready-made button styles used for actions, forms, navigation, and
+                                    UI
+                                    events.
+
+                                    <br><br><strong>Basic Button Examples (Real Output):</strong><br>
+                                    <button class="btn btn-primary m-1">Primary</button>
+                                    <button class="btn btn-danger m-1">Delete</button>
+                                    <button class="btn btn-success m-1">Save</button>
+
+                                    <pre><code>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Delete&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Save&lt;/button&gt;
+</code></pre>
+
+                                    <strong>Outline Buttons:</strong><br>
+                                    <button class="btn btn-outline-primary m-1">Outline</button>
+                                    <button class="btn btn-outline-warning m-1">Warning</button>
+
+                                    <pre><code>&lt;button class="btn btn-outline-primary"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+</code></pre>
+
+                                    <strong>Button Sizes:</strong><br>
+                                    <button class="btn btn-info btn-sm m-1">Small</button>
+                                    <button class="btn btn-dark btn-lg m-1">Large</button>
+
+                                    <pre><code>&lt;button class="btn btn-info btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn-dark btn-lg"&gt;Large&lt;/button&gt;
+</code></pre>
+
+                                    <strong>Button Group:</strong><br>
+                                    <div class="btn-group m-1">
+                                        <button class="btn btn-primary">Left</button>
+                                        <button class="btn btn-primary">Middle</button>
+                                        <button class="btn btn-primary">Right</button>
+                                    </div>
+
+                                    <pre><code>&lt;div class="btn-group"&gt;
+    &lt;button class="btn btn-primary"&gt;Left&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Middle&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </li>
+
+                                <!-- BADGES -->
+                                <li>
+                                    <strong>Badges:</strong><br>
+                                    Badges are small UI elements used for notifications, counts, or labeling content.
+
+                                    <br><br><strong>Examples:</strong><br>
+                                    <span class="badge bg-primary m-1">New</span>
+                                    <span class="badge bg-success m-1">Active</span>
+                                    <span class="badge bg-danger m-1">4</span>
+
+                                    <pre><code>&lt;span class="badge bg-primary"&gt;New&lt;/span&gt;
+&lt;span class="badge bg-success"&gt;Active&lt;/span&gt;
+&lt;span class="badge bg-danger"&gt;4&lt;/span&gt;
+</code></pre>
+
+                                    <strong>Badges inside Buttons:</strong><br>
+                                    <button class="btn btn-dark m-1">
+                                        Messages <span class="badge bg-light text-dark">3</span>
+                                    </button>
+
+                                    <pre><code>&lt;button class="btn btn-dark"&gt;
+    Messages &lt;span class="badge bg-light text-dark"&gt;3&lt;/span&gt;
+&lt;/button&gt;
+</code></pre>
+
+                                </li>
+
+                                <!-- ALERTS -->
+                                <li>
+                                    <strong>Alerts:</strong><br>
+                                    Alerts display important contextual messages like success, warning, or danger.
+
+                                    <br><br><strong>Examples:</strong><br>
+                                    <div class="alert alert-success mt-2">Successfully saved!</div>
+                                    <div class="alert alert-warning mt-2">Warning: Check your inputs.</div>
+                                    <div class="alert alert-danger mt-2">Error! Something went wrong.</div>
+
+                                    <pre><code>&lt;div class="alert alert-success"&gt;Successfully saved!&lt;/div&gt;
+&lt;div class="alert alert-warning"&gt;Warning: Check your inputs.&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;Error! Something went wrong.&lt;/div&gt;
+</code></pre>
+
+                                    <strong>Dismissible Alert:</strong><br>
+                                    <div class="alert alert-info alert-dismissible fade show mt-2">
+                                        Information alert!
+                                        <button class="btn-close" data-bs-dismiss="alert"></button>
+                                    </div>
+
+                                    <pre><code>&lt;div class="alert alert-info alert-dismissible fade show"&gt;
+    Information alert!
+    &lt;button class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- ICON BUTTONS -->
+                                <li>
+                                    <strong>Using Icons Inside Buttons:</strong><br>
+                                    Icons add meaning and improve UI experience. (Requires Bootstrap Icons CDN)
+
+                                    <br><br><strong>Examples:</strong><br>
+
+                                    <button class="btn btn-primary m-1">
+                                        <i class="bi bi-download"></i> Download
+                                    </button>
+
+                                    <button class="btn btn-success m-1">
+                                        <i class="bi bi-check-circle"></i> Submit
+                                    </button>
+
+                                    <pre><code>&lt;button class="btn btn-primary"&gt;
+    &lt;i class="bi bi-download"&gt;&lt;/i&gt; Download
+&lt;/button&gt;
+
+&lt;button class="btn btn-success"&gt;
+    &lt;i class="bi bi-check-circle"&gt;&lt;/i&gt; Submit
+&lt;/button&gt;
+</code></pre>
+
+                                    <strong>Icon-only Button:</strong><br>
+                                    <button class="btn btn-outline-secondary m-1">
+                                        <i class="bi bi-heart"></i>
+                                    </button>
+
+                                    <pre><code>&lt;button class="btn btn-outline-secondary"&gt;
+    &lt;i class="bi bi-heart"&gt;&lt;/i&gt;
+&lt;/button&gt;
+</code></pre>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 6 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse6">
+                            Module 6: Cards & Advanced Components
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse6" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+
+                                <!-- Basic Card Structure -->
+                                <li>
+                                    <strong>Basic Card Structure:</strong><br>
+                                    Cards are flexible content containers with support for images, links, lists,
+                                    headers,
+                                    and footers.
+
+                                    <!-- LIVE CARD -->
+                                    <div class="card shadow-sm mt-3" style="max-width: 22rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Basic Card</h5>
+                                            <p class="card-text">This is a simple card with text content inside.</p>
+                                            <a href="#" class="btn btn-primary">Action</a>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Title&lt;/h5&gt;
+        &lt;p&gt;Card text&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Image Cards -->
+                                <li>
+                                    <strong>Image Cards:</strong>
+
+                                    <!-- LIVE IMAGE CARD -->
+                                    <div class="card shadow-sm mt-3" style="max-width: 22rem;">
+                                        <img src="./src/img/image_card.png" class="card-img-top" alt="Card image">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Image Card</h5>
+                                            <p class="card-text">Card with image and text content.</p>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;img src="image.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Image Card&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Card with image and text content.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Horizontal Cards -->
+                                <li>
+                                    <strong>Horizontal Cards:</strong>
+
+                                    <div class="card shadow-sm mt-3">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-md-4">
+                                                <img src="./src/img/Horizontal_Card.png" class="img-fluid rounded-start"
+                                                    alt="Horizontal Card Image">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Horizontal Card</h5>
+                                                    <p class="card-text">A modern horizontal layout using Bootstrap
+                                                        grid.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;div class="row g-0"&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;img src="image.jpg" class="img-fluid rounded-start" alt="..."&gt;
+        &lt;/div&gt;
+
+        &lt;div class="col-md-8"&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h5 class="card-title"&gt;Horizontal Card&lt;/h5&gt;
+                &lt;p class="card-text"&gt;A modern horizontal layout.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- List Group inside Card -->
+                                <li>
+                                    <strong>List Group inside a Card:</strong>
+
+                                    <!-- LIVE LIST-GROUP CARD -->
+                                    <div class="card shadow-sm mt-3" style="max-width: 22rem;">
+                                        <div class="card-header">Topics</div>
+
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">HTML</li>
+                                            <li class="list-group-item">CSS</li>
+                                            <li class="list-group-item">Bootstrap</li>
+                                        </ul>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;Topics&lt;/div&gt;
+
+    &lt;ul class="list-group list-group-flush"&gt;
+        &lt;li class="list-group-item"&gt;HTML&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;CSS&lt;/li&gt;
+        &lt;li class="list-group-item"&gt;Bootstrap&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </li>
+
+
+
+                                <!-- Profile Card -->
+                                <li>
+                                    <strong>Profile Card (Modern UI):</strong>
+
+                                    <!-- LIVE PROFILE CARD -->
+                                    <div class="card shadow-sm text-center mt-3" style="max-width: 20rem;">
+                                        <img src="./src/img/John_Doe.png" class="rounded-circle mx-auto mt-3"
+                                            width="120" alt="Profile Image">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">John Doe</h5>
+                                            <p class="card-text text-muted">UI/UX Designer</p>
+                                            <button class="btn btn-primary btn-sm">Follow</button>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card text-center"&gt;
+    &lt;img src="profile.jpg" class="rounded-circle mx-auto" width="120" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Name&lt;/h5&gt;
+        &lt;p class="card-text text-muted"&gt;Role&lt;/p&gt;
+        &lt;button class="btn btn-primary btn-sm"&gt;Follow&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </li>
+
+
+
+                                <!-- Product Card -->
+                                <li>
+                                    <strong>Product Card:</strong>
+
+                                    <!-- LIVE PRODUCT CARD -->
+                                    <div class="card shadow-sm mt-3" style="max-width: 22rem;">
+                                        <img src="./src/img/Smart_Watch.png" class="card-img-top" alt="Smart Watch">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Smart Watch</h5>
+                                            <p class="text-muted">₹2,499</p>
+                                            <button class="btn btn-dark w-100">Buy Now</button>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;img src="product.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Product Name&lt;/h5&gt;
+        &lt;p class="text-muted"&gt;₹Price&lt;/p&gt;
+        &lt;button class="btn btn-dark w-100"&gt;Buy Now&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </li>
+
+
+
+                                <!-- Course Card -->
+                                <li>
+                                    <strong>Course Card (Modern UI):</strong>
+
+                                    <!-- LIVE COURSE CARD -->
+                                    <div class="card shadow-sm mt-3" style="max-width: 22rem;">
+                                        <img src="./src/img/stack.png" class="card-img-top" alt="Course Thumbnail">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Full-Stack Web Development</h5>
+                                            <p class="card-text text-muted">Learn HTML, CSS, JS, Node & React</p>
+
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-success">4.8 ★</span>
+                                                <button class="btn btn-primary btn-sm">Enroll</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card"&gt;
+    &lt;img src="course.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Course Title&lt;/h5&gt;
+        &lt;p class="card-text text-muted"&gt;Short description&lt;/p&gt;
+        &lt;div class="d-flex justify-content-between align-items-center"&gt;
+            &lt;span class="badge bg-success"&gt;Rating&lt;/span&gt;
+            &lt;button class="btn btn-primary btn-sm"&gt;Enroll&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                                </li>
+
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 7 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse7">
+                            Module 7: Navbar, Dropdowns & Navigation
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse7" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+
+                                <!-- Responsive Navbar -->
+                                <li>
+                                    <strong>Building Responsive Navbars:</strong><br>
+                                    Navbars are responsive navigation components with support for branding, links,
+                                    dropdowns, togglers, and forms.
+
+                                    <!-- LIVE NAVBAR -->
+                                    <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded mt-3">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand fw-bold" href="#">Learnify</a>
+
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navbarDemo1">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+
+                                            <div class="collapse navbar-collapse" id="navbarDemo1">
+                                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+
+                                    <pre><code>&lt;nav class="navbar navbar-expand-lg bg-light"&gt;
+  &lt;button class="navbar-toggler" ...&gt;&lt;/button&gt;
+  &lt;div class="collapse navbar-collapse"&gt;...&lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Dropdown Menu -->
+                                <li>
+                                    <strong>Dropdown Menus:</strong><br>
+                                    Add dropdowns inside the navbar for categories, user menus, etc.
+
+                                    <!-- LIVE DROPDOWN NAVBAR -->
+                                    <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded mt-3">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand fw-bold" href="#">ShopX</a>
+
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navbarDemo2">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+
+                                            <div class="collapse navbar-collapse" id="navbarDemo2">
+                                                <ul class="navbar-nav ms-auto">
+                                                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+
+                                                    <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                                            href="#">
+                                                            Products
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                                                            <li><a class="dropdown-item" href="#">Clothing</a></li>
+                                                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+
+                                    <pre><code>&lt;li class="nav-item dropdown"&gt;
+  &lt;a class="dropdown-toggle" data-bs-toggle="dropdown"&gt;Menu&lt;/a&gt;
+  &lt;ul class="dropdown-menu"&gt;...&lt;/ul&gt;
+&lt;/li&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Sticky Navbar -->
+                                <li>
+                                    <strong>Sticky Navbar (Stays at top on scroll):</strong>
+
+                                    <!-- LIVE STICKY NAVBAR -->
+                                    <nav class="navbar sticky-top navbar-dark bg-dark mt-3 shadow-sm rounded">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand fw-bold" href="#">StickyNav</a>
+                                            <button class="btn btn-outline-light btn-sm">Login</button>
+                                        </div>
+                                    </nav>
+
+                                    <pre><code>&lt;nav class="navbar sticky-top bg-dark"&gt;...&lt;/nav&gt;
+</code></pre>
+
+                                    <small class="text-muted">Scroll the page to see sticky behavior.</small>
+                                </li>
+
+
+
+                                <!-- Collapsible Menus -->
+                                <li>
+                                    <strong>Collapsible / Mobile Menus:</strong><br>
+                                    Collapsible menus turn into a toggle button on mobile.
+
+                                    <!-- LIVE COLLAPSIBLE NAV -->
+                                    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm rounded mt-3">
+                                        <div class="container-fluid">
+
+                                            <a class="navbar-brand fw-bold" href="#">MenuFlex</a>
+
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navbarDemo3">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+
+                                            <div class="collapse navbar-collapse" id="navbarDemo3">
+                                                <ul class="navbar-nav ms-auto gap-2">
+                                                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </nav>
+
+                                    <pre><code>&lt;button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"&gt;&lt;/button&gt;
+&lt;div class="collapse navbar-collapse" id="menu"&gt;...&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use <code>navbar-expand-lg</code> for desktop-first navbars.</li>
+                                        <li>Use <code>sticky-top</code> for fixed header sections.</li>
+                                        <li>Use <code>dropdown-menu-end</code> to right-align dropdowns.</li>
+                                        <li>Always wrap links in <code>ul.navbar-nav</code> for spacing.</li>
+                                        <li>Use container-fluid for full-width navbars.</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 8 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse8">
+                            Module 8: Forms & Input Groups
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse8" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Form Controls -->
+                                <li>
+                                    <strong>Form Controls & Validation:</strong><br>
+                                    Bootstrap provides consistent styling for inputs, labels, selects, and validation
+                                    states.
+
+                                    <!-- LIVE FORM -->
+                                    <form class="mt-3 needs-validation" novalidate style="max-width: 22rem;">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Email</label>
+                                            <input type="email" class="form-control" required>
+                                            <div class="invalid-feedback">Please enter a valid email.</div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Password</label>
+                                            <input type="password" class="form-control" required>
+                                            <div class="invalid-feedback">Password is required.</div>
+                                        </div>
+
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </form>
+
+                                    <pre><code>&lt;input class="form-control" required&gt;
+&lt;div class="invalid-feedback"&gt;Error message&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Input Groups -->
+                                <li>
+                                    <strong>Input Groups with Icons & Buttons:</strong><br>
+                                    Input groups let you combine inputs with text, icons, or buttons.
+
+                                    <!-- LIVE INPUT GROUP -->
+                                    <div class="input-group shadow-sm mt-3" style="max-width: 22rem;">
+                                        <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
+                                        <input type="text" class="form-control" placeholder="Username">
+                                    </div>
+
+                                    <div class="input-group shadow-sm mt-3" style="max-width: 22rem;">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                    </div>
+
+                                    <pre><code>&lt;div class="input-group"&gt;
+    &lt;span class="input-group-text"&gt;@&lt;/span&gt;
+    &lt;input class="form-control"&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Form Layouts -->
+                                <li>
+                                    <strong>Form Layouts (Inline, Stacked, Horizontal):</strong>
+
+                                    <br><br><strong>1. Stacked Form</strong>
+                                    <form class="shadow-sm p-3 bg-white rounded mt-3" style="max-width: 22rem;">
+                                        <input type="text" class="form-control mb-3" placeholder="Full Name">
+                                        <input type="email" class="form-control mb-3" placeholder="Email">
+                                        <button class="btn btn-dark w-100">Register</button>
+                                    </form>
+
+                                    <br><strong>2. Inline Form</strong>
+                                    <form class="d-flex gap-2 mt-3" style="max-width: 22rem;">
+                                        <input type="text" class="form-control" placeholder="Email">
+                                        <button class="btn btn-primary">Join</button>
+                                    </form>
+
+                                    <br><strong>3. Horizontal Form</strong>
+                                    <form class="mt-3">
+                                        <div class="row mb-3 align-items-center">
+                                            <label class="col-sm-3 col-form-label fw-bold">Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3 align-items-center">
+                                            <label class="col-sm-3 col-form-label fw-bold">Email</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <pre><code>&lt;form class="d-flex"&gt;...inline...&lt;/form&gt;
+&lt;div class="row"&gt;...horizontal...&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Select & Checkbox -->
+                                <li>
+                                    <strong>Select Menus & Checkboxes:</strong>
+
+                                    <!-- LIVE SELECT & CHECKBOX -->
+                                    <div class="shadow-sm p-3 bg-white rounded mt-3" style="max-width: 22rem;">
+                                        <label class="fw-bold">Course</label>
+                                        <select class="form-select mb-3">
+                                            <option>Web Development</option>
+                                            <option>AI / ML</option>
+                                            <option>Data Science</option>
+                                        </select>
+
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label">Subscribe to newsletter</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="level">
+                                            <label class="form-check-label">Beginner</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="level">
+                                            <label class="form-check-label">Advanced</label>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;select class="form-select"&gt;...&lt;/select&gt;
+&lt;input class="form-check-input" type="checkbox"&gt;
+&lt;input class="form-check-input" type="radio"&gt;
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 9 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse9">
+                            Module 9: Modals, Offcanvas & Interactive UI
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse9" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Modals -->
+                                <li>
+                                    <strong>Modals (Pop-ups for Login, Alerts, Forms):</strong><br>
+                                    Modals are used to display content in a popup overlay.
+
+                                    <!-- LIVE MODAL BUTTON -->
+                                    <button class="btn btn-primary mt-3" data-bs-toggle="modal"
+                                        data-bs-target="#liveModal">
+                                        Open Modal
+                                    </button>
+
+                                    <!-- MODAL -->
+                                    <div class="modal fade" id="liveModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Login</h5>
+                                                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <input type="email" class="form-control mb-3" placeholder="Email">
+                                                    <input type="password" class="form-control" placeholder="Password">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-dark">Login</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;button data-bs-toggle="modal" data-bs-target="#myModal"&gt;Open&lt;/button&gt;
+
+&lt;div class="modal fade" id="myModal"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Offcanvas -->
+                                <li>
+                                    <strong>Offcanvas Menus (Sidebar menus):</strong><br>
+                                    Offcanvas slides in from left, right, top, or bottom.
+
+                                    <!-- LIVE OFFCANVAS BUTTON -->
+                                    <button class="btn btn-dark mt-3" data-bs-toggle="offcanvas"
+                                        data-bs-target="#sideMenu">
+                                        Open Menu
+                                    </button>
+
+                                    <!-- OFFCANVAS -->
+                                    <div class="offcanvas offcanvas-start" id="sideMenu">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title">Menu</h5>
+                                            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+                                            <p>Navigation links go here.</p>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;button data-bs-toggle="offcanvas" data-bs-target="#menu"&gt;Open&lt;/button&gt;
+
+&lt;div class="offcanvas offcanvas-start" id="menu"&gt;...&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Collapse -->
+                                <li>
+                                    <strong>Collapse (Show/Hide Content):</strong><br>
+                                    Collapse toggles content visibility without leaving the page.
+
+                                    <!-- LIVE COLLAPSE -->
+                                    <button class="btn btn-secondary mt-3" data-bs-toggle="collapse"
+                                        data-bs-target="#demoCollapse">
+                                        Toggle Content
+                                    </button>
+
+                                    <div class="collapse mt-2" id="demoCollapse">
+                                        <div class="card card-body">
+                                            This is collapsible content!
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;button data-bs-toggle="collapse" data-bs-target="#box"&gt;Toggle&lt;/button&gt;
+&lt;div class="collapse" id="box"&gt;...&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+                                <!-- Tooltips & Popovers -->
+                                <li>
+                                    <strong>Tooltips </strong><br>
+                                    Used for small hints or extra information.
+
+                                    <!-- LIVE TOOLTIP -->
+                                    <button class="btn btn-outline-dark mt-3" data-bs-toggle="tooltip"
+                                        title="Tooltip text!">
+                                        Hover me
+                                    </button>
+
+
+
+                                    <pre><code>&lt;button data-bs-toggle="tooltip" title="Hello"&gt;Hover&lt;/button&gt;
+
+</code></pre>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 10 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse10">
+                            Module 10: Responsive Design with Bootstrap
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse10" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Media Queries -->
+                                <li>
+                                    <strong>Media Queries in Bootstrap:</strong><br>
+                                    Bootstrap uses predefined breakpoints like <code>sm</code>, <code>md</code>,
+                                    <code>lg</code>, etc.
+
+                                    <!-- LIVE MQ EXAMPLE -->
+                                    <div class="mt-3">
+                                        <p class="d-none d-md-block text-success">Visible on MD and above</p>
+                                        <p class="d-md-none text-primary">Visible on Mobile</p>
+                                    </div>
+
+                                    <pre><code>&lt;p class="d-none d-md-block"&gt;Shown on MD+ screens&lt;/p&gt;
+&lt;p class="d-md-none"&gt;Shown on Mobile&lt;/p&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Responsive Images & Videos -->
+                                <li>
+                                    <strong>Responsive Images & Videos:</strong><br>
+                                    Bootstrap makes images and videos scale with the screen.
+
+                                    <!-- LIVE IMG -->
+                                    <img src="./src/img/responsive.png" class="img-fluid rounded mt-3"
+                                        style="max-width: 22rem;">
+
+                                    <!-- LIVE VIDEO -->
+                                    <div class="ratio ratio-16x9 mt-3" style="max-width: 22rem;">
+                                        <iframe width="560" height="315"
+                                            src="https://www.youtube.com/embed/-qfEOE4vtxE?si=OLONEjmWPj7t7Neb"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+
+                                    <pre><code>&lt;img src="image.jpg" class="img-fluid"&gt;
+
+&lt;div class="ratio ratio-16x9"&gt;
+  &lt;iframe src="video-url"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Responsive Grid Layouts -->
+                                <li>
+                                    <strong>Responsive Grid Layouts:</strong><br>
+                                    Define columns differently for each screen size.
+
+                                    <!-- LIVE GRID -->
+                                    <div class="row text-center mt-3" style="max-width: 25rem;">
+                                        <div class="col-12 col-md-6 p-2 bg-light">Column 1</div>
+                                        <div class="col-12 col-md-6 p-2 bg-secondary text-white">Column 2</div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row"&gt;
+  &lt;div class="col-12 col-md-6"&gt;Col 1&lt;/div&gt;
+  &lt;div class="col-12 col-md-6"&gt;Col 2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Mobile-first UI -->
+                                <li>
+                                    <strong>Mobile-first UI Design:</strong><br>
+                                    Bootstrap starts with mobile layout then expands upward.
+
+                                    <!-- LIVE MOBILE-FIRST -->
+                                    <button class="btn btn-primary w-100 w-md-25 mt-3">
+                                        Responsive Button
+                                    </button>
+
+                                    <pre><code>&lt;button class="btn btn-primary w-100 w-md-25"&gt;
+  Responsive Button
+&lt;/button&gt;
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Module 11 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse11">
+                            Module 11: Bootstrap Icons & Custom Styling
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse11" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Bootstrap Icons -->
+                                <li>
+                                    <strong>Bootstrap Icons:</strong><br>
+                                    Bootstrap Icons are lightweight SVG icons that can be customized using
+                                    <code>text-*</code> and <code>fs-*</code> classes.
+
+                                    <!-- LIVE ICONS -->
+                                    <div class="mt-3" style="font-size: 1.8rem;">
+                                        <i class="bi bi-heart-fill text-danger me-2"></i>
+                                        <i class="bi bi-alarm text-primary me-2"></i>
+                                        <i class="bi bi-star-fill text-warning me-2"></i>
+                                        <i class="bi bi-gear-fill text-secondary"></i>
+                                    </div>
+
+                                    <pre><code>&lt;i class="bi bi-check-circle text-success fs-3"&gt;&lt;/i&gt;
+&lt;i class="bi bi-heart-fill me-2"&gt;&lt;/i&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- FontAwesome Icons -->
+                                <li>
+                                    <strong>FontAwesome Icons:</strong><br>
+                                    FontAwesome provides thousands of icons with solid, regular, and brand styles.
+
+                                    <!-- LIVE FONTAWESOME -->
+                                    <div class="mt-3" style="font-size: 1.8rem;">
+                                        <i class="fa-solid fa-user text-success me-2"></i>
+                                        <i class="fa-solid fa-bell text-warning me-2"></i>
+                                        <i class="fa-solid fa-circle-info text-info me-2"></i>
+                                        <i class="fa-solid fa-thumbs-up text-primary"></i>
+                                    </div>
+
+                                    <pre><code>&lt;i class="fa-solid fa-spinner fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fa-solid fa-arrow-right fa-beat"&gt;&lt;/i&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Custom CSS with Bootstrap -->
+                                <li>
+                                    <strong>Custom CSS with Bootstrap:</strong><br>
+                                    You can create your own custom components using CSS + Bootstrap utilities.
+
+                                    <!-- LIVE CUSTOM BOX -->
+                                    <div class="custom-box mt-3 p-3 text-white" style="max-width: 22rem; 
+            background: linear-gradient(135deg, #4b7bec, #3867d6);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                        Custom styled box using your own CSS
+                                    </div>
+                                    <pre><code>/* Custom CSS */
+.custom-box {
+  background: linear-gradient(135deg, #4b7bec, #3867d6);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Overriding Variables -->
+                                <li>
+                                    <strong>Overriding Bootstrap Variables:</strong><br>
+                                    Modify Bootstrap theme colors and component shapes globally.
+
+                                    <!-- LIVE VARIABLE DEMO -->
+                                    <button class="btn btn-primary mt-3 me-2">Primary</button>
+                                    <button class="btn btn-secondary mt-3">Secondary</button>
+
+                                    <pre><code>:root {
+  --bs-primary: #ff4f5a;          /* New Primary Color */
+  --bs-secondary: #7f8fa6;        /* New Secondary Color */
+  --bs-border-radius: 10px;       /* Global rounded corners */
+  --bs-body-bg: #f5f6fa;          /* Page background */
+}
+</code></pre>
+
+                                    <pre><code>.btn-primary {
+  box-shadow: 0 3px 10px rgba(255, 79, 90, 0.4);
+}
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 12 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="bsM12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#bsCollapse12">
+                            Module 12: Real Bootstrap Projects
+                        </button>
+                    </h2>
+
+                    <div id="bsCollapse12" class="accordion-collapse collapse" data-bs-parent="#bootstrapAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Landing Page -->
+                                <li>
+                                    <strong>Landing Page:</strong><br>
+                                    A clean hero section with title, text, and CTA button.
+
+                                    <!-- LIVE HERO SECTION -->
+                                    <div class="p-4 text-center bg-light mt-3 rounded shadow-sm"
+                                        style="max-width: 28rem;">
+                                        <h3 class="fw-bold">Welcome to Bootstrap Course</h3>
+                                        <p class="text-muted">Learn modern UI design with responsive components.</p>
+                                        <button class="btn btn-primary">Get Started</button>
+                                    </div>
+
+                                    <pre><code>&lt;section class="text-center p-5 bg-light"&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;p&gt;Sub heading text&lt;/p&gt;
+  &lt;button class="btn btn-primary"&gt;Get Started&lt;/button&gt;
+&lt;/section&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Portfolio Website -->
+                                <li>
+                                    <strong>Portfolio Website Sections:</strong><br>
+                                    Bootstrap Grid makes it easy to build portfolios.
+
+                                    <!-- LIVE PORTFOLIO GRID -->
+                                    <div class="row g-3 mt-3" style="max-width: 28rem;">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-white shadow-sm rounded text-center">Project 1</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-white shadow-sm rounded text-center">Project 2</div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row g-3"&gt;
+  &lt;div class="col-6"&gt;Project 1&lt;/div&gt;
+  &lt;div class="col-6"&gt;Project 2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Product Cards Grid -->
+                                <li>
+                                    <strong>Product Cards Grid:</strong><br>
+                                    Common UI used in e-commerce websites.
+
+                                    <!-- LIVE PRODUCT GRID -->
+                                    <div class="row g-3 mt-3" style="max-width: 28rem;">
+                                        <div class="col-6">
+                                            <div class="card shadow-sm">
+                                                <img src="./src/img/Smart_Watch.png" class="card-img-top">
+                                                <div class="card-body text-center">
+                                                    <h6>Smart Watch</h6>
+                                                    <p class="text-muted">₹2,499</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card shadow-sm">
+                                                <img src="./src/img/stack.png" class="card-img-top">
+                                                <div class="card-body text-center">
+                                                    <h6>Full Stack Course</h6>
+                                                    <p class="text-muted">₹3,999</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="row g-3"&gt;
+  &lt;div class="col-6"&gt;...card...&lt;/div&gt;
+  &lt;div class="col-6"&gt;...card...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Pricing Table -->
+                                <li>
+                                    <strong>Pricing Table:</strong><br>
+                                    A clean and modern pricing section.
+
+                                    <!-- LIVE PRICING TABLE -->
+                                    <div class="card shadow-sm mt-3 text-center" style="max-width: 22rem;">
+                                        <div class="card-header bg-primary text-white fw-bold">
+                                            Pro Plan
+                                        </div>
+                                        <div class="card-body">
+                                            <h2 class="fw-bold">₹499</h2>
+                                            <p class="text-muted">per month</p>
+                                            <ul class="list-unstyled">
+                                                <li>✔ 10 Projects</li>
+                                                <li>✔ Premium Support</li>
+                                                <li>✔ Unlimited Access</li>
+                                            </ul>
+                                            <button class="btn btn-dark w-100 mt-2">Choose Plan</button>
+                                        </div>
+                                    </div>
+
+                                    <pre><code>&lt;div class="card text-center"&gt;
+  &lt;div class="card-header"&gt;Pro Plan&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h2&gt;₹499&lt;/h2&gt;
+    &lt;button class="btn btn-dark"&gt;Choose Plan&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+
+
+                                <!-- Multi-section Website -->
+                                <li>
+                                    <strong>Responsive Multi-section Website:</strong><br>
+                                    Combine multiple Bootstrap components to build full pages.
+
+                                    <!-- LIVE MULTI SECTION -->
+                                    <div class="mt-3 p-3 bg-white shadow-sm rounded" style="max-width: 28rem;">
+                                        <h5 class="fw-bold">About Us</h5>
+                                        <p class="text-muted">We create responsive UI designs using Bootstrap.</p>
+
+                                        <h5 class="fw-bold mt-3">Services</h5>
+                                        <ul>
+                                            <li>Web Development</li>
+                                            <li>UI/UX Design</li>
+                                            <li>Branding</li>
+                                        </ul>
+
+                                        <h5 class="fw-bold mt-3">Contact</h5>
+                                        <p>Email: info@example.com</p>
+                                    </div>
+
+                                    <pre><code>&lt;section&gt;
+  &lt;h3&gt;About&lt;/h3&gt;
+  &lt;p&gt;Company details&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+  &lt;h3&gt;Services&lt;/h3&gt;
+  &lt;ul&gt;&lt;li&gt;Service 1&lt;/li&gt;&lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <hr>
+
+        <hr>
+        <section>
+            <h2 class="section-title">Quick Examples</h2>
+
+            <div class="row g-3 mt-2">
+
+                <!-- Button Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Buttons</h5>
+
+                        <!-- LIVE DEMO -->
+                        <button class="btn btn-primary mb-2">Click Me</button>
+
+                        <pre><code>&lt;button class="btn btn-primary"&gt;Click Me&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Alert Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Alerts</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div class="alert alert-success mb-2">Operation Successful!</div>
+
+                        <pre><code>&lt;div class="alert alert-success"&gt;
+  Operation Successful!
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Card Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Card Component</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div class="card shadow-sm mb-2" style="max-width: 18rem;">
+                            <div class="card-body">
+                                Card Content
+                            </div>
+                        </div>
+
+                        <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    Card Content
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Grid Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Grid Layout</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div class="row text-center mb-2">
+                            <div class="col-6 bg-light p-2">Left</div>
+                            <div class="col-6 bg-secondary text-white p-2">Right</div>
+                        </div>
+
+                        <pre><code>&lt;div class="row"&gt;
+  &lt;div class="col-6"&gt;Left&lt;/div&gt;
+  &lt;div class="col-6"&gt;Right&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Form Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Form Input</h5>
+
+                        <!-- LIVE DEMO -->
+                        <input type="text" class="form-control mb-2" placeholder="Enter text">
+
+                        <pre><code>&lt;input type="text" 
+ class="form-control" 
+ placeholder="Enter text"&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Navbar Example -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold">Navbar</h5>
+
+                        <!-- LIVE DEMO -->
+                        <nav class="navbar navbar-light bg-light mb-2" style="border-radius:8px;">
+                            <a class="navbar-brand ms-2">Logo</a>
+                        </nav>
+
+                        <pre><code>&lt;nav class="navbar navbar-light bg-light"&gt;
+  &lt;a class="navbar-brand"&gt;Logo&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <hr>
+
+        <!-- Outcomes -->
+        <section>
+            <h2 class="section-title">What You'll Be Able To Do</h2>
+
+            <ul class="learning-list">
+                <li>Build responsive websites using Bootstrap 5</li>
+                <li>Create modern UI components like cards, buttons, alerts, modals</li>
+                <li>Design mobile-first layouts using the grid system</li>
+                <li>Customize themes using CSS & Bootstrap utilities</li>
+                <li>Use Bootstrap Icons, FontAwesome & UI components</li>
+                <li>Build project sections like pricing, portfolio, product cards</li>
+                <li>Create full responsive multi-page websites</li>
+            </ul>
+        </section>
+
+        <hr>
+
+
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">FAQ</h2>
+            <div class="accordion" id="faqHtml">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                    <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">No, this course starts from zero.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                    <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">VS Code is recommended for beginners.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div> <!-- container -->
+
+
+
+    <!-- FOOTER -->
+    <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <h4 class="fw-bold">Learnify</h4>
+                    <p class="small">
+                        A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                        MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
+                        <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Popular Courses</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="./courses/python.html" class="text-white text-decoration-none">Python</a></li>
+                        <li><a href="./courses/html.html" class="text-white text-decoration-none">HTML</a></li>
+                        <li><a href="./courses/css.html" class="text-white text-decoration-none">CSS</a></li>
+                        <li><a href="./courses/javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT + TEAM + MENTORS -->
+                <div class="col-md-3">
+
+                    <!-- CONTACT -->
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="small mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                            learnify.team03@gmail.com
+                        </a>
+                    </p>
+
+                    <div class="row">
+
+                        <!-- TEAM -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Team</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Shaik Abdul Jabbar
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Panyala Nandini
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
+                                        target="_blank" class="text-white text-decoration-none">
+                                        N Anil Kumar
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- MENTORS -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Mentors</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
+                                        B Ambica Kiranmayee
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Uppugundla Sairam
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Saketh Kallepu
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="mt-4 border-light">
+            <p class="text-center small mb-0 opacity-75">
+                © 2025 Learnify. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

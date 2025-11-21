@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learnify | Simplify Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+
+        .transition-btn {
+            background: #0d6efd;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .transition-btn:hover {
+            background: #004bb5;
+            transform: scale(1.05);
+            /* optional zoom */
+        }
+
+
+        /* TRANSITION BUTTON */
+        #btnTransition:hover {
+            background: #0a58ca !important;
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* FADE-IN ANIMATION */
+        @keyframes fadeInBox {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CARD HOVER */
+        #cardHover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* SPINNER */
+        @keyframes spinAnim {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .box {
+            width: 150px;
+            padding: 20px;
+            background: #b3d9ff;
+            animation: fadeIn 1s ease-in forwards;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="../index.html">Home</a>
+                    </li>
+
+                    <!-- Courses Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                            <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                            <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
+                            <li><a class="dropdown-item" href="./css.html">CSS</a></li>
+                            <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
+                            <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
+                            <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Instructors -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Instructors</a>
+                    </li>
+
+
+                </ul>
+                <!-- Login / Signup -->
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Log In
+                </button>
+
+                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    Join for Free
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </nav>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Log In
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Don't have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
+                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-person-plus me-2"></i> Create Your Account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Choose a strong password">
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                                <input type="password" class="form-control" placeholder="Re-enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Create Account
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Already have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                data-bs-dismiss="modal">Log In</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero -->
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Learn CSS – Style, Design & Build Beautiful Websites</h1>
+            <p class="lead mb-0">Master CSS from basics to professional-level styling.
+                Learn how to control colors, layouts, typography, responsiveness, animations, and build modern web
+                designs.
+                Perfect for beginners who want to build clean, attractive webpages and improve frontend skills.</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Course Introduction</h2>
+            <p class="mt-3">
+                This Learnify CSS course teaches you how to style webpages from scratch.
+                You will learn everything from basic colors and fonts to advanced layouts like Flexbox and Grid, media
+                queries, animations, shadows, transitions, responsive design, and UI components.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Why Learn HTML -->
+        <section>
+            <h2 class="section-title">Why Learn CSS?
+            </h2>
+            <ul>
+                <li><strong>Brings Websites to Life</strong> — CSS controls colors, spacing, layout, and the entire look
+                    of
+                    a site.</li>
+                <li><strong>Essential for Frontend Development</strong> — Every professional frontend job requires CSS
+                    mastery.</li>
+                <li><strong>Responsive Web Design</strong> — Learn how to make websites work on mobile, tablet, and
+                    desktop.
+                </li>
+                <li><strong>Modern UI Skills</strong> — Flexbox, Grid, animations, shadows, transitions, etc.</li>
+                <li><strong>Works With Every Framework</strong> — React, Bootstrap, Tailwind, Angular all rely on CSS
+                    fundamentals.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- What You'll Learn -->
+        <section>
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>CSS Basics:</strong> Selectors, properties, colors, fonts, spacing.</li>
+                        <li><strong>Styling Text:</strong> Fonts, line-height, alignment, formatting.</li>
+                        <li><strong>Box Model:</strong> Margin, padding, borders, sizing.</li>
+                        <li><strong>Flexbox:</strong> Modern layout system for aligning and arranging items.</li>
+                        <li><strong>Grid Layout:</strong> Advanced 2D layouts for complete web page design.</li>
+                        <li><strong>Positioning:</strong> Relative, absolute, fixed, sticky.</li>
+
+                        <li><strong>Backgrounds & Shadows:</strong> Gradients, patterns, box shadows.</li>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+
+                        <li><strong>Transitions & Animations:</strong> Smooth effects, hover animations, keyframes.</li>
+
+                        <li><strong>Responsive Design:</strong> Media queries, breakpoints, mobile-first design.</li>
+                        <li><strong>CSS Units:</strong> px, %, em, rem, vh/vw, fr.</li>
+                        <li><strong>Forms & Buttons:</strong> Styling inputs, buttons, UI components.</li>
+                        <li><strong>Variables & Advanced Concepts:</strong> CSS variables, calc(), clamp().</li>
+                        <li><strong>Complete Project:</strong> Build a fully responsive modern landing page.</li>
+                    </ul>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Syllabus Accordion -->
+        <section>
+            <h2 class="section-title">Course Syllabus</h2>
+            <div class="accordion" id="cssAccordion">
+                <!-- Module 1 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse1">
+                            Module 1: CSS Basics
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse1" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- What is CSS -->
+                                <li>
+                                    <strong>What is CSS?</strong><br>
+                                    CSS (Cascading Style Sheets) is used to style and layout web pages.
+                                    It controls colors, fonts, spacing, alignment, borders, backgrounds, and full
+                                    layouts.
+                                </li>
+
+                                <!-- Ways to Use CSS -->
+                                <li>
+                                    <strong>Ways to Use CSS:</strong>
+                                    <ul>
+                                        <li><strong>Inline CSS:</strong> Inside the HTML tag <br>
+                                            <pre><code>&lt;h1 style="color:red;"&gt;Hello&lt;/h1&gt;</code></pre>
+                                        </li>
+
+                                        <li><strong>Internal CSS:</strong> Inside <code>&lt;style&gt;</code> in the head
+                                            <pre><code>&lt;style&gt;
+h1 { color: blue; }
+&lt;/style&gt;</code></pre>
+                                        </li>
+
+                                        <li><strong>External CSS (Recommended):</strong> In a separate <code>.css</code>
+                                            file
+                                            <pre><code>/* style.css */
+h1 {
+  color: green;
+}</code></pre>
+                                            Linked using:
+                                            <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Basic Styling -->
+                                <li>
+                                    <strong>Basic Styling Example:</strong>
+                                    <pre><code>h1 {
+  color: blue;
+  font-size: 30px;
+  font-weight: bold;
+}</code></pre>
+                                </li>
+
+                                <!-- Selectors -->
+                                <li>
+                                    <strong>Common CSS Selectors:</strong>
+                                    <pre><code>/* Element Selector */
+p { color: gray; }
+
+/* Class Selector */
+.title { font-size: 24px; }
+
+/* ID Selector */
+#main { background: yellow; }</code></pre>
+                                </li>
+
+                                <!-- Units -->
+                                <li>
+                                    <strong>CSS Units:</strong>
+                                    <ul>
+                                        <li><code>px</code> — fixed pixel size</li>
+                                        <li><code>%</code> — percentage of parent container</li>
+                                        <li><code>em</code> — relative to parent font-size</li>
+                                        <li><code>rem</code> — relative to root font-size</li>
+                                        <li><code>vh / vw</code> — viewport height / width</li>
+                                    </ul>
+                                    Example:
+                                    <pre><code>.box {
+  width: 50%;
+  font-size: 1.2rem;
+  height: 50vh;
+}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 2 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse2">
+                            Module 2: Selectors & Combinators
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse2" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- Basic Selectors -->
+                                <li>
+                                    <strong>Basic Selectors:</strong>
+                                    <ul>
+                                        <li><strong>Element Selector:</strong> <code>p { color: blue; }</code></li>
+                                        <li><strong>Class Selector:</strong> <code>.title { font-size: 22px; }</code>
+                                        </li>
+                                        <li><strong>ID Selector:</strong>
+                                            <code>#header { background: lightgray; }</code>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Attribute Selectors -->
+                                <li>
+                                    <strong>Attribute Selectors:</strong><br>
+                                    Used to target elements based on attributes and values.
+                                    <pre><code>input[type="text"] {
+  border: 1px solid grey;
+  padding: 6px;
+}</code></pre>
+                                </li>
+
+                                <!-- Combinators -->
+                                <li>
+                                    <strong>CSS Combinators:</strong><br>
+                                    Used to select elements based on their relationship in the HTML.
+                                    <ul>
+                                        <li><strong>A B (Descendant):</strong> Selects all B inside A
+                                            <pre><code>div p { color: green; }</code></pre>
+                                        </li>
+
+                                        <li><strong>A &gt; B (Child):</strong> Selects only direct children
+                                            <pre><code>ul &gt; li { padding: 5px; }</code></pre>
+                                        </li>
+
+                                        <li><strong>A + B (Adjacent Sibling):</strong> Selects B that comes immediately
+                                            after A
+                                            <pre><code>h1 + p { font-size: 18px; }</code></pre>
+                                        </li>
+
+                                        <li><strong>A ~ B (General Sibling):</strong> Selects all B siblings after A
+                                            <pre><code>h2 ~ p { color: gray; }</code></pre>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- CSS Specificity -->
+                                <li>
+                                    <strong>CSS Specificity:</strong><br>
+                                    Determines which style wins when multiple rules apply.
+                                    <ul>
+                                        <li><strong>Inline styles</strong> → Highest priority</li>
+                                        <li><strong>ID selectors</strong> → <code>#id</code></li>
+                                        <li><strong>Class selectors</strong> → <code>.class</code></li>
+                                        <li><strong>Element selectors</strong> → <code>h1</code></li>
+                                    </ul>
+
+                                    Example:
+                                    <pre><code>#title { color: blue; }
+.title { color: red; }
+h1 { color: green; }</code></pre>
+                                    Final color → <strong>blue (ID wins)</strong>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 3 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssM3Content">
+                            Module 3: Box Model
+                        </button>
+                    </h2>
+
+                    <div id="cssM3Content" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+                                <!-- What is Box Model -->
+                                <li>
+                                    <strong>What is the CSS Box Model?</strong><br>
+                                    Every HTML element is a box made of:
+                                    <strong>Content → Padding → Border → Margin</strong>
+
+                                    <!-- LIVE VISUAL BOX -->
+                                    <div class="mt-3 p-3 text-center" style="
+                        background:#ffe8e8;
+                        border: 3px solid #ff6b6b;
+                        margin: 20px 0;
+                        ">
+                                        <div style="
+                            background:#d6f5ff;
+                            padding: 20px;
+                            border: 2px dashed #1ba2d7;">
+                                            Content Area
+                                        </div>
+                                        <p class="mt-2 small text-muted">Outer area = margin → border → padding →
+                                            content
+                                        </p>
+                                    </div>
+
+                                    <img src="./src/img/box.png" alt="Box Model" class="img-fluid rounded mt-2"
+                                        style="max-width:600px;">
+                                </li>
+
+
+
+                                <!-- Layers -->
+                                <li>
+                                    <strong>Layers of the Box Model (Visual):</strong>
+
+                                    <div class="mt-3">
+                                        <div style="background:#ffdddd; padding:10px;">Margin</div>
+                                        <div style="background:#ffe8b3; padding:10px;">Border</div>
+                                        <div style="background:#e0ffcf; padding:10px;">Padding</div>
+                                        <div style="background:#d9e8ff; padding:10px;">Content</div>
+                                    </div>
+
+                                    <ul class="mt-3">
+                                        <li><strong>Content</strong> — text/image inside.</li>
+                                        <li><strong>Padding</strong> — space around content.</li>
+                                        <li><strong>Border</strong> — line around padding.</li>
+                                        <li><strong>Margin</strong> — space outside border.</li>
+                                    </ul>
+                                </li>
+
+
+
+                                <!-- Basic Example -->
+                                <li>
+                                    <strong>Basic Styling Example (Live Box):</strong>
+
+                                    <div style="
+                        margin:20px 0;
+                        padding:15px;
+                        border:2px solid black;
+                        background:#f8f9fa;
+                        width:200px;">
+                                        Example Box
+                                    </div>
+
+                                    <pre><code>.box {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #000;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Total Width -->
+                                <li>
+                                    <strong>Total Width & Height (Default):</strong>
+
+                                    <div class="p-2 bg-light border mt-2">
+                                        width + padding + border + margin
+                                    </div>
+
+                                    <pre><code>Total width = width + padding + border + margin</code></pre>
+
+                                    This can break layouts when adding padding/border.
+                                </li>
+
+
+
+                                <!-- box-sizing -->
+                                <li>
+                                    <strong>box-sizing Property (Visual Demo):</strong><br><br>
+
+                                    <div class="d-flex gap-3">
+
+                                        <!-- Content-box -->
+                                        <div style="
+                            width:120px;
+                            padding:20px;
+                            border:4px solid #ff6b6b;
+                            box-sizing:content-box;
+                            background:#ffe6e6;">
+                                            content-box
+                                        </div>
+
+                                        <!-- Border-box -->
+                                        <div style="
+                            width:120px;
+                            padding:20px;
+                            border:4px solid #1ba2d7;
+                            box-sizing:border-box;
+                            background:#e0f7ff;">
+                                            border-box
+                                        </div>
+                                    </div>
+
+                                    <pre><code>* { box-sizing: content-box; }   /* default */
+
+/* recommended */
+* { box-sizing: border-box; }
+</code></pre>
+
+                                </li>
+
+
+
+                                <!-- Centering -->
+                                <li>
+                                    <strong>Centering a Box (Live Demo):</strong>
+
+                                    <div style="
+                        width:200px;
+                        margin:0 auto;
+                        background:#d9e8ff;
+                        padding:10px;
+                        border-radius:8px;">
+                                        Centered Box
+                                    </div>
+
+                                    <pre><code>.box {
+  width: 400px;
+  margin: 0 auto;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Collapsing Margin -->
+                                <li>
+                                    <strong>Margin Collapsing (Visual):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div style="margin:20px 0; background:#e3ffe0; padding:10px;">
+                                        <p style="margin:20px 0; background:#d1fbd0;">Paragraph 1</p>
+                                        <p style="margin:20px 0; background:#d1fbd0;">Paragraph 2</p>
+                                    </div>
+
+                                    <p class="text-muted small">Vertical margins combine → only 20px between them.</p>
+
+                                    <pre><code>p {
+  margin: 20px 0;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Display Types -->
+                                <li>
+                                    <strong>Display Types (with Examples):</strong>
+
+                                    <div class="d-flex gap-2 mt-2">
+                                        <span style="display:block; padding:5px; background:#cce5ff;">block</span>
+                                        <span
+                                            style="display:inline-block; padding:5px; background:#c2f0c2;">inline-block</span>
+                                        <span style="display:inline; background:#ffd6cc;">inline</span>
+                                    </div>
+
+                                    <pre><code>span {
+  display: inline-block;
+  padding: 5px;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Padding & Margin Shorthand -->
+                                <li>
+                                    <strong>Padding & Margin Shorthand:</strong>
+
+                                    <pre><code>padding: 10px;                /* all sides */
+padding: 10px 20px;          /* top-bottom | left-right */
+padding: 10px 20px 5px 0;    /* top | right | bottom | left */</code></pre>
+                                </li>
+
+
+
+                                <!-- Border Styles -->
+                                <li>
+                                    <strong>Border Styles (Live Demo):</strong>
+
+                                    <div style="
+                        padding:10px;
+                        border:3px dashed blue;
+                        border-radius:10px;
+                        background:#eef7ff;
+                        width:max-content;">
+                                        Dashed Border Box
+                                    </div>
+
+                                    <pre><code>.box {
+  border: 2px dashed blue;
+  border-radius: 10px;
+}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 4 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssM4Content">
+                            Module 4: Backgrounds & Borders
+                        </button>
+                    </h2>
+
+                    <div id="cssM4Content" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+
+                                <!-- Background Basics -->
+                                <li>
+                                    <strong>Background Properties:</strong><br>
+                                    Used to add images, colors, gradients behind elements.
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-4 text-white rounded" style="
+                        background-image:url('./src/img/banner_demo.png');
+                        background-size:cover;
+                        background-position:center;
+                        background-repeat:no-repeat;
+                        height:150px;">
+                                        Banner Background Demo
+                                    </div>
+
+                                    <pre><code>.banner {
+  background-image: url("banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- background shorthand -->
+                                <li>
+                                    <strong>Background Shorthand:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-4 text-white rounded" style="
+                        background: url('./src/img/pattern.png') no-repeat center/cover;
+                        height:120px;">
+                                        Shorthand Example
+                                    </div>
+
+                                    <pre><code>background: url("banner.png") no-repeat center/cover;</code></pre>
+                                </li>
+
+
+
+                                <!-- Gradient Backgrounds -->
+                                <li>
+                                    <strong>Gradient Backgrounds:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 text-white rounded" style="
+                        background: linear-gradient(135deg, #4f8cff, #6ee7b7);
+                        width:max-content;">
+                                        Beautiful Gradient Box
+                                    </div>
+
+                                    <pre><code>.box {
+  background: linear-gradient(135deg, #4f8cff, #6ee7b7);
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Borders Basics -->
+                                <li>
+                                    <strong>Border Properties:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="p-3 mt-3" style="
+                        border: 3px dashed #333;
+                        width:max-content;">
+                                        Dashed Border Box
+                                    </div>
+
+                                    <ul class="mt-2">
+                                        <li>border-width</li>
+                                        <li>border-style (solid/dashed/dotted)</li>
+                                        <li>border-color</li>
+                                    </ul>
+
+                                    <pre><code>.card {
+  border: 2px solid #333;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Border Radius -->
+                                <li>
+                                    <strong>Rounded Corners (border-radius):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex align-items-center gap-3 mt-3">
+                                        <div style="
+                            width:80px;
+                            height:80px;
+                            background:#b3d4fc;
+                            border-radius:10px;">
+                                        </div>
+
+                                        <div style="
+                            width:80px;
+                            height:80px;
+                            background:#ffb3c6;
+                            border-radius:50%;">
+                                        </div>
+                                    </div>
+
+                                    <pre><code>.box {
+  border-radius: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Box Shadow -->
+                                <li>
+                                    <strong>Box Shadow (Live Effect):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="p-3 mt-3 text-center" style="
+                        width:120px;
+                        background:white;
+                        border-radius:8px;
+                        box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                        Shadow Box
+                                    </div>
+
+                                    <pre><code>.card {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Text Shadow -->
+                                <li>
+                                    <strong>Text Shadows:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <h3 style="text-shadow:2px 2px 8px rgba(0,0,0,0.3);" class="mt-3">
+                                        Shadow Text
+                                    </h3>
+
+                                    <pre><code>h1 {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Multiple Backgrounds -->
+                                <li>
+                                    <strong>Multiple Background Images:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="p-4 mt-3 rounded" style="
+                        height:140px;
+                        background-image:
+                        url('./src/img/pattern.png'),
+                        linear-gradient(135deg, #e0f0ff, #ffffff);
+                        background-size:120px, cover;
+                        background-repeat:no-repeat;
+                        background-position:top left, center;">
+                                        Multiple Backgrounds Demo
+                                    </div>
+
+                                    <pre><code>.hero {
+  background-image:
+    url("pattern.png"),
+    linear-gradient(135deg, #e0f0ff, #ffffff);
+}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 5 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssM5Content">
+                            Module 5: Flexbox
+                        </button>
+                    </h2>
+
+                    <div id="cssM5Content" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+                                <!-- What is Flexbox -->
+                                <li>
+                                    <strong>1. What is Flexbox?</strong><br>
+                                    Flexbox = powerful layout system for:
+                                    <ul>
+                                        <li>Centering content easily</li>
+                                        <li>Spacing control</li>
+                                        <li>Responsive layouts</li>
+                                        <li>Building navbars, cards, grids</li>
+                                    </ul>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex justify-content-center align-items-center mt-3 p-3 rounded"
+                                        style="height:90px; background:#e3f0ff;">
+                                        <span class="px-3 py-2 rounded" style="background:#0d6efd; color:#fff;">Centered
+                                            with Flexbox</span>
+                                    </div>
+                                </li>
+
+
+                                <!-- Diagram -->
+                                <li>
+                                    <strong>Main Axis & Cross Axis (Visual Diagram):</strong>
+                                    <div class="my-3">
+                                        <img src="./src/img/flex.png" class="img-fluid rounded"
+                                            style="max-width:600px;">
+                                    </div>
+                                </li>
+
+
+                                <!-- Activate Flex -->
+                                <li>
+                                    <strong>2. How to Activate Flexbox:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div style="display:flex; gap:10px; padding:10px; background:#f8f9fa;">
+                                        <div class="p-2 bg-primary text-white rounded">Item 1</div>
+                                        <div class="p-2 bg-primary text-white rounded">Item 2</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  display: flex;
+}</code></pre>
+                                </li>
+
+
+                                <!-- flex-direction -->
+                                <li>
+                                    <strong>3. flex-direction (axis control):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex flex-column gap-2 mt-3 p-2 rounded"
+                                        style="background:#fff0d6; width:max-content;">
+                                        <div class="px-3 py-2 bg-warning rounded">Item A</div>
+                                        <div class="px-3 py-2 bg-warning rounded">Item B</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  flex-direction: column;
+}</code></pre>
+                                </li>
+
+
+                                <!-- justify-content -->
+                                <li>
+                                    <strong>4. justify-content (horizontal alignment):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex justify-content-between mt-3 p-2 rounded"
+                                        style="background:#e8ffe6;">
+                                        <div class="p-2 bg-success text-white rounded">Left</div>
+                                        <div class="p-2 bg-success text-white rounded">Right</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  justify-content: space-between;
+}</code></pre>
+                                </li>
+
+
+                                <!-- align-items -->
+                                <li>
+                                    <strong>5. align-items (vertical alignment):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex align-items-end gap-2 mt-3 p-3 rounded"
+                                        style="background:#e6f7ff; height:100px;">
+                                        <div class="p-2 bg-info rounded">Small</div>
+                                        <div class="p-4 bg-info rounded">Large</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  align-items: center;
+}</code></pre>
+                                </li>
+
+
+                                <!-- align-content -->
+                                <li>
+                                    <strong>6. align-content (multi-row alignment):</strong><br>
+                                    Works only with <code>flex-wrap: wrap;</code>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex flex-wrap align-content-between mt-3"
+                                        style="height:120px; gap:5px; background:#f1f1f1;">
+                                        <div class="bg-secondary text-white px-2 py-1 rounded">1</div>
+                                        <div class="bg-secondary text-white px-2 py-1 rounded">2</div>
+                                        <div class="bg-secondary text-white px-2 py-1 rounded">3</div>
+                                        <div class="bg-secondary text-white px-2 py-1 rounded">4</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  flex-wrap: wrap;
+  align-content: space-between;
+}</code></pre>
+                                </li>
+
+
+                                <!-- flex-wrap -->
+                                <li>
+                                    <strong>7. flex-wrap:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex flex-wrap gap-2 mt-2 p-2 rounded" style="background:#fff7e6;">
+                                        <div class="px-3 py-2 bg-warning rounded">Box</div>
+                                        <div class="px-3 py-2 bg-warning rounded">Box</div>
+                                        <div class="px-3 py-2 bg-warning rounded">Box</div>
+                                        <div class="px-3 py-2 bg-warning rounded">Box</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  flex-wrap: wrap;
+}</code></pre>
+                                </li>
+
+
+                                <!-- gap -->
+                                <li>
+                                    <strong>8. gap (spacing between items):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex gap-4 mt-3 p-2 rounded" style="background:#eaf7ea;">
+                                        <div class="bg-success text-white p-2 rounded">A</div>
+                                        <div class="bg-success text-white p-2 rounded">B</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  display: flex;
+  gap: 20px;
+}</code></pre>
+                                </li>
+
+
+                                <!-- flex-grow shrink basis -->
+                                <li>
+                                    <strong>9. Flex Item Properties (Grow, Shrink, Basis):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex gap-2 mt-3">
+                                        <div style="flex-grow:1" class="p-2 bg-primary text-white rounded">Grow 1</div>
+                                        <div style="flex-grow:2" class="p-2 bg-primary text-white rounded">Grow 2</div>
+                                    </div>
+
+                                    <pre><code>.item { flex-grow: 1; }
+.item { flex-shrink: 0; }
+.item { flex-basis: 200px; }
+.item { flex: 1 0 200px; }</code></pre>
+                                </li>
+
+
+                                <!-- order -->
+                                <li>
+                                    <strong>10. Change item order:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex gap-2 mt-3">
+                                        <div class="p-2 bg-dark text-white rounded" style="order:2;">Item 1</div>
+                                        <div class="p-2 bg-dark text-white rounded" style="order:1;">Item 2</div>
+                                    </div>
+
+                                    <pre><code>.item { order: 2; }
+.item-special { order: -1; }</code></pre>
+                                </li>
+
+
+                                <!-- align-self -->
+                                <li>
+                                    <strong>11. align-self (override parent):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex mt-3 p-3 rounded" style="height:100px; background:#f8f9fa;">
+                                        <div class="p-2 bg-secondary text-white rounded" style="align-self:flex-start;">
+                                            Top
+                                        </div>
+                                        <div class="p-2 bg-secondary text-white rounded" style="align-self:flex-end;">
+                                            Bottom
+                                        </div>
+                                    </div>
+
+                                    <pre><code>.item {
+  align-self: flex-end;
+}</code></pre>
+                                </li>
+
+
+                                <!-- Real UI Example 1 -->
+                                <li>
+                                    <strong>12. Real UI: Responsive Navbar</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <nav class="d-flex justify-content-between align-items-center mt-3 p-3 rounded"
+                                        style="background:#0d6efd; color:white;">
+                                        <div class="fw-bold">Learnify</div>
+                                        <ul class="d-flex gap-3 list-unstyled m-0">
+                                            <li>Home</li>
+                                            <li>Courses</li>
+                                            <li>Contact</li>
+                                        </ul>
+                                    </nav>
+
+                                    <pre><code>nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}</code></pre>
+                                </li>
+
+
+                                <!-- Real UI Example 2 -->
+                                <li>
+                                    <strong>13. Real UI: Card Grid</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="cards d-flex flex-wrap gap-3 mt-3">
+                                        <div class="p-3 bg-white shadow-sm rounded" style="flex:1 1 calc(33% - 20px);">
+                                            Card 1
+                                        </div>
+                                        <div class="p-3 bg-white shadow-sm rounded" style="flex:1 1 calc(33% - 20px);">
+                                            Card 2
+                                        </div>
+                                        <div class="p-3 bg-white shadow-sm rounded" style="flex:1 1 calc(33% - 20px);">
+                                            Card 3
+                                        </div>
+                                    </div>
+
+                                    <pre><code>.cards {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.card {
+  flex:1 1 calc(33% - 20px);
+}</code></pre>
+                                </li>
+
+
+                                <!-- Real UI Example 3 -->
+                                <li>
+                                    <strong>14. Center Anything:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="d-flex justify-content-center align-items-center mt-3"
+                                        style="height:100px; background:#edf5ff;">
+                                        <span class="p-2 bg-primary text-white rounded">Perfect Center</span>
+                                    </div>
+
+                                    <pre><code>.center-box {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 6 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse6">
+                            Module 6: CSS Grid
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse6" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <ul class="learning-list">
+
+
+
+                                <!-- What is Grid -->
+                                <li>
+                                    <strong>What is CSS Grid?</strong><br>
+                                    CSS Grid is a <strong>two-dimensional layout system</strong> for rows + columns.
+                                    Ideal for:
+                                    <ul>
+                                        <li>Dashboards</li>
+                                        <li>Galleries</li>
+                                        <li>Card layouts</li>
+                                        <li>Entire page structures</li>
+                                    </ul>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap:10px;
+                        background:#eef6ff;">
+                                        <div class="p-2 bg-primary text-white rounded">1</div>
+                                        <div class="p-2 bg-primary text-white rounded">2</div>
+                                        <div class="p-2 bg-primary text-white rounded">3</div>
+                                    </div>
+                                </li>
+
+
+
+                                <!-- Basic Grid Setup -->
+                                <li>
+                                    <strong>Basic Grid Setup:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap:10px;
+                        background:#fff4e6;">
+                                        <div class="p-2 bg-warning rounded">A</div>
+                                        <div class="p-2 bg-warning rounded">B</div>
+                                    </div>
+
+                                    <pre><code>.container {
+  display: grid;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Grid Diagram -->
+                                <li>
+                                    <strong>Grid Structure Diagram:</strong><br>
+                                    <img src="./src/img/grid.png" class="img-fluid rounded mt-2"
+                                        style="max-width:550px;">
+                                </li>
+
+
+
+                                <!-- Defining Columns -->
+                                <li>
+                                    <strong>Defining Columns & Rows (Live):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-columns: 150px 1fr 2fr;
+                        gap:10px;
+                        background:#e8ffe6;">
+                                        <div class="bg-success text-white p-2 rounded">150px</div>
+                                        <div class="bg-success text-white p-2 rounded">1fr</div>
+                                        <div class="bg-success text-white p-2 rounded">2fr</div>
+                                    </div>
+
+                                    <pre><code>.grid {
+  grid-template-columns: 200px 1fr 2fr;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- repeat() -->
+                                <li>
+                                    <strong>repeat() Shortcut:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:10px;
+                        grid-template-columns: repeat(3, 1fr);
+                        background:#e8f0ff;">
+                                        <div class="p-2 bg-primary text-white rounded">1</div>
+                                        <div class="p-2 bg-primary text-white rounded">2</div>
+                                        <div class="p-2 bg-primary text-white rounded">3</div>
+                                    </div>
+
+                                    <pre><code>grid-template-columns: repeat(3, 1fr);</code></pre>
+                                </li>
+
+
+
+                                <!-- Rows -->
+                                <li>
+                                    <strong>Defining Rows:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-rows: 60px 120px 40px;
+                        gap:10px;
+                        background:#f7e8ff;">
+                                        <div class="bg-purple text-white p-2 rounded">Row 1 (60px)</div>
+                                        <div class="bg-purple text-white p-2 rounded">Row 2 (120px)</div>
+                                        <div class="bg-purple text-white p-2 rounded">Row 3 (40px)</div>
+                                    </div>
+
+                                    <pre><code>grid-template-rows: 150px auto 100px;</code></pre>
+                                </li>
+
+
+
+                                <!-- Gap -->
+                                <li>
+                                    <strong>Grid Gap (Live):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:20px;
+                        grid-template-columns: repeat(3,1fr);
+                        background:#f0f8ff;">
+                                        <div class="p-3 bg-info text-white rounded">Gap</div>
+                                        <div class="p-3 bg-info text-white rounded">Gap</div>
+                                        <div class="p-3 bg-info text-white rounded">Gap</div>
+                                    </div>
+
+                                    <pre><code>gap: 20px;</code></pre>
+                                </li>
+
+
+
+                                <!-- Alignment -->
+                                <li>
+                                    <strong>Aligning Grid Items:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-columns: 1fr 1fr;
+                        height:120px;
+                        justify-items:center;
+                        align-items:center;
+                        background:#e5fff3;">
+                                        <div class="p-2 bg-success text-white rounded">Centered</div>
+                                        <div class="p-2 bg-success text-white rounded">Centered</div>
+                                    </div>
+
+                                    <pre><code>justify-items: center;
+align-items: center;</code></pre>
+                                </li>
+
+
+
+                                <!-- Spanning -->
+                                <li>
+                                    <strong>Spanning Rows & Columns (Live):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:10px;
+                        grid-template-columns: repeat(3,1fr);
+                        background:#fff5e6;">
+                                        <div class="p-3 bg-warning rounded" style="grid-column: span 2;">Span 2 Columns
+                                        </div>
+                                        <div class="p-3 bg-warning rounded">B</div>
+                                        <div class="p-3 bg-warning rounded" style="grid-row: span 2;">Span 2 Rows</div>
+                                        <div class="p-3 bg-warning rounded">D</div>
+                                    </div>
+
+                                    <pre><code>.item1 { grid-column: span 2; }
+.item2 { grid-row: span 2; }</code></pre>
+                                </li>
+
+
+
+                                <!-- Implicit / Explicit -->
+                                <li>
+                                    <strong>Implicit vs Explicit Grid:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        grid-template-columns: repeat(3,1fr);
+                        grid-auto-rows: 60px;
+                        gap:10px;
+                        background:#f4f9ff;">
+                                        <div class="p-2 bg-primary text-white rounded">1</div>
+                                        <div class="p-2 bg-primary text-white rounded">2</div>
+                                        <div class="p-2 bg-primary text-white rounded">3</div>
+                                        <div class="p-2 bg-primary text-white rounded">Implicit Row</div>
+                                    </div>
+
+                                    <pre><code>grid-auto-rows: minmax(100px, auto);</code></pre>
+                                </li>
+
+
+
+                                <!-- Areas -->
+                                <li>
+                                    <strong>Grid Template Areas (Live Layout):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:10px;
+                        grid-template-areas:
+                            'header header'
+                            'sidebar main'
+                            'footer footer';
+                        grid-template-columns: 150px 1fr;
+                        ">
+                                        <div class="p-2 text-center bg-primary text-white rounded"
+                                            style="grid-area:header;">
+                                            Header
+                                        </div>
+                                        <div class="p-2 bg-secondary text-white rounded" style="grid-area:sidebar;">
+                                            Sidebar
+                                        </div>
+                                        <div class="p-2 bg-info text-white rounded" style="grid-area:main;">
+                                            Main
+                                        </div>
+                                        <div class="p-2 bg-dark text-white rounded" style="grid-area:footer;">
+                                            Footer
+                                        </div>
+                                    </div>
+
+                                    <pre><code>grid-template-areas:
+  "header header"
+  "sidebar main"
+  "footer footer";</code></pre>
+                                </li>
+
+
+
+                                <!-- Responsive Auto-Fit -->
+                                <li>
+                                    <strong>Responsive Grid (auto-fit / auto-fill):</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:15px;
+                        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                        background:#eefaff;">
+                                        <div class="p-2 bg-primary text-white rounded">Card</div>
+                                        <div class="p-2 bg-primary text-white rounded">Card</div>
+                                        <div class="p-2 bg-primary text-white rounded">Card</div>
+                                        <div class="p-2 bg-primary text-white rounded">Card</div>
+                                    </div>
+
+                                    <pre><code>grid-template-columns:
+repeat(auto-fit, minmax(220px, 1fr));</code></pre>
+                                </li>
+
+
+
+                                <!-- minmax -->
+                                <li>
+                                    <strong>minmax() Function:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:10px;
+                        grid-template-columns: repeat(3, minmax(120px, 1fr));
+                        background:#f4f4ff;">
+                                        <div class="p-2 bg-primary text-white rounded">1</div>
+                                        <div class="p-2 bg-primary text-white rounded">2</div>
+                                        <div class="p-2 bg-primary text-white rounded">3</div>
+                                    </div>
+
+                                    <pre><code>grid-template-columns:
+repeat(3, minmax(150px, 1fr));</code></pre>
+                                </li>
+
+
+
+                                <!-- Grid vs Flexbox -->
+                                <li>
+                                    <strong>Grid vs Flexbox:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="row g-3 mt-2">
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-light rounded">
+                                                <strong>Flexbox</strong><br>
+                                                1-dimensional (Row OR Column)
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-light rounded">
+                                                <strong>Grid</strong><br>
+                                                2-dimensional (Rows AND Columns)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+
+                                <!-- Dashboard -->
+                                <li>
+                                    <strong>Real Project: Dashboard Layout</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:10px;
+                        grid-template-columns: 200px 1fr 250px;
+                        grid-template-rows: 60px auto;
+                        background:#fff8e6;">
+                                        <div class="p-2 bg-warning rounded">Sidebar</div>
+                                        <div class="p-2 bg-warning rounded">Main</div>
+                                        <div class="p-2 bg-warning rounded">Stats</div>
+                                    </div>
+
+                                    <pre><code>.dashboard {
+  display:grid;
+  grid-template-columns:200px 1fr 300px;
+}</code></pre>
+                                </li>
+
+
+
+                                <!-- Gallery -->
+                                <li>
+                                    <strong>Real Project: Image Gallery</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        gap:15px;
+                        grid-template-columns:
+                        repeat(auto-fill, minmax(120px,1fr));
+                        background:#eef6ff;">
+                                        <div class="p-2 bg-primary text-white rounded">Img</div>
+                                        <div class="p-2 bg-primary text-white rounded">Img</div>
+                                        <div class="p-2 bg-primary text-white rounded">Img</div>
+                                        <div class="p-2 bg-primary text-white rounded">Img</div>
+                                    </div>
+
+                                    <pre><code>.gallery {
+  display:grid;
+  gap:15px;
+  grid-template-columns:
+  repeat(auto-fill, minmax(180px, 1fr));
+}</code></pre>
+                                </li>
+
+
+                                <!-- Debug -->
+                                <li>
+                                    <strong>Debug Trick:</strong>
+
+                                    <!-- LIVE DEMO -->
+                                    <div class="mt-3 p-3 rounded" style="
+                        display:grid;
+                        outline:2px dashed red;
+                        gap:10px;
+                        grid-template-columns: repeat(3,1fr);">
+                                        <div style="outline:1px solid blue;" class="p-2">A</div>
+                                        <div style="outline:1px solid blue;" class="p-2">B</div>
+                                        <div style="outline:1px solid blue;" class="p-2">C</div>
+                                    </div>
+
+                                    <pre><code>.grid { outline:2px dashed red; }
+.grid > * { outline:1px solid blue; }</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 7 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse7">
+                            Module 7: Positioning & Layout
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse7" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <p>
+                                CSS Positioning controls *where* elements appear on the page.
+                                It is used for tooltips, modals, floating buttons, sticky headers, and advanced layouts.
+                            </p>
+
+                            <ul>
+                                <li><strong>Static</strong> — default flow</li>
+                                <li><strong>Relative</strong> — moves element relative to itself</li>
+                                <li><strong>Absolute</strong> — positioned relative to nearest parent</li>
+                                <li><strong>Fixed</strong> — stays fixed on scroll</li>
+                                <li><strong>Sticky</strong> — sticks when scrolled</li>
+                                <li><strong>z-index</strong> — controls layering</li>
+                            </ul>
+
+                            <hr>
+
+
+
+                            <!-- Static -->
+                            <h6 class="fw-bold">1. Static Position (Default)</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="mt-2 p-3 rounded" style="background:#f8f9fa;">
+                                <div style="padding:10px; background:#cfe2ff; border-radius:6px;">Static Box 1</div>
+                                <div style="padding:10px; background:#cfe2ff; border-radius:6px;">Static Box 2</div>
+                            </div>
+
+                            <pre><code>.box {
+  position: static;
+}</code></pre>
+
+                            <p class="small text-muted">Top/left/bottom/right do NOT work for static elements.</p>
+
+                            <hr>
+
+
+
+                            <!-- Relative -->
+                            <h6 class="fw-bold">2. Relative Position</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="mt-3 p-3 rounded" style="background:#fff4e6;">
+                                <div style="
+                    position:relative;
+                    top:10px;
+                    left:20px;
+                    padding:10px;
+                    background:#ffcc99;
+                    border-radius:6px;">
+                                    Moved using top + left
+                                </div>
+                            </div>
+
+                            <pre><code>.box {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Absolute -->
+                            <h6 class="fw-bold">3. Absolute Position</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="mt-3 p-3 rounded" style="
+                position:relative;
+                height:150px;
+                background:#e8faff;">
+                                <div style="
+                    position:absolute;
+                    top:20px;
+                    left:30px;
+                    background:#0dcaf0;
+                    padding:10px;
+                    border-radius:6px;
+                    color:white;">
+                                    Absolute Child
+                                </div>
+                                <p class="small text-muted mt-5">(Parent is relative → child positions inside parent)
+                                </p>
+                            </div>
+
+                            <pre><code>.parent { position: relative; }
+.child  { position: absolute; }</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Fixed -->
+                            <h6 class="fw-bold">4. Fixed Position</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 bg-light rounded" style="border-left:4px solid #0d6efd;">
+                                <div style="
+                    position:fixed;
+                    bottom:20px;
+                    right:20px;
+                    background:#0d6efd;
+                    color:white;
+                    padding:8px 12px;
+                    border-radius:6px;">
+                                    Fixed Button
+                                </div>
+                                <p class="small text-muted">Scroll the page — this button stays fixed.</p>
+                            </div>
+
+                            <pre><code>.fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Sticky -->
+                            <h6 class="fw-bold">5. Sticky Position</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 bg-light rounded" style="height:200px; overflow-y:auto;">
+                                <div style="
+                    position:sticky;
+                    top:0;
+                    background:#ffc107;
+                    padding:10px;
+                    border-radius:6px;">
+                                    I Stick When Scrolling
+                                </div>
+                                <p style="margin-top:300px;">Scroll to see sticky effect</p>
+                            </div>
+
+                            <pre><code>.header {
+  position: sticky;
+  top: 0;
+}</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Z-index -->
+                            <h6 class="fw-bold">6. z-index (Layer Control)</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="position-relative mt-3" style="height:140px;">
+                                <div style="
+                    position:absolute;
+                    top:30px; left:30px;
+                    z-index:1;
+                    background:#6c757d;
+                    padding:15px;
+                    border-radius:8px;
+                    color:white;">
+                                    Behind (z-index:1)
+                                </div>
+
+                                <div style="
+                    position:absolute;
+                    top:50px; left:60px;
+                    z-index:3;
+                    background:#0d6efd;
+                    padding:15px;
+                    border-radius:8px;
+                    color:white;">
+                                    Front (z-index:3)
+                                </div>
+                            </div>
+
+                            <pre><code>.box1 { z-index: 2; }
+.box2 { z-index: 1; }</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Layout Patterns -->
+                            <h6 class="fw-bold">7. Common Layout Patterns</h6>
+                            <ul class="mt-2">
+                                <li>Floating banners & popups (absolute + z-index)</li>
+                                <li>Sticky headers (sticky)</li>
+                                <li>Chat / Help floating buttons (fixed)</li>
+                                <li>Tooltips & dropdowns (absolute)</li>
+                                <li>Overlapping UI elements (z-index)</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 8 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse8">
+                            Module 8: Typography & Icons
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse8" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <p>
+                                Typography controls how text appears. Good typography improves UI, readability, and user
+                                experience.
+                                Icons help create modern visual UI.
+                            </p>
+
+                            <ul>
+                                <li>Google Fonts</li>
+                                <li>font-size, weight, spacing, height</li>
+                                <li>Responsive text → rem, vw, clamp()</li>
+                                <li>Bootstrap Icons + FontAwesome</li>
+                            </ul>
+
+                            <hr>
+
+
+
+                            <!-- Google Fonts -->
+                            <h6 class="fw-bold">1. Using Google Fonts</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 rounded mb-2" style="
+                font-family:'Poppins', sans-serif;
+                background:#f0f7ff;">
+                                <h4 style="font-weight:600;">Poppins — Google Font Demo</h4>
+                                <p style="font-weight:300;">Light text sample</p>
+                                <p style="font-weight:500;">Medium weight text</p>
+                                <p style="font-weight:600;">Bold weight text</p>
+                            </div>
+
+                            <pre><code>&lt;link 
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet"&gt;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Typography Properties -->
+                            <h6 class="fw-bold">2. Typography Properties</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 mb-2 rounded" style="background:#fff4e6;">
+                                <h3 style="
+                    font-size:2rem;
+                    font-weight:600;
+                    letter-spacing:0.5px;
+                    line-height:1.4;">
+                                    Styled Heading — Demo
+                                </h3>
+                                <p>This is clean, readable UI text using proper spacing & line height.</p>
+                            </div>
+
+                            <pre><code>.title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Responsive Text -->
+                            <h6 class="fw-bold">3. Responsive Text (clamp)</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 rounded mb-2" style="
+                background:#e8fff4;
+                font-size:clamp(1.8rem, 4vw, 3rem);
+                font-weight:600;">
+                                This heading resizes automatically!
+                            </div>
+
+                            <pre><code>.hero-heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- Bootstrap Icons -->
+                            <h6 class="fw-bold">4. Bootstrap Icons</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="mt-2 mb-2" style="font-size:1.8rem;">
+                                <i class="bi bi-heart-fill text-danger"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-bell text-primary"></i>
+                            </div>
+
+                            <pre><code>&lt;link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"&gt;
+
+&lt;i class="bi bi-heart-fill"&gt;&lt;/i&gt;
+</code></pre>
+
+                            <hr>
+
+
+
+                            <!-- FontAwesome -->
+                            <h6 class="fw-bold">5. FontAwesome Icons</h6>
+
+                            <!-- LIVE DEMO -->
+                            <div class="mt-2 mb-2" style="font-size:1.8rem;">
+                                <i class="fa-solid fa-user text-success"></i>
+                                <i class="fa-solid fa-bolt text-warning"></i>
+                                <i class="fa-solid fa-check-circle text-primary"></i>
+                            </div>
+
+                            <pre><code>&lt;script src="https://kit.fontawesome.com/your-key.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;i class="fa-solid fa-user"&gt;&lt;/i&gt;
+</code></pre>
+
+                            <hr>
+
+
+
+                            <h6 class="fw-bold">6. Where Icons Are Used</h6>
+                            <ul>
+                                <li>Navigation bars (Home, Login, Search)</li>
+                                <li>Buttons (Download, Share, Menu)</li>
+                                <li>Feature cards & service highlights</li>
+                                <li>Alerts & status badges</li>
+                                <li>Social links (FB, Insta, LinkedIn)</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 9 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse9">
+                            Module 9: Transitions & Animations
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse9" class="accordion-collapse collapse" data-bs-parent="#cssAccordion">
+                        <div class="accordion-body">
+
+                            <p>
+                                CSS animations make your UI feel alive.
+                                They add smoothness, motion, hover effects and interactive elements in modern design.
+                            </p>
+
+                            <hr>
+
+
+                            <!-- 1. TRANSITION BUTTON -->
+                            <h5 class="fw-bold">1. Smooth Hover Transition</h5>
+
+                            <!-- LIVE DEMO -->
+                            <div class="p-3 bg-light rounded mb-3">
+                                <button id="btnTransition" style="
+                        background:#0d6efd;
+                        color:white;
+                        padding:12px 28px;
+                        border:none;
+                        border-radius:8px;
+                        font-size:1rem;
+                        cursor:pointer;
+                        transition:0.3s ease;
+                        box-shadow:0 4px 8px rgba(0,0,0,0.1);
+                    ">
+                                    Hover Me
+                                </button>
+                            </div>
+
+                            <pre><code>&lt;button id="btnTransition" style="transition:0.3s;"&gt;Hover&lt;/button&gt;
+
+#btnTransition:hover {
+  background:#0a58ca;
+  transform: translateY(-5px) scale(1.05);
+}
+</code></pre>
+
+                            <hr>
+
+
+                            <!-- 2. FADE IN -->
+                            <h5 class="fw-bold">2. Fade-In Animation</h5>
+
+                            <!-- LIVE DEMO -->
+                            <div id="fadeBox" style="
+                    width:220px;
+                    padding:20px;
+                    background:#cfe2ff;
+                    border-radius:10px;
+                    animation: fadeInBox 1.2s ease forwards;
+                    font-weight:500;
+                    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                ">
+                                I Fade In Smoothly ✨
+                            </div>
+
+                            <pre><code>@keyframes fadeInBox {
+  0% { opacity:0; transform:translateY(20px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+</code></pre>
+
+                            <hr>
+
+
+                            <!-- 3. CARD HOVER -->
+                            <h5 class="fw-bold">3. Animated Hover Card</h5>
+
+                            <!-- LIVE DEMO -->
+                            <div id="cardHover" style="
+                    padding:25px;
+                    background:white;
+                    border-radius:12px;
+                    border:1px solid #eee;
+                    transition:0.4s ease;
+                    width:260px;
+                    box-shadow:0 4px 8px rgba(0,0,0,0.05);
+                ">
+                                <h6 class="fw-bold mb-1">Hover Me</h6>
+                                Smooth animated card hover effect used in modern UI.
+                            </div>
+
+                            <pre><code>#cardHover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+</code></pre>
+
+                            <hr>
+
+
+                            <!-- 4. LOADER -->
+                            <h5 class="fw-bold">4. Spinning Loader</h5>
+
+                            <!-- LIVE DEMO -->
+                            <div id="spinLoader" style="
+                    width:45px;
+                    height:45px;
+                    border:5px solid #e6e6e6;
+                    border-top-color:#0d6efd;
+                    border-radius:50%;
+                    animation: spinAnim 0.9s linear infinite;
+                    margin:15px;
+                ">
+                            </div>
+
+                            <pre><code>@keyframes spinAnim {
+  0% { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+</code></pre>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 10 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse10">
+                            Module 10: Responsive Design
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse10" class="accordion-collapse collapse" aria-labelledby="cssM10"
+                        data-bs-parent="#cssAccordion">
+
+                        <div class="accordion-body">
+
+                            <p>
+                                Responsive Design ensures your website looks great on mobiles, tablets, and desktops.
+                                It uses flexible layouts, scalable text, fluid containers, and media queries.
+                            </p>
+
+                            <ul class="learning-list">
+                                <li>Mobile-first design</li>
+                                <li>Media Queries</li>
+                                <li>Responsive units (% , rem , vw , vh , fr)</li>
+                                <li>Responsive images</li>
+                                <li>Responsive Flexbox & Grid layouts</li>
+                            </ul>
+
+                            <hr>
+
+                            <!-- MOBILE FIRST -->
+                            <h6 class="fw-bold">Mobile-First Approach</h6>
+                            <p>Start designing for small screens → scale up for larger devices.</p>
+
+                            <div class="p-3 bg-light border rounded mb-3">
+                                <strong>Mobile padding:</strong> 15px
+                                <br>
+                                <strong>Tablet/Desktop padding:</strong> 40px
+                            </div>
+
+                            <pre><code>/* Base - Mobile */
+.container {
+    padding: 15px;
+}
+
+/* Tablets & larger */
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- MEDIA QUERIES -->
+                            <h6 class="fw-bold">Media Queries</h6>
+                            <p>Change layout based on screen size.</p>
+
+                            <pre><code>@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+    .box {
+        width: 100%;
+    }
+}
+</code></pre>
+
+                            <ul class="learning-list">
+                                <li><strong>max-width</strong> → styles below width</li>
+                                <li><strong>min-width</strong> → styles above width</li>
+                                <li><strong>orientation</strong> → landscape / portrait</li>
+                            </ul>
+
+                            <hr>
+
+                            <!-- RESPONSIVE IMAGES -->
+                            <h6 class="fw-bold">Responsive Images</h6>
+
+                            <div class="p-3 bg-light border rounded mb-2">
+                                Image scales automatically to fit its container.
+                            </div>
+
+                            <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- RESPONSIVE GRID -->
+                            <h6 class="fw-bold">Responsive Grid Layout</h6>
+
+                            <div class="p-3 bg-light border rounded mb-3">
+                                1 column on mobile → 3 columns on tablet & desktop.
+                            </div>
+
+                            <pre><code>.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</code></pre>
+
+                            <p>Perfect for product grids, cards, galleries.</p>
+
+                            <hr>
+
+                            <!-- RESPONSIVE TEXT -->
+                            <h6 class="fw-bold">Responsive Text</h6>
+
+                            <div class="p-3 bg-light border rounded mb-3">
+                                Text size adapts between 24px and 48px based on screen width.
+                            </div>
+
+                            <pre><code>h1 {
+    font-size: clamp(24px, 5vw, 48px);
+}
+</code></pre>
+
+                            <p><strong>clamp()</strong> helps create fluid, scalable typography.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 11 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="cssM11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse11">
+                            Module 11: CSS Variables & Advanced CSS
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse11" class="accordion-collapse collapse" aria-labelledby="cssM11"
+                        data-bs-parent="#cssAccordion">
+
+                        <div class="accordion-body">
+
+                            <p>
+                                CSS Variables allow you to store reusable values like colors, spacing, and fonts.
+                                Advanced CSS helps you build scalable, flexible, and modern UI designs.
+                            </p>
+
+                            <ul class="learning-list">
+                                <li>Creating and using CSS Variables</li>
+                                <li>Global variables with <code>:root</code></li>
+                                <li>Overriding variables</li>
+                                <li>Dark mode using variables</li>
+                                <li><code>calc()</code> for mathematical styling</li>
+                                <li>Advanced selectors: <code>:nth-child</code>, <code>:not()</code>, <code>:is()</code>
+                                </li>
+                                <li>Advanced units: <code>vh</code>, <code>vw</code>, <code>min()</code>,
+                                    <code>max()</code>, <code>clamp()</code>
+                                </li>
+                            </ul>
+
+                            <hr>
+
+                            <!-- VARIABLES BASICS -->
+                            <h6 class="fw-bold">CSS Variables (Custom Properties)</h6>
+
+                            <div class="p-3 bg-light border rounded mb-3">
+                                Define reusable values in <code>:root</code> to make your CSS cleaner.
+                            </div>
+
+                            <pre><code>:root {
+    --primary: #0d6efd;
+    --radius: 8px;
+    --padding: 20px;
+}
+
+.box {
+    background: var(--primary);
+    padding: var(--padding);
+    border-radius: var(--radius);
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- OVERRIDING VARIABLES -->
+                            <h6 class="fw-bold">Overriding Variables</h6>
+
+                            <pre><code>:root {
+    --theme-color: #0d6efd;
+}
+
+.dark-mode {
+    --theme-color: #111;
+}
+
+.title {
+    color: var(--theme-color);
+}
+</code></pre>
+
+                            <p>
+                                Add <code>class="dark-mode"</code> to switch themes instantly.
+                            </p>
+
+                            <hr>
+
+                            <!-- DARK MODE -->
+                            <h6 class="fw-bold">Dark Mode With CSS Variables</h6>
+
+                            <pre><code>:root {
+    --bg: #ffffff;
+    --text: #222;
+}
+
+.dark-mode {
+    --bg: #000000;
+    --text: #f5f5f5;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- CALC -->
+                            <h6 class="fw-bold">Using calc() for Dynamic Values</h6>
+
+                            <pre><code>.box {
+    width: calc(100% - 40px);
+    padding: calc(10px + 1rem);
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- ADVANCED SELECTORS -->
+                            <h6 class="fw-bold">Advanced CSS Selectors</h6>
+
+                            <ul class="learning-list">
+                                <li>
+                                    <strong>:nth-child()</strong>
+                                    <pre><code>li:nth-child(2) { color: red; }</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>:not()</strong>
+                                    <pre><code>button:not(.primary) { background:#eee; }</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>:is()</strong>
+                                    <pre><code>.content :is(h1, h2, h3) {
+    margin-bottom: 10px;
+}</code></pre>
+                                </li>
+                            </ul>
+
+                            <hr>
+
+                            <!-- UNITS -->
+                            <h6 class="fw-bold">Advanced CSS Units</h6>
+
+                            <ul class="learning-list">
+                                <li><strong>vw</strong> → viewport width</li>
+                                <li><strong>vh</strong> → viewport height</li>
+                                <li><strong>min()</strong> → smallest value</li>
+                                <li><strong>max()</strong> → largest value</li>
+                                <li><strong>clamp()</strong> → responsive range</li>
+                            </ul>
+
+                            <pre><code>h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+</code></pre>
+
+                            <hr>
+
+                            <!-- REAL USE -->
+                            <h6 class="fw-bold">Real UI Example Using Variables</h6>
+
+                            <pre><code>:root {
+    --card-bg: #ffffff;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+</code></pre>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module 12 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="cssM12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#cssCollapse12">
+                            Module 12: Real-World Projects
+                        </button>
+                    </h2>
+
+                    <div id="cssCollapse12" class="accordion-collapse collapse" aria-labelledby="cssM12"
+                        data-bs-parent="#cssAccordion">
+
+                        <div class="accordion-body">
+
+                            <p class="mb-3">
+                                In this module, you will apply all CSS concepts (Flexbox, Grid, animations, variables,
+                                responsiveness) to build real-world UI components and full web pages.
+                            </p>
+
+                            <h5 class="fw-bold">🔥 Projects You Will Build</h5>
+
+                            <ul>
+                                <li><strong>Responsive Landing Page</strong> — Hero section, buttons, layout, responsive
+                                    grid.</li>
+                                <li><strong>Login Form UI</strong> — Clean glassmorphism / minimal login design.</li>
+                                <li><strong>Portfolio Website</strong> — About, skills, projects, contact sections.</li>
+                                <li><strong>Pricing Table</strong> — 3-column pricing cards with hover effects.</li>
+                                <li><strong>Product Card UI</strong> — Image, title, price, rating, add-to-cart button.
+                                </li>
+                                <li><strong>Fully Responsive Website</strong> — Navbar, sections, footer, media queries.
+                                </li>
+                            </ul>
+
+                            <hr>
+
+                            <h5 class="fw-bold">📌 Example Mini-Project: Product Card UI</h5>
+
+                            <pre><code>.card {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    background: #fff;
+    width: 260px;
+    transition: 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.price {
+    color: #0d6efd;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.btn-buy {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-buy:hover {
+    background: #004db3;
+}
+</code></pre>
+
+                            <hr>
+
+                            <h5 class="fw-bold">📌 What This Module Covers</h5>
+                            <ul>
+                                <li>Designing UI components from scratch</li>
+                                <li>Using Flexbox + Grid in real designs</li>
+                                <li>Adding hover animations & transitions</li>
+                                <li>Building mobile-first layouts</li>
+                                <li>Creating reusable components (cards, forms, sections)</li>
+                                <li>Final project combining everything</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+        <hr>
+
+
+        <section>
+            <h2 class="section-title">Quick Examples</h2>
+
+            <div class="row g-3">
+
+                <!-- Basic CSS Syntax -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">Basic CSS Syntax</h5>
+
+                        <!-- LIVE DEMO -->
+                        <h3 style="color: blue; font-size: 30px;">Hello CSS</h3>
+
+                        <pre><code>h1 {
+  color: blue;
+  font-size: 30px;
+}</code></pre>
+                    </div>
+                </div>
+
+
+                <!-- Class & ID Selectors -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">Class & ID Selectors</h5>
+
+                        <!-- LIVE DEMO -->
+                        <p class="title-demo" style="color: #0d6efd;">This is a Title</p>
+                        <div id="main-box-demo" style="padding: 10px; background:#f8f9fa; border-radius:6px;">
+                            ID Box
+                        </div>
+
+                        <pre><code>.title {
+  color: #0d6efd;
+}
+
+#main-box {
+  padding: 20px;
+}</code></pre>
+                    </div>
+                </div>
+
+
+                <!-- Box Model -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">Box Model</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div style="
+                    margin: 10px;
+                    padding: 10px;
+                    border: 2px solid black;
+                    background: #f1f1f1;
+                    display:inline-block;">
+                            Box Model Example
+                        </div>
+
+                        <pre><code>.box {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid black;
+}</code></pre>
+                    </div>
+                </div>
+
+
+                <!-- Flexbox Example -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">Flexbox Example</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div style="
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    height:80px;
+                    background:#e9ecef;
+                    border-radius:6px;">
+                            <span>Centered Item</span>
+                        </div>
+
+                        <pre><code>.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}</code></pre>
+                    </div>
+                </div>
+
+
+                <!-- Grid Example -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">CSS Grid Example</h5>
+
+                        <!-- LIVE DEMO -->
+                        <div style="
+                    display:grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap:10px;
+                    background:#f8f9fa;
+                    padding:10px;">
+                            <div class="p-2 bg-primary text-white text-center">1</div>
+                            <div class="p-2 bg-primary text-white text-center">2</div>
+                            <div class="p-2 bg-primary text-white text-center">3</div>
+                        </div>
+
+                        <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</code></pre>
+                    </div>
+                </div>
+
+
+                <!-- Transition Example -->
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm h-100">
+                        <h5 class="fw-bold">Transition Example</h5>
+
+                        <!-- LIVE DEMO -->
+                        <button class="transition-btn mb-2">Hover Me</button>
+
+                        <pre><code>button {
+  background: #0d6efd;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #004bb5;
+}</code></pre>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <hr>
+
+
+
+
+        <hr>
+
+        <!-- Outcomes -->
+        <section>
+            <h2 class="section-title">What You'll Be Able To Do</h2>
+
+            <ul class="learning-list">
+                <li>Design clean and modern web pages using CSS</li>
+                <li>Style layouts with colors, spacing, borders, and backgrounds</li>
+                <li>Build responsive layouts using Flexbox & CSS Grid</li>
+                <li>Create smooth transitions, animations, and hover effects</li>
+                <li>Use Google Fonts and icon libraries for professional typography</li>
+                <li>Build UI components like cards, navbars, buttons, and forms</li>
+                <li>Develop fully responsive landing pages and websites</li>
+                <li>Use CSS variables, pseudo-classes, and advanced selectors</li>
+                <li>Structure CSS files like a real developer (reset, base, utilities)</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">FAQ</h2>
+            <div class="accordion" id="faqHtml">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                    <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">No, this course starts from zero.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                    <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">VS Code is recommended for beginners.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div> <!-- container -->
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <h4 class="fw-bold">Learnify</h4>
+                    <p class="small">
+                        A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                        MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
+                        <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Popular Courses</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="./courses/python.html" class="text-white text-decoration-none">Python</a></li>
+                        <li><a href="./courses/html.html" class="text-white text-decoration-none">HTML</a></li>
+                        <li><a href="./courses/css.html" class="text-white text-decoration-none">CSS</a></li>
+                        <li><a href="./courses/javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT + TEAM + MENTORS -->
+                <div class="col-md-3">
+
+                    <!-- CONTACT -->
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="small mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                            learnify.team03@gmail.com
+                        </a>
+                    </p>
+
+                    <div class="row">
+
+                        <!-- TEAM -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Team</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Shaik Abdul Jabbar
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Panyala Nandini
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
+                                        target="_blank" class="text-white text-decoration-none">
+                                        N Anil Kumar
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- MENTORS -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Mentors</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
+                                        B Ambica Kiranmayee
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Uppugundla Sairam
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Saketh Kallepu
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="mt-4 border-light">
+            <p class="text-center small mb-0 opacity-75">
+                © 2025 Learnify. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

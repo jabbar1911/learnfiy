@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learnify | Simplify Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="../index.html">Home</a>
+                    </li>
+
+                    <!-- Courses Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                            <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                            <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
+                            <li><a class="dropdown-item" href="./css.html">CSS</a></li>
+                            <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
+                            <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
+                            <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Instructors -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Instructors</a>
+                    </li>
+
+
+                </ul>
+
+                <!-- Login / Signup -->
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Log In
+                </button>
+
+                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    Join for Free
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </nav>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Log In
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Don't have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
+                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-person-plus me-2"></i> Create Your Account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Choose a strong password">
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                                <input type="password" class="form-control" placeholder="Re-enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Create Account
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Already have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                data-bs-dismiss="modal">Log In</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Hero -->
+    <header class="hero text-center">
+        <div class="container">
+            <h1 class="display-6 fw-bold">Learn HTML – From Basics to Real Projects</h1>
+            <p class="lead mb-0">Build web pages with HTML, create layouts, embed media, and prepare for frontend
+                development.</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Course Introduction</h2>
+            <p class="mt-3">
+                This Learnify HTML course teaches you how to structure web pages using HTML5.
+                Start from tags and attributes, then learn semantic HTML, forms, media, and best practices.
+                Perfect for beginners who want to build websites or move into frontend development.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Why Learn HTML -->
+        <section>
+            <h2 class="section-title">Why Learn HTML?</h2>
+            <ul>
+                <li><strong>Essential Web Skill</strong> — HTML is the foundation of every website.</li>
+                <li><strong>Fast Results</strong> — See changes instantly in the browser.</li>
+                <li><strong>Pair with CSS & JS</strong> — Start building interactive, styled sites.</li>
+                <li><strong>Career Entry</strong> — Frontend, web design, content roles.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- What You'll Learn -->
+        <section>
+            <h2 class="section-title">What You'll Learn</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li>HTML tags, attributes and document structure</li>
+                        <li>Semantic HTML5 (header, nav, main, article, section)</li>
+                        <li>Text formatting, links, images, lists</li>
+                        <li>Tables, forms, inputs and validations</li>
+                        <li>Embedding media: audio, video, iframes</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Responsive basics: meta viewport, mobile-first</li>
+                        <li>Accessibility basics (alt, roles, aria)</li>
+                        <li>Project workflow: folder structure & assets</li>
+                        <li>Deploy simple pages to GitHub Pages / Vercel</li>
+                        <li>Build portfolio-ready HTML projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Syllabus Accordion -->
+        <section>
+            <h2 class="section-title">Course Syllabus</h2>
+            <div class="accordion" id="htmlAccordion">
+                <!-- Module 1 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse1">
+                            Module 1: HTML Basics & Document Structure
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse1" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4 class="mb-3">What You Will Learn</h4>
+
+                            <ul class="learning-list">
+
+                                <!-- What is HTML -->
+                                <li>
+                                    <strong>What is HTML?</strong><br>
+                                    HTML (HyperText Markup Language) is the standard language used to build the
+                                    structure of a webpage. It defines how text, images, buttons, and layout
+                                    appear in the browser.
+                                </li>
+
+                                <!-- Document Structure -->
+                                <li>
+                                    <strong>HTML Document Structure:</strong><br>
+                                    Every HTML page follows a strict structure:
+                                    <ul>
+                                        <li><code>&lt;!DOCTYPE html&gt;</code> — Declares HTML5 version</li>
+                                        <li><code>&lt;html&gt;</code> — Root container for all content</li>
+                                        <li><code>&lt;head&gt;</code> — Contains metadata, title, CSS links, and scripts
+                                        </li>
+                                        <li><code>&lt;body&gt;</code> — All visible elements displayed on the webpage
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Common Tags -->
+                                <li>
+                                    <strong>Commonly Used Tags:</strong><br>
+                                    Essential tags used to structure content:
+                                    <ul>
+                                        <li>Headings: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+                                        <li>Paragraph: <code>&lt;p&gt;</code></li>
+                                        <li>Block container: <code>&lt;div&gt;</code></li>
+                                        <li>Inline container: <code>&lt;span&gt;</code></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Attributes -->
+                                <li>
+                                    <strong>HTML Attributes:</strong><br>
+                                    Attributes provide additional information to elements:
+                                    <ul>
+                                        <li><code>id</code> — Unique identifier</li>
+                                        <li><code>class</code> — Used for grouping & styling</li>
+                                        <li><code>style</code> — Inline CSS</li>
+                                        <li><code>title</code> — Tooltip displayed on hover</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Void Elements -->
+                                <li>
+                                    <strong>Void (Self-Closing) Elements:</strong><br>
+                                    These elements do not have closing tags:
+                                    <ul>
+                                        <li><code>&lt;br&gt;</code> — Line break</li>
+                                        <li><code>&lt;hr&gt;</code> — Horizontal separator</li>
+                                        <li><code>&lt;img&gt;</code> — Displays an image</li>
+                                        <li><code>&lt;input&gt;</code> — Form input field</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Semantic Tags -->
+                                <li>
+                                    <strong>Semantic HTML Tags:</strong><br>
+                                    Tags that give meaning and structure to a webpage:
+                                    <ul>
+                                        <li><code>&lt;header&gt;</code> — Page heading/top section</li>
+                                        <li><code>&lt;nav&gt;</code> — Navigation menu</li>
+                                        <li><code>&lt;main&gt;</code> — Main content area</li>
+                                        <li><code>&lt;footer&gt;</code> — Bottom section of the webpage</li>
+                                    </ul>
+                                    These enhance SEO, accessibility, and clarity.
+                                </li>
+
+                                <!-- Block vs Inline -->
+                                <li>
+                                    <strong>Block vs Inline Elements:</strong>
+                                    <ul>
+                                        <li><strong>Block elements</strong> — Start a new line and take full width
+                                            (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>)
+                                        </li>
+                                        <li><strong>Inline elements</strong> — Stay in the same line
+                                            (<code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
+                                            <code>&lt;strong&gt;</code>)
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- DOM -->
+                                <li>
+                                    <strong>How Browsers Read HTML (DOM):</strong><br>
+                                    Browsers convert HTML into a tree-based structure called the
+                                    <strong>DOM (Document Object Model)</strong>, allowing JavaScript to access
+                                    and modify content dynamically.
+                                </li>
+
+                                <div class="my-3">
+                                    <img src="./src/img/dom.png " alt="DOM Diagram" class="img-fluid"
+                                        style="max-width: 550px; width: 100%; border-radius: 12px;">
+                                </div>
+
+                                <!-- Metadata -->
+                                <li>
+                                    <strong>Metadata in HTML:</strong><br>
+                                    Metadata appears inside the <code>&lt;head&gt;</code> tag:
+                                    <ul>
+                                        <li><code>&lt;title&gt;</code> — The title shown in the browser tab</li>
+                                        <li><code>&lt;meta&gt;</code> — Charset, viewport, keywords, SEO description
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Layout -->
+                                <li>
+                                    <strong>Creating a Simple Webpage Layout:</strong><br>
+                                    A basic webpage layout contains:
+                                    <ul>
+                                        <li>Header</li>
+                                        <li>Navigation bar</li>
+                                        <li>Main content area</li>
+                                        <li>Footer</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                            <h4 class="mt-4">Example Code</h4>
+
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;p&gt;This is my first HTML webpage.&lt;/p&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      © 2025 Learnify
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 2 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse2">
+                            Module 2: Text, Links, and Lists
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse2" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+                            <ul>
+
+                                <li>
+                                    <strong>Headings:</strong><br>
+                                    Headings are used to create titles and structured sections.
+                                    <ul>
+                                        <li><code>&lt;h1&gt;</code> — Main page heading</li>
+                                        <li><code>&lt;h2&gt;</code> — Section heading</li>
+                                        <li><code>&lt;h3&gt;</code> to <code>&lt;h6&gt;</code> — Subsections</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <strong>Paragraphs:</strong><br>
+                                    Paragraphs display blocks of text and automatically add spacing.
+                                    <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Anchor Tags (Links):</strong><br>
+                                    Used to create hyperlinks to other pages or resources.
+                                    <pre><code>&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;</code></pre>
+
+                                    Common attributes:
+                                    <ul>
+                                        <li><code>href</code> — Link destination</li>
+                                        <li><code>target="_blank"</code> — Opens link in a new tab</li>
+                                        <li><code>title</code> — Tooltip on hover</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <strong>Unordered Lists (Bulleted):</strong><br>
+                                    Used when order does not matter.
+                                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Ordered Lists (Numbered):</strong><br>
+                                    Used when order is important.
+                                    <pre><code>&lt;ol&gt;
+    &lt;li&gt;Step 1&lt;/li&gt;
+    &lt;li&gt;Step 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Nested Lists:</strong><br>
+                                    Lists inside lists to create hierarchy.
+                                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apple&lt;/li&gt;
+            &lt;li&gt;Mango&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Combining Text, Links, and Lists:</strong><br>
+                                    You can freely mix these elements.
+                                    <pre><code>&lt;p&gt;Visit our website: 
+    &lt;a href="https://example.com"&gt;Example&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Google&lt;/li&gt;
+    &lt;li&gt;YouTube&lt;/li&gt;
+    &lt;li&gt;ChatGPT&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use only one <code>&lt;h1&gt;</code> per page</li>
+                                        <li>Use descriptive link text (avoid "click here")</li>
+                                        <li>Use ordered lists for steps or instructions</li>
+                                        <li>Use unordered lists for general information</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 3 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse3">
+                            Module 3: Images & Media
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse3" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+                            <ul>
+
+                                <li>
+                                    <strong>&lt;img&gt; Tag (Images):</strong><br>
+                                    Used to display images. It is a self-closing (void) element.
+                                    <ul>
+                                        <li><code>src</code> — Image file path</li>
+                                        <li><code>alt</code> — Text shown if image fails to load</li>
+                                        <li><code>width</code> — Controls image width</li>
+                                        <li><code>height</code> — Controls image height</li>
+                                    </ul>
+                                    <pre><code>&lt;img src="logo.png" alt="Logo" width="200"&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Responsive Images (srcset):</strong><br>
+                                    Allows the browser to pick the best image size based on screen width.
+                                    <pre><code>&lt;img 
+    src="image-small.jpg"
+    srcset="image-small.jpg 480w, image-medium.jpg 768w, image-large.jpg 1200w"
+    alt="Responsive Image"&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Lazy Loading Images:</strong><br>
+                                    Improves performance by loading images only when they appear on screen.
+                                    <pre><code>&lt;img src="banner.png" alt="Banner" loading="lazy"&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Embedding Videos with &lt;video&gt;:</strong><br>
+                                    The <code>&lt;video&gt;</code> tag is used to show videos on the webpage.
+                                    <ul>
+                                        <li><code>controls</code> — Show video controls</li>
+                                        <li><code>autoplay</code> — Play automatically</li>
+                                        <li><code>loop</code> — Repeat video</li>
+                                        <li><code>muted</code> — Mute video</li>
+                                        <li><code>poster</code> — Custom thumbnail image</li>
+                                    </ul>
+                                    <pre><code>&lt;video controls width="400"&gt;
+    &lt;source src="intro.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Embedding Audio with &lt;audio&gt;:</strong><br>
+                                    The <code>&lt;audio&gt;</code> tag is used to embed music or audio clips.
+                                    <pre><code>&lt;audio controls&gt;
+    &lt;source src="music.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Combining Images & Media:</strong><br>
+                                    You can mix images, videos, and audio in the same page easily.
+                                    <pre><code>&lt;img src="logo.png" alt="Logo"&gt;
+
+&lt;video controls width="300"&gt;
+    &lt;source src="intro.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+    &lt;source src="bgmusic.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+                                </li>
+
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Always use an <code>alt</code> attribute for accessibility</li>
+                                        <li>Use <code>srcset</code> for responsive images</li>
+                                        <li>Use <code>loading="lazy"</code> to improve page speed</li>
+                                        <li>Use optimized formats (JPG, PNG, SVG, MP4, MP3)</li>
+                                        <li>Keep file sizes small for faster loading</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 4 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse4">
+                            Module 4: Tables & Semantic HTML
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse4" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Semantic HTML -->
+                                <li>
+                                    <strong>Semantic HTML Tags:</strong><br>
+                                    Semantic tags describe the meaning and structure of your webpage.
+                                    <ul>
+                                        <li><code>&lt;header&gt;</code> — Top section (logo, title)</li>
+                                        <li><code>&lt;nav&gt;</code> — Navigation/menu bar</li>
+                                        <li><code>&lt;main&gt;</code> — Main content area</li>
+                                        <li><code>&lt;section&gt;</code> — Groups related content</li>
+                                        <li><code>&lt;article&gt;</code> — Independent content (blogs, posts)</li>
+                                        <li><code>&lt;aside&gt;</code> — Side content</li>
+                                        <li><code>&lt;footer&gt;</code> — Bottom section</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Example Semantic Layout -->
+                                <li>
+                                    <strong>Semantic Layout Example:</strong>
+                                    <pre><code>&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Introduction&lt;/h2&gt;
+        &lt;p&gt;Main content here.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;article&gt;
+        &lt;h2&gt;Blog Post&lt;/h2&gt;
+        &lt;p&gt;A sample article.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    © 2025 My Website
+&lt;/footer&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Tables Introduction -->
+                                <li>
+                                    <strong>Introduction to Tables:</strong><br>
+                                    Tables are used to display information in rows and columns.
+                                    <ul>
+                                        <li><code>&lt;table&gt;</code> — Table container</li>
+                                        <li><code>&lt;tr&gt;</code> — Table row</li>
+                                        <li><code>&lt;th&gt;</code> — Header cell</li>
+                                        <li><code>&lt;td&gt;</code> — Data cell</li>
+                                        <li><code>&lt;thead&gt;</code> — Header section</li>
+                                        <li><code>&lt;tbody&gt;</code> — Body section</li>
+                                        <li><code>&lt;tfoot&gt;</code> — Footer section</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Basic Table Example -->
+                                <li>
+                                    <strong>Basic Table Example:</strong>
+                                    <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;22&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Table with thead tbody tfoot -->
+                                <li>
+                                    <strong>Table with Header, Body, Footer:</strong>
+                                    <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Keyboard&lt;/td&gt;
+            &lt;td&gt;$40&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;$15&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;$55&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Table Styling -->
+                                <li>
+                                    <strong>Adding Simple Borders:</strong>
+                                    <pre><code>&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Branch&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Rahul&lt;/td&gt;
+        &lt;td&gt;CSE&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use semantic tags to structure your page meaningfully</li>
+                                        <li>Use tables only for real tabular data</li>
+                                        <li>Use <code>&lt;th&gt;</code> for headers and <code>&lt;td&gt;</code> for data
+                                        </li>
+                                        <li>Use <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+                                            <code>&lt;tfoot&gt;</code> to organize tables
+                                        </li>
+                                        <li>Add <code>scope="col"</code> or <code>scope="row"</code> for accessibility
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 5 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse5">
+                            Module 5: Forms & Inputs
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse5" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Forms Intro -->
+                                <li>
+                                    <strong>Introduction to Forms:</strong><br>
+                                    Forms allow users to enter information and send it to a server.
+                                    <br><br>
+                                    Basic form structure:
+                                    <pre><code>&lt;form action="/submit" method="post"&gt;
+    ...
+&lt;/form&gt;</code></pre>
+
+                                    <strong>Key Attributes:</strong>
+                                    <ul>
+                                        <li><code>action</code> — The URL where form data is sent</li>
+                                        <li><code>method</code> — Request type (<code>GET</code> or <code>POST</code>)
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Input Types -->
+                                <li>
+                                    <strong>Input Types:</strong><br>
+                                    HTML provides many types of input fields:
+                                    <ul>
+                                        <li><code>text</code> — Basic text input</li>
+                                        <li><code>email</code> — Email validation</li>
+                                        <li><code>password</code> — Hidden characters</li>
+                                        <li><code>number</code> — Numeric input</li>
+                                        <li><code>radio</code> — Select one option</li>
+                                        <li><code>checkbox</code> — Select multiple options</li>
+                                    </ul>
+
+                                    <pre><code>&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+&lt;input type="number"&gt;
+&lt;input type="radio"&gt;
+&lt;input type="checkbox"&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Labels -->
+                                <li>
+                                    <strong>Labels:</strong><br>
+                                    Labels improve accessibility and identify input fields.
+                                    <pre><code>&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input type="text" id="name"&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Placeholders -->
+                                <li>
+                                    <strong>Placeholders:</strong><br>
+                                    Provide hint text inside an input field.
+                                    <pre><code>&lt;input type="text" placeholder="Enter your name"&gt;</code></pre>
+                                </li>
+
+                                <!-- Required -->
+                                <li>
+                                    <strong>Required Attribute:</strong><br>
+                                    Makes a field mandatory for submission.
+                                    <pre><code>&lt;input type="email" required&gt;</code></pre>
+                                </li>
+
+                                <!-- Validation -->
+                                <li>
+                                    <strong>Basic Validation:</strong><br>
+                                    HTML supports built-in validation:
+                                    <ul>
+                                        <li>Email format check</li>
+                                        <li>Required fields</li>
+                                        <li>Number range (min, max)</li>
+                                        <li>Min/Max length</li>
+                                    </ul>
+
+                                    <pre><code>&lt;input type="number" min="1" max="10"&gt;</code></pre>
+                                </li>
+
+                                <!-- Complete Form Example -->
+                                <li>
+                                    <strong>Complete Form Example:</strong>
+                                    <pre><code>&lt;form action="/submit" method="post"&gt;
+
+    &lt;label&gt;Name
+        &lt;input type="text" name="name" placeholder="Enter your name" required&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Email
+        &lt;input type="email" name="email" placeholder="Enter your email" required&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Password
+        &lt;input type="password" name="password" required&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Age
+        &lt;input type="number" name="age" min="1" max="100"&gt;
+    &lt;/label&gt;
+
+    &lt;p&gt;Gender:&lt;/p&gt;
+    &lt;label&gt;&lt;input type="radio" name="gender" value="male"&gt; Male&lt;/label&gt;
+    &lt;label&gt;&lt;input type="radio" name="gender" value="female"&gt; Female&lt;/label&gt;
+
+    &lt;p&gt;Hobbies:&lt;/p&gt;
+    &lt;label&gt;&lt;input type="checkbox" name="hobby" value="music"&gt; Music&lt;/label&gt;
+    &lt;label&gt;&lt;input type="checkbox" name="hobby" value="sports"&gt; Sports&lt;/label&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Always pair inputs with labels</li>
+                                        <li>Use <code>required</code> for important fields</li>
+                                        <li>Use correct input types for better validation</li>
+                                        <li>Use placeholders for clarity</li>
+                                        <li>Use POST method for secure data</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 6 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse6">
+                            Module 6: Media & Embeds
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse6" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Iframes -->
+                                <li>
+                                    <strong>Using &lt;iframe&gt; for Embedding Content:</strong><br>
+                                    The <code>&lt;iframe&gt;</code> tag allows embedding external content like websites,
+                                    videos, maps, and forms.
+
+                                    <br><br>Common attributes:
+                                    <ul>
+                                        <li><code>src</code> — URL to embed</li>
+                                        <li><code>title</code> — Required for accessibility</li>
+                                        <li><code>width</code> / <code>height</code> — Frame size</li>
+                                        <li><code>allowfullscreen</code> — Enables full-screen mode</li>
+                                        <li><code>loading="lazy"</code> — Loads only when visible</li>
+                                    </ul>
+
+                                    <pre><code>&lt;iframe src="https://example.com" title="External content"&gt;&lt;/iframe&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Youtube Embeds -->
+                                <li>
+                                    <strong>Embedding YouTube Videos:</strong><br>
+                                    YouTube provides special embed URLs for videos.
+
+                                    <pre><code>&lt;iframe 
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    width="560"
+    height="315"
+    title="YouTube Video"
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+                                    <strong>Tips:</strong>
+                                    <ul>
+                                        <li>Always include a <code>title</code> attribute</li>
+                                        <li>Add <code>allowfullscreen</code> for a better experience</li>
+                                        <li>Use <code>style="border:0;"</code> to remove borders</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Google Maps -->
+                                <li>
+                                    <strong>Embedding Google Maps:</strong><br>
+                                    Google Maps provides embed HTML via "Share → Embed Map".
+
+                                    <pre><code>&lt;iframe 
+    src="https://www.google.com/maps/embed?..."
+    style="border:0;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Google Map"&gt;
+&lt;/iframe&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Accessibility -->
+                                <li>
+                                    <strong>Accessibility Attributes for Media:</strong><br>
+                                    Improve usability for screen readers and assistive tools.
+                                    <ul>
+                                        <li><code>title</code> — Describe purpose of iframe</li>
+                                        <li><code>aria-label</code> — Extra description</li>
+                                        <li><code>aria-hidden="true"</code> — For decorative iframes</li>
+                                        <li><code>alt</code> (for images)</li>
+                                        <li>Use captions for videos with audio</li>
+                                    </ul>
+
+                                    <pre><code>&lt;iframe 
+    src="https://www.youtube.com/embed/xyz"
+    title="HTML Tutorial Video"&gt;
+&lt;/iframe&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Responsive Embeds -->
+                                <li>
+                                    <strong>Responsive Media Embeds:</strong><br>
+                                    Iframes do not resize by default. Wrap them for responsiveness.
+
+                                    <pre><code>&lt;div style="position:relative; padding-bottom:56.25%; height:0;"&gt;
+    &lt;iframe 
+        src="https://www.youtube.com/embed/xyz" 
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        title="Responsive Video"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Full Example -->
+                                <li>
+                                    <strong>Full Media Embed Example:</strong>
+
+                                    <pre><code>&lt;h3&gt;YouTube Video:&lt;/h3&gt;
+&lt;iframe 
+    src="https://www.youtube.com/embed/xyz"
+    title="Video tutorial"
+    width="560"
+    height="315"
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;h3&gt;Google Maps:&lt;/h3&gt;
+&lt;iframe
+    src="https://www.google.com/maps/embed?..."
+    width="600"
+    height="450"
+    style="border:0;"
+    loading="lazy"
+    title="Google Map"&gt;
+&lt;/iframe&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Always use a <code>title</code> attribute on iframes</li>
+                                        <li>Use lazy loading for performance</li>
+                                        <li>Ensure embeds are responsive on mobile</li>
+                                        <li>Use trusted sources only when embedding content</li>
+                                        <li>Use correct embed URLs (YouTube/Google Maps)</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 7 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse7">
+                            Module 7: Accessibility & SEO Basics
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse7" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Accessibility Intro -->
+                                <li>
+                                    <strong>What is Accessibility?</strong><br>
+                                    Accessibility ensures your website is usable by everyone, including users
+                                    with disabilities. It improves usability, SEO, and user experience.
+                                </li>
+
+                                <!-- Alt Text -->
+                                <li>
+                                    <strong>Alt Text for Images:</strong><br>
+                                    Alt text describes images for screen readers and helps SEO.
+                                    <pre><code>&lt;img src="profile.jpg" alt="Profile photo of John"&gt;</code></pre>
+
+                                    <strong>Why alt text matters:</strong>
+                                    <ul>
+                                        <li>Helps blind users understand images</li>
+                                        <li>Improves SEO ranking</li>
+                                        <li>Shows fallback text if image fails</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Headings Order -->
+                                <li>
+                                    <strong>Correct Headings Order:</strong><br>
+                                    Use headings in logical order to improve readability and SEO.
+                                    <pre><code>&lt;h1&gt;HTML Course&lt;/h1&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;h3&gt;Why Learn HTML?&lt;/h3&gt;
+</code></pre>
+
+                                    <strong>Benefits of proper heading structure:</strong>
+                                    <ul>
+                                        <li>Screen readers navigate using headings</li>
+                                        <li>Improves clarity and structure</li>
+                                        <li>Search engines understand hierarchy</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Semantic Tags -->
+                                <li>
+                                    <strong>Using Semantic HTML Tags:</strong><br>
+                                    Semantic tags give meaning to different parts of a webpage.
+                                    <ul>
+                                        <li><code>&lt;header&gt;</code> — Top section</li>
+                                        <li><code>&lt;nav&gt;</code> — Navigation bar</li>
+                                        <li><code>&lt;main&gt;</code> — Main content</li>
+                                        <li><code>&lt;section&gt;</code> — Group related content</li>
+                                        <li><code>&lt;article&gt;</code> — Independent content block</li>
+                                        <li><code>&lt;footer&gt;</code> — Bottom section</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Meta Tags -->
+                                <li>
+                                    <strong>Basic SEO Meta Tags:</strong><br>
+                                    Meta tags help search engines understand your webpage.
+                                    <pre><code>&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Learn HTML, CSS, and JavaScript"&gt;
+</code></pre>
+                                </li>
+
+                                <!-- SEO Structure -->
+                                <li>
+                                    <strong>SEO-Friendly HTML Structure:</strong><br>
+                                    A clean structure improves ranking and accessibility.
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Learn HTML Basics"&gt;
+    &lt;title&gt;HTML Course – Learnify&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;HTML Basics&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Introduction&lt;/h2&gt;
+            &lt;p&gt;HTML is the structure of all webpages.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        © 2025 Learnify
+    &lt;/footer&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use only one <code>&lt;h1&gt;</code> per page</li>
+                                        <li>Add alt text to all images</li>
+                                        <li>Use semantic tags instead of only &lt;div&gt;</li>
+                                        <li>Write meaningful link text (avoid "click here")</li>
+                                        <li>Use proper meta descriptions (50–160 characters)</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 8 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse8">
+                            Module 8: Responsive Basics & Meta Tags
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse8" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Responsive Design -->
+                                <li>
+                                    <strong>What is Responsive Web Design?</strong><br>
+                                    Responsive design ensures your website automatically adapts to mobile, tablet,
+                                    laptop,
+                                    and desktop screens for better usability and readability.
+                                </li>
+
+                                <!-- Mobile First -->
+                                <li>
+                                    <strong>Mobile-First Approach:</strong><br>
+                                    The mobile-first workflow means designing for small screens first, then adding
+                                    styles for larger devices.
+                                    <pre><code>p {
+    font-size: 16px; /* Mobile */
+}
+
+@media(min-width: 768px) {
+    p { font-size: 18px; } /* Tablet */
+}
+
+@media(min-width: 992px) {
+    p { font-size: 20px; } /* Desktop */
+}
+</code></pre>
+                                </li>
+
+                                <!-- Meta Viewport -->
+                                <li>
+                                    <strong>Meta Viewport Tag:</strong><br>
+                                    This tag ensures the website scales correctly on mobile devices.
+                                    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+
+                                    Without this tag, the website may appear zoomed out or broken on smartphones.
+                                </li>
+
+                                <!-- Bootstrap Introduction -->
+                                <li>
+                                    <strong>Responsive Design with Bootstrap:</strong><br>
+                                    Bootstrap provides built-in responsive utilities and layouts:
+                                    <ul>
+                                        <li>Grid system (e.g., <code>col-</code>, <code>col-md-</code>,
+                                            <code>col-lg-</code>)
+                                        </li>
+                                        <li>Responsive spacing (<code>mt-3 mt-md-0</code>)</li>
+                                        <li>Responsive images (<code>img-fluid</code>)</li>
+                                    </ul>
+
+                                    <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-12 col-md-6"&gt;Left&lt;/div&gt;
+    &lt;div class="col-12 col-md-6"&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Simple Responsive Techniques -->
+                                <li>
+                                    <strong>Simple Responsive Techniques (Without Bootstrap):</strong><br>
+
+                                    <u>Responsive images:</u>
+                                    <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+
+                                    <u>Fluid containers:</u>
+                                    <pre><code>.container {
+    width: 100%;
+    padding: 10px;
+}</code></pre>
+
+                                    <u>Flexbox layout:</u>
+                                    <pre><code>.box {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: 768px) {
+    .box {
+        flex-direction: row;
+    }
+}
+</code></pre>
+
+                                    <u>Using percentages instead of pixels:</u>
+                                    <pre><code>.card {
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .card {
+        width: 50%;
+    }
+}
+</code></pre>
+                                </li>
+
+                                <!-- Full Example -->
+                                <li>
+                                    <strong>Full Responsive HTML Example:</strong>
+                                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Responsive Demo&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;This page adjusts to your screen size.&lt;/p&gt;
+
+    &lt;div class="container"&gt;
+        &lt;div class="box"&gt;Box 1&lt;/div&gt;
+        &lt;div class="box"&gt;Box 2&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Always include the viewport meta tag</li>
+                                        <li>Start with mobile-first CSS</li>
+                                        <li>Use flexible units (%, rem, vw, vh)</li>
+                                        <li>Use responsive images</li>
+                                        <li>Use Bootstrap for fast, responsive layouts</li>
+                                        <li>Test your website on different devices</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 9 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse9">
+                            Module 9: Project Structure & Assets
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse9" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Why Structure Matters -->
+                                <li>
+                                    <strong>Why Project Structure Matters:</strong><br>
+                                    A clean folder structure keeps the project organized, easier to maintain, and
+                                    scalable.
+                                </li>
+
+                                <!-- Folder Structure -->
+                                <li>
+                                    <strong>Common Project Folder Structure:</strong><br>
+                                    A professional HTML project usually looks like this:
+
+                                    <pre><code>project/
+│
+├── index.html
+├── css/
+│     └── style.css
+├── js/
+│     └── script.js
+├── img/
+│     └── banner.png
+└── assets/
+      └── fonts/
+</code></pre>
+
+                                    <strong>Folder meaning:</strong>
+                                    <ul>
+                                        <li><code>css/</code> — All styling files</li>
+                                        <li><code>js/</code> — All JavaScript files</li>
+                                        <li><code>img/</code> — Images, icons, backgrounds</li>
+                                        <li><code>assets/</code> — Fonts, media, or extra files</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Linking CSS -->
+                                <li>
+                                    <strong>Linking CSS Files:</strong><br>
+                                    Adding external CSS to HTML:
+
+                                    <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+
+                                    This keeps HTML clean and makes styles reusable.
+                                </li>
+
+                                <!-- Linking JS -->
+                                <li>
+                                    <strong>Linking JavaScript Files:</strong><br>
+                                    JavaScript is usually linked before the <code>&lt;/body&gt;</code> tag to improve
+                                    performance.
+
+                                    <pre><code>&lt;script src="js/script.js"&gt;&lt;/script&gt;</code></pre>
+                                </li>
+
+                                <!-- Relative vs Absolute Paths -->
+                                <li>
+                                    <strong>Relative vs Absolute Paths:</strong><br>
+
+                                    <u>Relative paths</u> (inside your project):
+                                    <pre><code>&lt;img src="img/logo.png" alt="Logo"&gt;
+&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+
+                                    <u>Absolute paths</u> (full URL):
+                                    <pre><code>&lt;img src="https://example.com/logo.png"&gt;
+&lt;script src="https://cdn.example.com/app.js"&gt;&lt;/script&gt;</code></pre>
+                                </li>
+
+                                <!-- Types of Relative Paths -->
+                                <li>
+                                    <strong>Types of Relative Paths:</strong>
+                                    <ul>
+                                        <li>Same folder:
+                                            <pre><code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+                                        </li>
+
+                                        <li>Inside a child folder:
+                                            <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+                                        </li>
+
+                                        <li>Go up one folder:
+                                            <pre><code>&lt;img src="../img/pic.png"&gt;</code></pre>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Keep HTML, CSS, JS in separate folders</li>
+                                        <li>Use clean file names (no spaces)</li>
+                                        <li>Store images inside <code>img/</code></li>
+                                        <li>Keep reusable assets in the <code>assets/</code> folder</li>
+                                        <li>Use relative paths for internal files</li>
+                                        <li>Use absolute paths for CDN links</li>
+                                    </ul>
+                                </li>
+
+                                <!-- Full Example -->
+                                <li>
+                                    <strong>Example of a Well-Organized Project:</strong>
+
+                                    <pre><code>myWebsite/
+│
+├── index.html
+├── about.html
+│
+├── css/
+│     ├── style.css
+│     └── responsive.css
+│
+├── js/
+│     ├── main.js
+│     └── validation.js
+│
+├── img/
+│     ├── logo.png
+│     └── header-bg.jpg
+│
+└── assets/
+      ├── fonts/
+      └── icons/
+</code></pre>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 10 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse10">
+                            Module 10: Forms Advanced & Validation
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse10" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Client-side Validation -->
+                                <li>
+                                    <strong>Client-Side Validation:</strong><br>
+                                    Validation checks user input <strong>before</strong> submitting to the server.
+                                    It improves user experience, reduces errors, and prevents invalid data.
+                                </li>
+
+                                <!-- Required Attribute -->
+                                <li>
+                                    <strong>Required Attribute:</strong><br>
+                                    Makes a form field mandatory.
+                                    <pre><code>&lt;input type="text" required&gt;</code></pre>
+                                </li>
+
+                                <!-- Pattern Attribute -->
+                                <li>
+                                    <strong>Pattern Attribute:</strong><br>
+                                    Validates input using Regular Expressions (RegEx).
+
+                                    <u>Only alphabets:</u>
+                                    <pre><code>&lt;input type="text" pattern="[A-Za-z]+" required&gt;</code></pre>
+
+                                    <u>Phone number (10 digits):</u>
+                                    <pre><code>&lt;input type="text" pattern="\d{10}" required&gt;</code></pre>
+
+                                    <u>Password with number + 8 chars:</u>
+                                    <pre><code>&lt;input type="password" pattern="(?=.*[0-9]).{8,}" required&gt;</code></pre>
+                                </li>
+
+                                <!-- Other Validation Attributes -->
+                                <li>
+                                    <strong>Other Validation Attributes:</strong>
+                                    <ul>
+                                        <li><code>minlength</code> / <code>maxlength</code></li>
+                                        <li><code>min</code> / <code>max</code></li>
+                                        <li><code>step</code> — increments</li>
+                                        <li><code>email</code> — email format validation</li>
+                                        <li><code>url</code> — URL validation</li>
+                                    </ul>
+
+                                    <pre><code>&lt;input type="number" min="1" max="100"&gt;</code></pre>
+                                </li>
+
+                                <!-- Custom Messages -->
+                                <li>
+                                    <strong>Custom Validation Messages:</strong><br>
+                                    Use <code>title</code> to show custom hints.
+                                    <pre><code>&lt;input type="text" pattern="[A-Za-z]+" 
+       title="Only alphabets allowed"&gt;</code></pre>
+                                </li>
+
+                                <!-- Constraint Validation API -->
+                                <li>
+                                    <strong>Constraint Validation API (JavaScript):</strong><br>
+
+                                    <u>Check entire form validity:</u>
+                                    <pre><code>form.checkValidity();</code></pre>
+
+                                    <u>Check single input validity:</u>
+                                    <pre><code>input.checkValidity();</code></pre>
+
+                                    <u>Show validation error messages:</u>
+                                    <pre><code>input.reportValidity();</code></pre>
+
+                                    <u>Stop form submission if invalid:</u>
+                                    <pre><code>form.addEventListener("submit", function (e) {
+    if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+    }
+});</code></pre>
+                                </li>
+
+                                <!-- Full Example -->
+                                <li>
+                                    <strong>Full Advanced Form Example:</strong>
+                                    <pre><code>&lt;form id="registerForm"&gt;
+
+    &lt;label&gt;Name
+        &lt;input type="text" name="name" required minlength="3"&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Email
+        &lt;input type="email" name="email" required&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Password
+        &lt;input type="password" name="password" 
+               pattern="(?=.*[0-9]).{8,}"
+               title="Must be 8+ chars & include a number"
+               required&gt;
+    &lt;/label&gt;
+
+    &lt;label&gt;Phone
+        &lt;input type="text" name="phone" pattern="\d{10}" required&gt;
+    &lt;/label&gt;
+
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+
+&lt;/form&gt;
+
+&lt;script&gt;
+const form = document.getElementById("registerForm");
+form.addEventListener("submit", (e) =&gt; {
+    if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+    }
+});
+&lt;/script&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use HTML validation before JavaScript</li>
+                                        <li>Use <code>required</code> for important fields</li>
+                                        <li>Use <code>pattern</code> for strict input rules</li>
+                                        <li>Use <code>title</code> to guide users</li>
+                                        <li>Combine HTML + JS validation for full protection</li>
+                                        <li>Still validate on server — never rely only on client-side checks</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 11 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse11">
+                            Module 11: Semantic Layouts & Landings
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse11" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- What Are Semantic Layouts -->
+                                <li>
+                                    <strong>What Are Semantic Layouts?</strong><br>
+                                    Semantic layouts use meaningful tags to structure webpages for better SEO,
+                                    accessibility,
+                                    and cleaner code.
+
+                                    Common semantic tags:
+                                    <ul>
+                                        <li><code>&lt;header&gt;</code></li>
+                                        <li><code>&lt;nav&gt;</code></li>
+                                        <li><code>&lt;main&gt;</code></li>
+                                        <li><code>&lt;section&gt;</code></li>
+                                        <li><code>&lt;article&gt;</code></li>
+                                        <li><code>&lt;aside&gt;</code></li>
+                                        <li><code>&lt;footer&gt;</code></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Hero Section -->
+                                <li>
+                                    <strong>Building Hero Sections:</strong><br>
+                                    A hero section is the top banner area of a webpage with a headline, subheading, CTA
+                                    button,
+                                    and optional background image.
+
+                                    <pre><code>&lt;header class="hero"&gt;
+    &lt;h1&gt;Learn HTML the Right Way&lt;/h1&gt;
+    &lt;p&gt;Build modern and responsive websites with ease.&lt;/p&gt;
+    &lt;a href="#start" class="btn"&gt;Start Learning&lt;/a&gt;
+&lt;/header&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Feature Blocks -->
+                                <li>
+                                    <strong>Creating Feature Blocks:</strong><br>
+                                    Feature sections highlight key points using <code>&lt;section&gt;</code> and
+                                    <code>&lt;article&gt;</code>.
+
+                                    <pre><code>&lt;section class="features"&gt;
+    &lt;article class="feature"&gt;
+        &lt;h2&gt;Easy to Learn&lt;/h2&gt;
+        &lt;p&gt;HTML is beginner-friendly and widely used.&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;article class="feature"&gt;
+        &lt;h2&gt;SEO Friendly&lt;/h2&gt;
+        &lt;p&gt;Semantic tags improve website ranking.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Footer Section -->
+                                <li>
+                                    <strong>Building Footer Sections:</strong><br>
+                                    The footer contains important links and contact information.
+
+                                    <pre><code>&lt;footer&gt;
+    &lt;p&gt;© 2025 Learnify. All rights reserved.&lt;/p&gt;
+
+    &lt;nav&gt;
+        &lt;a href="#about"&gt;About&lt;/a&gt;
+        &lt;a href="#courses"&gt;Courses&lt;/a&gt;
+        &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/footer&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Semantic Containers -->
+                                <li>
+                                    <strong>Using Semantic Containers for SEO & Accessibility:</strong><br>
+
+                                    ❌ Non-semantic:
+                                    <pre><code>&lt;div class="top"&gt;&lt;/div&gt;
+&lt;div class="middle"&gt;&lt;/div&gt;
+&lt;div class="bottom"&gt;&lt;/div&gt;
+</code></pre>
+
+                                    ✅ Semantic version:
+                                    <pre><code>&lt;header&gt;&lt;/header&gt;
+&lt;main&gt;&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;
+</code></pre>
+
+                                    Using semantic tags improves SEO clarity and helps screen readers.
+                                </li>
+
+                                <!-- Complete Landing Structure -->
+                                <li>
+                                    <strong>Complete Semantic Landing Page Structure:</strong>
+
+                                    <pre><code>&lt;header&gt;
+    &lt;h1&gt;Welcome to Learnify&lt;/h1&gt;
+    &lt;p&gt;Your journey to web development starts here.&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;a href="#courses"&gt;Courses&lt;/a&gt;
+    &lt;a href="#features"&gt;Features&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+
+    &lt;section id="courses"&gt;
+        &lt;h2&gt;Our Courses&lt;/h2&gt;
+        &lt;p&gt;Learn HTML, CSS, JavaScript and more.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="features"&gt;
+        &lt;h2&gt;Key Features&lt;/h2&gt;
+
+        &lt;article&gt;
+            &lt;h3&gt;Beginner Friendly&lt;/h3&gt;
+            &lt;p&gt;Simple explanations for every concept.&lt;/p&gt;
+        &lt;/article&gt;
+
+        &lt;article&gt;
+            &lt;h3&gt;Hands-on Projects&lt;/h3&gt;
+            &lt;p&gt;Practice real-world applications.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2025 Learnify&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Use semantic tags instead of only &lt;div&gt;</li>
+                                        <li>Use one &lt;h1&gt; per landing page</li>
+                                        <li>Group related content using &lt;section&gt;</li>
+                                        <li>Use &lt;article&gt; for independent content</li>
+                                        <li>Add clear CTAs in your hero section</li>
+                                        <li>Keep footer clean and informative</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Module 12 -->
+                <div class="accordion-item card-course">
+                    <h2 class="accordion-header" id="h12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hCollapse12">
+                            Module 12: Deploying Simple Pages
+                        </button>
+                    </h2>
+
+                    <div id="hCollapse12" class="accordion-collapse collapse" data-bs-parent="#htmlAccordion">
+                        <div class="accordion-body">
+
+                            <h4>What You Will Learn</h4>
+
+                            <ul>
+
+                                <!-- Deployment Intro -->
+                                <li>
+                                    <strong>What Is Deployment?</strong><br>
+                                    Deployment means publishing your website online so anyone can view it using a URL.
+                                    In this module, you will learn how to deploy using GitHub Pages, Netlify, and
+                                    Vercel,
+                                    including essential Git commands.
+                                </li>
+
+                                <!-- GitHub Pages -->
+                                <li>
+                                    <strong>Deploying With GitHub Pages:</strong><br>
+                                    GitHub Pages is perfect for static websites (HTML, CSS, JS).
+
+                                    <u>Steps:</u>
+                                    <ol>
+                                        <li>Create a GitHub account</li>
+                                        <li>Create a new repository</li>
+                                        <li>Upload your project (with <code>index.html</code>)</li>
+                                        <li>Go to <strong>Settings → Pages</strong></li>
+                                        <li>Select <strong>Deploy from Branch</strong></li>
+                                        <li>Choose:
+                                            <ul>
+                                                <li><strong>Branch:</strong> main</li>
+                                                <li><strong>Folder:</strong> /root</li>
+                                            </ul>
+                                        </li>
+                                        <li>Save → GitHub generates your live link</li>
+                                    </ol>
+
+                                    <pre><code>https://username.github.io/repository-name
+</code></pre>
+                                </li>
+
+                                <!-- Basic Git Commands -->
+                                <li>
+                                    <strong>Basic Git Commands:</strong>
+
+                                    <u>Initialize & upload project:</u>
+                                    <pre><code>git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+</code></pre>
+
+                                    <u>Update project:</u>
+                                    <pre><code>git add .
+git commit -m "Updated website"
+git push
+</code></pre>
+                                </li>
+
+                                <!-- Netlify -->
+                                <li>
+                                    <strong>Deploying With Netlify:</strong><br>
+                                    Netlify allows extremely easy drag-and-drop hosting.
+
+                                    <u>Steps:</u>
+                                    <ol>
+                                        <li>Go to https://www.netlify.com</li>
+                                        <li>Login using GitHub or Email</li>
+                                        <li>Drag & drop your project folder</li>
+                                        <li>Get instant live URL</li>
+                                    </ol>
+
+                                    <pre><code>https://your-site-name.netlify.app
+</code></pre>
+                                </li>
+
+                                <!-- Vercel -->
+                                <li>
+                                    <strong>Deploying With Vercel:</strong><br>
+                                    Vercel is great for frontend and JavaScript-based sites.
+
+                                    <u>Steps:</u>
+                                    <ol>
+                                        <li>Visit https://vercel.com</li>
+                                        <li>Login with GitHub</li>
+                                        <li>Import your repository</li>
+                                        <li>Click "Deploy"</li>
+                                    </ol>
+
+                                    <pre><code>https://project-name.vercel.app
+</code></pre>
+                                </li>
+
+                                <!-- Folder Structure -->
+                                <li>
+                                    <strong>Required Project Structure for Deployment:</strong>
+                                    Hosting platforms expect an <code>index.html</code> in the root folder.
+
+                                    <pre><code>index.html
+css/
+js/
+img/
+</code></pre>
+                                </li>
+
+                                <!-- Deployment Issues -->
+                                <li>
+                                    <strong>Common Deployment Issues & Fixes:</strong>
+
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Issue</th>
+                                                <th>Reason</th>
+                                                <th>Fix</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Blank page</td>
+                                                <td>Wrong file paths</td>
+                                                <td>Use relative paths like <code>./css/style.css</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Images not loading</td>
+                                                <td>Wrong folder name</td>
+                                                <td>Check lowercase <code>img/</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Git push fails</td>
+                                                <td>No commit message</td>
+                                                <td><code>git commit -m "msg"</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>GitHub Pages not live</td>
+                                                <td>Wrong branch selection</td>
+                                                <td>Select <strong>main</strong> in Pages settings</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+
+                                <!-- Best Practices -->
+                                <li>
+                                    <strong>Best Practices:</strong>
+                                    <ul>
+                                        <li>Always include <code>index.html</code> in project root</li>
+                                        <li>Use clean file names (no spaces)</li>
+                                        <li>Push updates via Git for auto-deployment</li>
+                                        <li>Use HTTPS links for assets</li>
+                                        <li>Check console errors before publishing</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div> <!-- end accordion -->
+        </section>
+
+        <hr>
+
+        <!-- Quick Examples Section -->
+        <section>
+            <h2 class="section-title">Quick Examples</h2>
+
+            <div class="row g-3 mt-2">
+
+                <!-- Basic HTML Template -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold mb-2">Basic HTML Template</h5>
+
+                        <pre style="font-size: 1rem; padding: 14px;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- Image Example: Relative + Absolute -->
+                <div class="col-md-6">
+                    <div class="card card-course p-3 h-100">
+                        <h5 class="fw-bold mb-2">Image Example (Relative & Absolute Paths)</h5>
+
+                        <!-- Relative Path -->
+                        <ul style="font-size: 1rem;">
+                            <li><strong>Relative Path</strong> (image inside <code>img/</code> folder):</li>
+                        </ul>
+
+                        <pre
+                            style="font-size: 1rem; padding: 14px;"><code>&lt;img src="img/avatar.png" alt="User avatar"&gt;</code></pre>
+
+                        <!-- One folder back -->
+                        <ul style="font-size: 1rem;" class="mt-2">
+                            <li><strong>Relative Path — go up one folder</strong>:</li>
+                        </ul>
+
+                        <pre
+                            style="font-size: 1rem; padding: 14px;"><code>&lt;img src="../img/avatar.png" alt="User avatar"&gt;</code></pre>
+
+                        <!-- Absolute URL -->
+                        <ul style="font-size: 1rem;" class="mt-2">
+                            <li><strong>Absolute Path</strong> (full URL / CDN):</li>
+                        </ul>
+
+                        <pre
+                            style="font-size: 1rem; padding: 14px;"><code>&lt;img src="https://example.com/assets/img/avatar.png" alt="User avatar"&gt;</code></pre>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <hr>
+
+        <!-- Outcomes -->
+        <section>
+            <h2 class="section-title">What You'll Be Able To Do</h2>
+            <ul>
+                <li>Build static web pages and landing pages</li>
+                <li>Create accessible, semantic HTML</li>
+                <li>Structure projects and link assets</li>
+                <li>Deploy pages to GitHub Pages / Vercel</li>
+                <li>Work smoothly with CSS and JavaScript next</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- FAQ -->
+        <section>
+            <h2 class="section-title">FAQ</h2>
+            <div class="accordion" id="faqHtml">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                    <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">No, this course starts from zero.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                    <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                        <div class="accordion-body">VS Code is recommended for beginners.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div> <!-- container -->
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <h4 class="fw-bold">Learnify</h4>
+                    <p class="small">
+                        A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                        MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
+                        <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Popular Courses</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="./courses/python.html" class="text-white text-decoration-none">Python</a></li>
+                        <li><a href="./courses/html.html" class="text-white text-decoration-none">HTML</a></li>
+                        <li><a href="./courses/css.html" class="text-white text-decoration-none">CSS</a></li>
+                        <li><a href="./courses/javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT + TEAM + MENTORS -->
+                <div class="col-md-3">
+
+                    <!-- CONTACT -->
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="small mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                            learnify.team03@gmail.com
+                        </a>
+                    </p>
+
+                    <div class="row">
+
+                        <!-- TEAM -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Team</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Shaik Abdul Jabbar
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                        class="text-white text-decoration-none">
+                                        Panyala Nandini
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
+                                        target="_blank" class="text-white text-decoration-none">
+                                        N Anil Kumar
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- MENTORS -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Mentors</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
+                                        B Ambica Kiranmayee
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Uppugundla Sairam
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Saketh Kallepu
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="mt-4 border-light">
+            <p class="text-center small mb-0 opacity-75">
+                © 2025 Learnify. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
