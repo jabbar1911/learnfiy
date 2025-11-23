@@ -9,347 +9,2671 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+    </style>
 </head>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+    <div class="container-fluid">
 
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
-        <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+        </a>
 
-            <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
-                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
-            </a>
+        <!-- Toggle -->
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Toggle -->
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link text-white active" href="../index.html">Home</a>
+                </li>
+
+                <!-- Courses Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Courses
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                        <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                        <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
+                        <li><a class="dropdown-item" href="./css.html">CSS</a></li>
+                        <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
+                        <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
+                        <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
+                        <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
+                        <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
+                    </ul>
+                </li>
+
+                <!-- Instructors -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../Instructors/Instructors.html">Instructors</a>
+                </li>
+
+
+            </ul>
+            <!-- Login / Signup -->
+            <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Log In
             </button>
 
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                Join for Free
+            </button>
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </div>
 
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white active" href="../index.html">Home</a>
+
+    </div>
+
+</nav>
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+            <div class="modal-header border-0">
+                <h4 class="modal-title fw-bold text-primary">
+                    <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body px-4">
+
+                <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Enter your password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                        Log In
+                    </button>
+
+                    <p class="text-center small mt-3">
+                        Don't have an account?
+                        <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#signupModal"
+                            data-bs-dismiss="modal">Create Account</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- SIGNUP MODAL -->
+<div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+            <div class="modal-header border-0">
+                <h4 class="modal-title fw-bold text-primary">
+                    <i class="bi bi-person-plus me-2"></i> Create Your Account
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body px-4">
+
+                <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Choose a strong password">
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                            <input type="password" class="form-control" placeholder="Re-enter your password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                        Create Account
+                    </button>
+
+                    <p class="text-center small mt-3">
+                        Already have an account?
+                        <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            data-bs-dismiss="modal">Log In</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Hero -->
+<header class="hero text-center">
+    <div class="container">
+        <h1 class="display-6 fw-bold">Learn MySQL – From Basics to Real Databases</h1>
+        <p class="lead mb-0">
+            Master MySQL from foundational concepts to real-world database projects.
+            Learn tables, queries, joins, functions, indexes, and build practical data-driven applications.
+            Perfect for beginners preparing for backend development, data handling, and SQL problem-solving.
+        </p>
+    </div>
+</header>
+
+
+<div class="container my-5">
+
+    <!-- Intro -->
+    <section>
+        <h2 class="section-title">Course Introduction</h2>
+        <p class="mt-3">
+            This Learnify MySQL course teaches you MySQL from the absolute basics to practical, real-world database
+            usage.
+            Start with creating databases and tables, then move into writing queries, joins, functions, constraints,
+            indexing, and managing relational data.
+            Perfect for beginners who want to learn backend development, data handling, analytics, or prepare for
+            SQL-based
+            interviews and industry projects.
+        </p>
+    </section>
+
+
+    <hr>
+    <!-- Why Learn MySQL -->
+    <section>
+        <h2 class="section-title">Why Learn MySQL?</h2>
+        <ul>
+            <li><strong>Industry-Standard Database</strong> — MySQL is one of the most widely used relational databases
+                in the world.</li>
+            <li><strong>Essential for Backend Development</strong> — Powering websites, apps, CMS systems, and
+                enterprise applications.</li>
+            <li><strong>High Career Demand</strong> — SQL and MySQL skills are required in software development, data
+                analysis, and IT roles.</li>
+            <li><strong>Beginner-Friendly</strong> — Easy to understand SQL syntax makes it perfect for new learners.
+            </li>
+            <li><strong>Free & Open-Source</strong> — Learn and use MySQL without any cost, ideal for students and
+                developers.</li>
+            <li><strong>Works with Any Language</strong> — Integrates seamlessly with Python, Java, PHP, Node.js, and
+                more.</li>
+            <li><strong>Reliable & Fast</strong> — Trusted by companies worldwide for performance and stability.</li>
+        </ul>
+    </section>
+
+
+    <hr>
+
+    <!-- What You'll Learn -->
+    <section>
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="row g-3">
+
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>MySQL Basics</strong> — Databases, tables, rows, columns, and SQL syntax structure.</li>
+
+                    <li><strong>SQL Queries</strong> — SELECT, INSERT, UPDATE, DELETE, and filtering data with WHERE.
                     </li>
 
-                    <!-- Courses Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Courses
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
-                            <li><a class="dropdown-item" href="./python.html">Python</a></li>
-                            <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
-                            <li><a class="dropdown-item" href="./css.html">CSS</a></li>
-                            <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
-                            <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
-                            <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
-                            <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
-                            <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
-                        </ul>
+                    <li><strong>Joins</strong> — INNER JOIN, LEFT JOIN, RIGHT JOIN, and combining data across tables.
                     </li>
 
-                    <!-- Instructors -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Instructors</a>
+                    <li><strong>Keys & Constraints</strong> — Primary keys, foreign keys, unique constraints, and NOT
+                        NULL.</li>
+
+                    <li><strong>Data Types</strong> — INT, VARCHAR, DATE, FLOAT, TEXT, and choosing the correct type.
+                    </li>
+
+                    <li><strong>Functions</strong> — COUNT, SUM, AVG, MIN, MAX, UCASE, LCASE, and string/date functions.
                     </li>
 
 
                 </ul>
-                <!-- Login / Signup -->
-                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Log In
-                </button>
-
-                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
-                    Join for Free
-                </button>
-
-
             </div>
 
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>Ordering & Grouping</strong> — ORDER BY, GROUP BY, HAVING, and aggregated results.</li>
 
-        </div>
+                    <li><strong>Indexes</strong> — Creating and using indexes to improve query performance.</li>
 
-    </nav>
-    <!-- LOGIN MODAL -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+                    <li><strong>Subqueries</strong> — Nested SELECT queries to retrieve advanced filtered data.</li>
 
-                <div class="modal-header border-0">
-                    <h4 class="modal-title fw-bold text-primary">
-                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+                    <li><strong>Database Design</strong> — ER diagrams, normalization, and structuring relational data.
+                    </li>
 
-                <div class="modal-body px-4">
+                    <li><strong>Views & Stored Procedures</strong> — Creating reusable virtual tables and server-side
+                        logic.</li>
 
-                    <p class="text-muted">Welcome back! Please enter your details.</p>
+                    <li><strong>Transactions</strong> — COMMIT, ROLLBACK, ACID properties, and safe data updates.</li>
 
-                    <form>
+                    <li><strong>Import & Export</strong> — Loading CSV/SQL files and backing up databases.</li>
 
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Enter your password">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
-                            Log In
-                        </button>
-
-                        <p class="text-center small mt-3">
-                            Don't have an account?
-                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
-                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
-                        </p>
-
-                    </form>
-
-                </div>
-
+                    <li><strong>Mini Projects</strong> — Build small database systems and query-based applications.</li>
+                </ul>
             </div>
         </div>
-    </div>
-    <!-- SIGNUP MODAL -->
-    <div class="modal fade" id="signupModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
-
-                <div class="modal-header border-0">
-                    <h4 class="modal-title fw-bold text-primary">
-                        <i class="bi bi-person-plus me-2"></i> Create Your Account
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body px-4">
-
-                    <p class="text-muted">Start your learning journey with Learnify.</p>
-
-                    <form>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Full Name</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" placeholder="Enter your name">
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                            </div>
-                        </div>
-
-                        <!-- Password -->
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Choose a strong password">
-                            </div>
-                        </div>
-
-                        <!-- Confirm Password -->
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold">Confirm Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
-                                <input type="password" class="form-control" placeholder="Re-enter your password">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
-                            Create Account
-                        </button>
-
-                        <p class="text-center small mt-3">
-                            Already have an account?
-                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
-                                data-bs-dismiss="modal">Log In</a>
-                        </p>
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <h1>mysql.</h1>
-
-    <body>
+    </section>
 
 
+    <hr>
 
+    <!-- Syllabus Accordion -->
+    <section>
+        <h2 class="section-title">Course Syllabus</h2>
+        <div class="accordion" id="mysqlAccordion">
 
+            <!-- Module 1 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse1">
+                        Module 1: Introduction to Databases & MySQL
+                    </button>
+                </h2>
 
-        <!-- FOOTER -->
-        <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
-            <div class="container">
+                <div id="myCollapse1" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
 
-                <div class="row g-4">
+                        <ul class="learning-list">
 
-                    <!-- Logo + Description -->
-                    <div class="col-md-4">
-                        <h4 class="fw-bold">Learnify</h4>
-                        <p class="small">
-                            A simple and structured platform to learn Python, HTML, CSS, JavaScript,
-                            MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
-                        </p>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div class="col-md-2">
-                        <h6 class="fw-bold mb-3">Quick Links</h6>
-                        <ul class="list-unstyled small">
-                            <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
-                            <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
-                            <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Popular Courses -->
-                    <div class="col-md-3">
-                        <h6 class="fw-bold mb-3">Popular Courses</h6>
-                        <ul class="list-unstyled small">
-                            <li><a href="./python.html" class="text-white text-decoration-none">Python</a></li>
-                            <li><a href="./html.html" class="text-white text-decoration-none">HTML</a></li>
-                            <li><a href="./css.html" class="text-white text-decoration-none">CSS</a></li>
-                            <li><a href="./javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                            <li>
+                                <strong>What is a Database?</strong><br>
+                                A database is an organized collection of structured data that allows fast storage,
+                                retrieval, management, and updating of information. It is used in almost every
+                                application including banking, e-commerce, education, healthcare, and social media.
                             </li>
+
+                            <li>
+                                <strong>What is SQL?</strong><br>
+                                SQL (Structured Query Language) is the standard language used to communicate with
+                                relational
+                                databases. It helps perform tasks such as querying data, inserting records, updating
+                                information,
+                                deleting entries, and managing database structures.
+                            </li>
+
+                            <li>
+                                <strong>Why MySQL?</strong>
+                                <ul>
+                                    <li><strong>Open-source & Free</strong> — No license fees, perfect for students &
+                                        developers.</li>
+                                    <li><strong>Highly Scalable</strong> — Supports small apps to enterprise-level
+                                        systems.</li>
+                                    <li><strong>Fast & Reliable</strong> — Optimized for high-performance read/write
+                                        operations.</li>
+                                    <li><strong>Widely Used</strong> — Trusted by Google, Facebook, Netflix, and many
+                                        startups.</li>
+                                    <li><strong>Cross-Platform</strong> — Works on Windows, macOS, and Linux.</li>
+                                    <li><strong>Huge Community Support</strong> — Tons of tutorials, forums, and
+                                        documentation.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <strong>Installing MySQL:</strong>
+                                <ul>
+                                    <li>Download <strong>MySQL Community Server</strong> from the official website.</li>
+                                    <li>Install <strong>MySQL Workbench</strong> for a GUI-based SQL editor.</li>
+                                    <li>Set the <strong>root password</strong> during installation.</li>
+                                    <li>Configure the default port (3306) for MySQL Services.</li>
+                                    <li>Test the installation by connecting using Workbench or Terminal.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <strong>MySQL Tools You Will Use:</strong>
+                                <ul>
+                                    <li><strong>MySQL Server</strong> — Stores and processes databases.</li>
+                                    <li><strong>MySQL Workbench</strong> — Visual tool for writing queries and designing
+                                        schemas.</li>
+                                    <li><strong>Command Line Client</strong> — Fastest way to execute SQL commands.</li>
+                                    <li><strong>phpMyAdmin</strong> (optional) — Web-based interface for MySQL.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <strong>Connecting to MySQL (CLI):</strong><br>
+                                Use the command line to log into the MySQL server:
+                                <pre><code>mysql -u root -p</code></pre>
+                                After entering the password, you can start writing SQL commands.
+                            </li>
+
+                            <li>
+                                <strong>Basic MySQL Commands You Should Know:</strong>
+                                <pre><code>
+SHOW DATABASES;        -- List all databases
+CREATE DATABASE test;  -- Create a new database
+USE test;              -- Select a database
+SHOW TABLES;           -- View all tables in DB
+SELECT VERSION();      -- Check installed MySQL version
+STATUS;                -- View server status
+        </code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Understanding SQL Syntax:</strong>
+                                <ul>
+                                    <li>SQL is <strong>case-insensitive</strong>, but keywords are usually written in
+                                        uppercase.</li>
+                                    <li>Statements must end with a <strong>semicolon (;)</strong>.</li>
+                                    <li>Queries follow a structured format:
+                                        <code>SELECT columns FROM table WHERE condition;</code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <strong>Types of Databases:</strong>
+                                <ul>
+                                    <li><strong>Relational Databases (RDBMS)</strong> — MySQL, PostgreSQL, Oracle</li>
+                                    <li><strong>NoSQL Databases</strong> — MongoDB, Cassandra, Firebase</li>
+                                    <li><strong>Cloud Databases</strong> — AWS RDS, Google Cloud SQL, Azure SQL</li>
+                                </ul>
+                            </li>
+
                         </ul>
+
+
                     </div>
+                </div>
+            </div>
 
-                    <!-- CONTACT + TEAM + MENTORS -->
-                    <div class="col-md-3">
+            <!-- Module 2 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse2">
+                        Module 2: Database & Table Creation
+                    </button>
+                </h2>
 
-                        <!-- CONTACT -->
-                        <h6 class="fw-bold mb-3">Contact Us</h6>
-                        <p class="small mb-3">
-                            <i class="bi bi-envelope-fill me-2"></i>
-                            <a href="mailto:learnify.team03@gmail.com"
-                                class="text-white fw-semibold text-decoration-none">
-                                learnify.team03@gmail.com
-                            </a>
-                        </p>
+                <div id="myCollapse2" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
 
-                        <div class="row">
+                        <ul class="learning-list">
 
-                            <!-- TEAM -->
-                            <div class="col-6">
-                                <h6 class="fw-bold mb-2">Team</h6>
-                                <ul class="list-unstyled small">
+                            <li>
+                                <strong>Creating a Database</strong><br>
+                                Databases act as containers for tables. Use the following command to create one:
+                                <pre><code>CREATE DATABASE companydb;</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-people-fill me-2"></i>
-                                        <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
-                                            class="text-white text-decoration-none text-nowrap">
-                                            Shaik Abdul Jabbar
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Selecting / Using a Database</strong><br>
+                                Switch to a specific database before running SQL commands:
+                                <pre><code>USE companydb;</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-people-fill me-2"></i>
-                                        <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
-                                            class="text-white text-decoration-none text-nowrap">
-                                            Panyala Nandini
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Creating a Table (Employees)</strong><br>
+                                A table stores data in rows and columns. Here’s an example:
+                                <pre><code>CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_name VARCHAR(100) NOT NULL,
+    salary FLOAT,
+    join_date DATE,
+    is_active BOOLEAN DEFAULT 1
+);</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-people-fill me-2"></i>
-                                        <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
-                                            target="_blank" class="text-white text-decoration-none text-nowrap">
-                                            N Anil Kumar
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Common MySQL Data Types:</strong>
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Data Type</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>INT</code></td>
+                                                <td>Stores whole numbers</td>
+                                                <td>25, 100, -5</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>VARCHAR(n)</code></td>
+                                                <td>Text with max length n</td>
+                                                <td>"John", "Hyderabad"</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>DATE</code></td>
+                                                <td>Stores date values</td>
+                                                <td>2024-01-15</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>FLOAT</code></td>
+                                                <td>Decimal numbers</td>
+                                                <td>5000.50</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>BOOLEAN</code></td>
+                                                <td>0 = False, 1 = True</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
 
-                                </ul>
-                            </div>
+                            <li>
+                                <strong>Adding a New Column to a Table</strong><br>
+                                Modify an existing table structure using <code>ALTER TABLE</code>:
+                                <pre><code>ALTER TABLE employees
+ADD COLUMN email VARCHAR(100);</code></pre>
+                            </li>
 
-                            <!-- MENTORS -->
-                            <div class="col-6">
-                                <h6 class="fw-bold mb-2">Mentors</h6>
-                                <ul class="list-unstyled small">
+                            <li>
+                                <strong>Renaming a Table</strong>
+                                <pre><code>RENAME TABLE employees TO staff;</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-person-badge me-2"></i>
-                                        <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
-                                            target="_blank" class="text-white text-decoration-none text-nowrap">
-                                            B Ambica Kiranmayee
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Describe Table Structure</strong><br>
+                                Shows column names, types, keys, and extra information:
+                                <pre><code>DESCRIBE employees;</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-person-badge me-2"></i>
-                                        <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
-                                            class="text-white text-decoration-none text-nowrap">
-                                            Uppugundla Sairam
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Show All Tables in a Database</strong>
+                                <pre><code>SHOW TABLES;</code></pre>
+                            </li>
 
-                                    <li class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-person-badge me-2"></i>
-                                        <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
-                                            class="text-white text-decoration-none text-nowrap">
-                                            Saketh Kallepu
-                                        </a>
-                                    </li>
+                            <li>
+                                <strong>Deleting a Table or Database</strong>
+                                <pre><code>DROP TABLE employees;
+DROP DATABASE companydb;</code></pre>
+                            </li>
 
-                                </ul>
-                            </div>
+                            <li>
+                                <strong>Real-World Example: Creating a Product Table</strong><br>
+                                <pre><code>CREATE TABLE products (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_name VARCHAR(100),
+    price FLOAT NOT NULL,
+    stock INT DEFAULT 0,
+    added_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Understanding Constraints:</strong>
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Constraint</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>PRIMARY KEY</strong></td>
+                                                <td>Uniquely identifies each row</td>
+                                                <td><code>emp_id INT PRIMARY KEY</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>NOT NULL</strong></td>
+                                                <td>Value cannot be empty</td>
+                                                <td><code>emp_name VARCHAR(100) NOT NULL</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>UNIQUE</strong></td>
+                                                <td>No duplicate values allowed</td>
+                                                <td><code>email VARCHAR(100) UNIQUE</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>DEFAULT</strong></td>
+                                                <td>Sets a default value if none is provided</td>
+                                                <td><code>is_active BOOLEAN DEFAULT 1</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                        </ul>
 
 
+                    </div>
+                </div>
+            </div>
 
+            <!-- Module 3 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse3">
+                        Module 3: INSERT, SELECT, UPDATE, DELETE (CRUD)
+                    </button>
+                </h2>
+
+                <div id="myCollapse3" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <li>
+                                <strong>INSERT Records</strong><br>
+                                Add new rows into a table.
+                                <pre><code>INSERT INTO employees (name, age, department)
+VALUES ('Amit', 25, 'Sales');</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>SELECT Records (Read Data)</strong><br>
+                                Fetch all or specific columns from a table.
+                                <pre><code>SELECT * FROM employees;
+SELECT name, department FROM employees;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Filtering Data (WHERE Clause)</strong><br>
+                                Retrieve rows that match a condition.
+                                <pre><code>SELECT * FROM employees
+WHERE age >= 25;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>UPDATE Records</strong><br>
+                                Modify existing data inside a table.
+                                <pre><code>UPDATE employees
+SET department = 'HR'
+WHERE id = 3;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>DELETE Records</strong><br>
+                                Remove rows permanently.
+                                <pre><code>DELETE FROM employees
+WHERE id = 4;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Sorting Data (ORDER BY)</strong><br>
+                                Sort data in ascending or descending order.
+                                <pre><code>SELECT * FROM employees
+ORDER BY age DESC;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Limit Output (LIMIT)</strong><br>
+                                Restrict number of rows returned.
+                                <pre><code>SELECT * FROM employees
+LIMIT 3;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Selecting Unique Values (DISTINCT)</strong><br>
+                                Remove duplicate values in results.
+                                <pre><code>SELECT DISTINCT department
+FROM employees;</code></pre>
+                            </li>
+
+                            <li>
+                                <strong>Basic Search Using LIKE</strong><br>
+                                Search by matching patterns.
+                                <pre><code>SELECT * FROM employees
+WHERE name LIKE 'A%';   -- starts with A</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse4">
+                        Module 4: SQL Functions & Operators
+                    </button>
+                </h2>
+
+                <div id="myCollapse4" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- Aggregate Functions -->
+                            <li>
+                                <strong>Aggregate Functions</strong><br>
+                                Aggregate functions perform calculations on multiple rows and return a single value.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>COUNT()</code></td>
+                                                <td>Counts rows</td>
+                                                <td><code>SELECT COUNT(*) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>AVG()</code></td>
+                                                <td>Average value</td>
+                                                <td><code>SELECT AVG(salary) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MAX()</code> / <code>MIN()</code></td>
+                                                <td>Highest / lowest value</td>
+                                                <td><code>SELECT MAX(salary), MIN(salary) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>SUM()</code></td>
+                                                <td>Total of numeric column</td>
+                                                <td><code>SELECT SUM(salary) FROM employees;</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT COUNT(*) FROM employees;
+SELECT AVG(salary) FROM employees;
+SELECT MAX(age), MIN(age) FROM employees;
+SELECT SUM(salary) FROM employees;</code></pre>
+                            </li>
+
+                            <!-- String Functions -->
+                            <li>
+                                <strong>String Functions</strong><br>
+                                Useful for formatting and manipulating text values.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>UPPER()</code></td>
+                                                <td>Converts text to uppercase</td>
+                                                <td><code>SELECT UPPER(name) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>LOWER()</code></td>
+                                                <td>Converts text to lowercase</td>
+                                                <td><code>SELECT LOWER(name) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CONCAT()</code></td>
+                                                <td>Joins multiple strings</td>
+                                                <td><code>SELECT CONCAT(name, ' - ', department);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>LENGTH()</code></td>
+                                                <td>Returns string length</td>
+                                                <td><code>SELECT LENGTH(name) FROM employees;</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT UPPER(name), LOWER(name) FROM employees;
+SELECT CONCAT(name, ' works in ', department) FROM employees;</code></pre>
+                            </li>
+
+                            <!-- Math Functions -->
+                            <li>
+                                <strong>Math Functions</strong><br>
+                                Perfect for performing calculations inside SQL queries.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>ABS()</code></td>
+                                                <td>Absolute value</td>
+                                                <td><code>SELECT ABS(-25);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>ROUND()</code></td>
+                                                <td>Round decimal values</td>
+                                                <td><code>SELECT ROUND(5.789, 2);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CEIL()</code></td>
+                                                <td>Round up</td>
+                                                <td><code>SELECT CEIL(4.3);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>FLOOR()</code></td>
+                                                <td>Round down</td>
+                                                <td><code>SELECT FLOOR(4.8);</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT ABS(-10);
+SELECT ROUND(3.14159, 2);
+SELECT CEIL(7.2), FLOOR(7.9);</code></pre>
+                            </li>
+
+                            <!-- Logical Operators -->
+                            <li>
+                                <strong>Logical Operators</strong><br>
+                                Used to combine multiple conditions.
+
+                                <pre><code>SELECT * FROM employees
+WHERE age > 25 AND department = 'IT';
+
+SELECT * FROM employees
+WHERE department = 'HR' OR department = 'Sales';
+
+SELECT * FROM employees
+WHERE NOT (salary > 50000);</code></pre>
+                            </li>
+
+                            <!-- BETWEEN, IN, LIKE -->
+                            <li>
+                                <strong>BETWEEN, IN, LIKE</strong><br>
+                                Advanced filtering techniques used in almost every SQL application.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Operator</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>BETWEEN</code></td>
+                                                <td>Range search</td>
+                                                <td><code>age BETWEEN 20 AND 30</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>IN</code></td>
+                                                <td>Match one of many values</td>
+                                                <td><code>department IN ('IT', 'HR')</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>LIKE</code></td>
+                                                <td>Pattern matching</td>
+                                                <td><code>name LIKE 'A%'</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
+SELECT * FROM employees WHERE department IN ('IT', 'Finance');
+SELECT * FROM employees WHERE name LIKE 'S%';   -- starts with S
+</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse5">
+                        Module 5: Joins (INNER, LEFT, RIGHT, FULL)
+                    </button>
+                </h2>
+
+                <div id="myCollapse5" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- Aggregate Functions -->
+                            <li>
+                                <strong>Aggregate Functions</strong><br>
+                                Aggregate functions summarize multiple rows of data into a single output. They are
+                                widely used in reports, analytics, and dashboards.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>COUNT()</code></td>
+                                                <td>Counts number of rows</td>
+                                                <td><code>SELECT COUNT(*) FROM orders;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>AVG()</code></td>
+                                                <td>Returns average value</td>
+                                                <td><code>SELECT AVG(price) FROM products;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MAX()</code></td>
+                                                <td>Finds highest value</td>
+                                                <td><code>SELECT MAX(salary) FROM employees;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MIN()</code></td>
+                                                <td>Finds lowest value</td>
+                                                <td><code>SELECT MIN(stock) FROM products;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>SUM()</code></td>
+                                                <td>Adds all values</td>
+                                                <td><code>SELECT SUM(amount) FROM payments;</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT COUNT(*) FROM orders;
+SELECT AVG(price) FROM products;
+SELECT MAX(salary), MIN(salary) FROM employees;
+SELECT SUM(quantity) FROM sales;</code></pre>
+                            </li>
+
+                            <!-- String Functions -->
+                            <li>
+                                <strong>String Functions</strong><br>
+                                String functions help clean, search, and format text values inside tables.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>UPPER()</code></td>
+                                                <td>Converts text to uppercase</td>
+                                                <td><code>SELECT UPPER(city) FROM customers;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>LOWER()</code></td>
+                                                <td>Converts text to lowercase</td>
+                                                <td><code>SELECT LOWER(email) FROM users;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CONCAT()</code></td>
+                                                <td>Combines two or more strings</td>
+                                                <td><code>SELECT CONCAT(first_name, ' ', last_name) FROM users;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>SUBSTRING()</code></td>
+                                                <td>Extracts part of a string</td>
+                                                <td><code>SELECT SUBSTRING(name, 1, 3) FROM products;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>TRIM()</code></td>
+                                                <td>Removes spaces</td>
+                                                <td><code>SELECT TRIM('  Learnify  ');</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT CONCAT(first_name, ' ', last_name) FROM users;
+SELECT SUBSTRING(product_name, 1, 5) FROM products;
+SELECT TRIM('   Hello SQL   ');</code></pre>
+                            </li>
+
+                            <!-- Math Functions -->
+                            <li>
+                                <strong>Math Functions</strong><br>
+                                Math functions allow calculations directly inside SQL queries for analytics and
+                                dashboards.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>ABS()</code></td>
+                                                <td>Returns absolute (positive) value</td>
+                                                <td><code>SELECT ABS(-75);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>ROUND()</code></td>
+                                                <td>Rounds number to given decimals</td>
+                                                <td><code>SELECT ROUND(99.567, 1);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CEIL()</code></td>
+                                                <td>Rounds number up</td>
+                                                <td><code>SELECT CEIL(5.2);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>FLOOR()</code></td>
+                                                <td>Rounds number down</td>
+                                                <td><code>SELECT FLOOR(8.9);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MOD()</code></td>
+                                                <td>Returns remainder</td>
+                                                <td><code>SELECT MOD(17, 5);</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT ABS(-42);
+SELECT ROUND(13.899, 2);
+SELECT CEIL(3.2), FLOOR(3.9);
+SELECT MOD(17, 5);</code></pre>
+                            </li>
+
+                            <!-- Logical Operators -->
+                            <li>
+                                <strong>Logical Operators</strong><br>
+                                Logical operators help combine multiple conditions for powerful filtering.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Operator</th>
+                                                <th>Description</th>
+                                                <th>Example Condition</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>AND</code></td>
+                                                <td>All conditions must be true</td>
+                                                <td><code>salary > 30000 AND department='IT'</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>OR</code></td>
+                                                <td>Any one condition true</td>
+                                                <td><code>city='Delhi' OR city='Mumbai'</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>NOT</code></td>
+                                                <td>Reverses condition</td>
+                                                <td><code>NOT (age < 18)</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT * FROM employees
+WHERE salary > 40000 AND department = 'IT';
+
+SELECT * FROM customers
+WHERE city = 'Mumbai' OR city = 'Chennai';
+
+SELECT * FROM users
+WHERE NOT (role = 'admin');</code></pre>
+                            </li>
+
+                            <!-- BETWEEN, IN, LIKE -->
+                            <li>
+                                <strong>BETWEEN, IN, LIKE Operators</strong><br>
+                                These operators are essential for advanced search and filtering in SQL.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Operator</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>BETWEEN</code></td>
+                                                <td>Search within a range</td>
+                                                <td><code>price BETWEEN 100 AND 500</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>IN</code></td>
+                                                <td>Match one from a list</td>
+                                                <td><code>status IN ('Pending', 'Completed')</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>LIKE</code></td>
+                                                <td>Search using patterns</td>
+                                                <td><code>email LIKE '%gmail.com'</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT * FROM products WHERE price BETWEEN 500 AND 1500;
+SELECT * FROM orders WHERE status IN ('Pending', 'Shipped');
+SELECT * FROM users WHERE email LIKE '%@yahoo.com';</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse6">
+                        Module 6: Constraints & Keys
+                    </button>
+                </h2>
+
+                <div id="myCollapse6" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- PRIMARY KEY -->
+                            <li>
+                                <strong>PRIMARY KEY</strong><br>
+                                A Primary Key uniquely identifies every record in a table.
+                                <br>• Cannot contain <strong>NULL</strong>
+                                <br>• Must be <strong>unique</strong>
+                                <br>• A table can have only one PRIMARY KEY (can be composite)
+
+                                <pre><code>emp_id INT PRIMARY KEY AUTO_INCREMENT;</code></pre>
+                            </li>
+
+                            <!-- FOREIGN KEY -->
+                            <li>
+                                <strong>FOREIGN KEY</strong><br>
+                                A Foreign Key creates a link between two tables and ensures data consistency.
+                                <br>• Prevents inserting invalid department IDs
+                                <br>• Used for one-to-many or many-to-many relationships
+
+                                <pre><code>FOREIGN KEY (dept_id) REFERENCES departments(dept_id);</code></pre>
+                            </li>
+
+                            <!-- UNIQUE -->
+                            <li>
+                                <strong>UNIQUE</strong><br>
+                                Ensures all values in the column are different.
+                                A table can have multiple UNIQUE constraints.
+
+                                <pre><code>email VARCHAR(150) UNIQUE;</code></pre>
+                            </li>
+
+                            <!-- NOT NULL -->
+                            <li>
+                                <strong>NOT NULL</strong><br>
+                                Ensures the column must always contain a value.
+                                Used for mandatory fields.
+
+                                <pre><code>full_name VARCHAR(80) NOT NULL;</code></pre>
+                            </li>
+
+                            <!-- CHECK -->
+                            <li>
+                                <strong>CHECK</strong><br>
+                                Validates data using a condition.
+                                Helps maintain clean data inside the database.
+
+                                <pre><code>salary INT CHECK(salary > 10000);</code></pre>
+                            </li>
+
+                            <!-- DEFAULT -->
+                            <li>
+                                <strong>DEFAULT</strong><br>
+                                Automatically assigns a value when the user does not provide one.
+
+                                <pre><code>status VARCHAR(20) DEFAULT 'Active';</code></pre>
+                            </li>
+
+                            <!-- COMPOSITE KEY -->
+                            <li>
+                                <strong>Composite Primary Key</strong><br>
+                                A primary key that uses more than one column.
+
+                                <pre><code>PRIMARY KEY (student_id, course_id);</code></pre>
+                            </li>
+
+                            <!-- ADDING CONSTRAINTS -->
+                            <li>
+                                <strong>Adding Constraints (ALTER TABLE)</strong><br>
+
+                                <pre><code>ALTER TABLE employees
+ADD CONSTRAINT fk_dept
+FOREIGN KEY (dept_id)
+REFERENCES departments(dept_id);</code></pre>
+                            </li>
+
+                            <!-- DROPPING CONSTRAINTS -->
+                            <li>
+                                <strong>Dropping Constraints</strong>
+
+                                <pre><code>ALTER TABLE employees DROP FOREIGN KEY fk_dept;
+ALTER TABLE employees DROP INDEX email;</code></pre>
+                            </li>
+
+                        </ul>
+
+                        <!-- FULL SUMMARY TABLE -->
+                        <div class="table-responsive mt-3">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Constraint</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td><strong>PRIMARY KEY</strong></td>
+                                        <td>Uniquely identifies each record; cannot contain NULL.</td>
+                                        <td><code>emp_id INT PRIMARY KEY</code></td>
+                                        <td>Employee ID, Student Roll No.</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>FOREIGN KEY</strong></td>
+                                        <td>Links tables and maintains relational integrity.</td>
+                                        <td><code>FOREIGN KEY(dept_id) REFERENCES dept(dept_id)</code></td>
+                                        <td>Employee → Department relation</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>UNIQUE</strong></td>
+                                        <td>Ensures all column values are unique.</td>
+                                        <td><code>email VARCHAR(150) UNIQUE</code></td>
+                                        <td>Email, phone, Aadhaar number</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>NOT NULL</strong></td>
+                                        <td>Prevents storing empty (NULL) values.</td>
+                                        <td><code>name VARCHAR(50) NOT NULL</code></td>
+                                        <td>Required fields like name, password</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CHECK</strong></td>
+                                        <td>Validates data with a given rule.</td>
+                                        <td><code>age INT CHECK(age >= 18)</code></td>
+                                        <td>Age restrictions, salary limits</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>DEFAULT</strong></td>
+                                        <td>Assigns a default value automatically.</td>
+                                        <td><code>status VARCHAR(10) DEFAULT 'Active'</code></td>
+                                        <td>User accounts, order statuses</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Composite Key</strong></td>
+                                        <td>Two or more columns uniquely identify a row.</td>
+                                        <td><code>PRIMARY KEY (student_id, course_id)</code></td>
+                                        <td>Enrollment tables (many-to-many)</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
 
+                        <!-- REAL EXAMPLE TABLE CREATION -->
+                        <h5 class="fw-bold mt-4">✔ Full Working Example: Table with All Constraints</h5>
+
+                        <pre><code>CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(80) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    age INT CHECK(age >= 18),
+    salary INT DEFAULT 30000,
+    dept_id INT,
+    status VARCHAR(20) DEFAULT 'Active',
+    FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+);
+</code></pre>
+
+
                     </div>
-
                 </div>
+            </div>
 
-                <hr class="mt-4 border-light">
-                <p class="text-center small mb-0 opacity-75">
-                    © 2025 Learnify. All Rights Reserved.
+            <!-- Module 7 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse7">
+                        Module 7: GROUP BY & HAVING
+                    </button>
+                </h2>
+
+                <div id="myCollapse7" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- GROUP BY BASICS -->
+                            <li>
+                                <strong>GROUP BY Basics</strong><br>
+                                The <strong>GROUP BY</strong> clause groups rows that have the same values in a column
+                                and allows you to apply
+                                aggregate functions like <code>COUNT()</code>, <code>AVG()</code>, <code>SUM()</code>,
+                                <code>MAX()</code>.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Purpose</th>
+                                                <th>Description</th>
+                                                <th>Example Query</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Group by department</td>
+                                                <td>Counts how many employees exist in each department</td>
+                                                <td><code>SELECT department, COUNT(*) FROM employees GROUP BY department;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Group by job role</td>
+                                                <td>Shows total salary given to each role</td>
+                                                <td><code>SELECT role, SUM(salary) FROM employees GROUP BY role;</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT department, COUNT(*)
+FROM employees
+GROUP BY department;</code></pre>
+                            </li>
+
+                            <!-- GROUP BY WITH AGGREGATES -->
+                            <li>
+                                <strong>GROUP BY with Aggregate Functions</strong><br>
+                                When grouping, aggregate functions help summarize data for each group.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Aggregate</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>AVG()</code></td>
+                                                <td>Average salary in each department</td>
+                                                <td><code>SELECT department, AVG(salary) FROM employees GROUP BY department;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MAX()</code> / <code>MIN()</code></td>
+                                                <td>Highest & lowest salary per role</td>
+                                                <td><code>SELECT role, MAX(salary), MIN(salary) FROM employees GROUP BY role;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>SUM()</code></td>
+                                                <td>Total expenses per department</td>
+                                                <td><code>SELECT department, SUM(salary) FROM employees GROUP BY department;</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT department, AVG(salary)
+FROM employees
+GROUP BY department;</code></pre>
+                            </li>
+
+                            <!-- HAVING CLAUSE -->
+                            <li>
+                                <strong>HAVING Clause (Filter Groups)</strong><br>
+                                The <strong>HAVING</strong> clause filters the result of grouped data.
+                                <code>WHERE</code> filters rows BEFORE grouping,
+                                <code>HAVING</code> filters groups AFTER grouping.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Use Case</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Departments with more than 5 employees</td>
+                                                <td>Filters grouped data using COUNT()</td>
+                                                <td><code>SELECT department, COUNT(*) FROM employees GROUP BY department HAVING COUNT(*) > 5;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Roles with avg salary > 50000</td>
+                                                <td>Filters groups using AVG()</td>
+                                                <td><code>SELECT role, AVG(salary) FROM employees GROUP BY role HAVING AVG(salary) > 50000;</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT department, COUNT(*)
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 3;</code></pre>
+                            </li>
+
+                            <!-- REAL-WORLD EXAMPLES -->
+                            <li>
+                                <strong>Real-World GROUP BY Examples</strong>
+
+                                <pre><code>-- 1. Total sales by city
+SELECT city, SUM(amount) 
+FROM orders 
+GROUP BY city;
+
+-- 2. Count students by branch
+SELECT branch, COUNT(*) 
+FROM students 
+GROUP BY branch;
+
+-- 3. Highest salary per department
+SELECT department, MAX(salary)
+FROM employees
+GROUP BY department;
+
+-- 4. Departments with average salary > 40000
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 40000;</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse8">
+                        Module 8: Subqueries
+                    </button>
+                </h2>
+
+                <div id="myCollapse8" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- SIMPLE SUBQUERY -->
+                            <li>
+                                <strong>Simple Subquery</strong><br>
+                                A simple subquery returns a single value and is used inside a <code>WHERE</code> clause.
+                                It runs first, and the result is used by the outer query.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Scalar Subquery</td>
+                                                <td>Returns exactly one value</td>
+                                                <td><code>(SELECT MAX(salary) FROM employees)</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT * FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees);</code></pre>
+                            </li>
+
+                            <!-- SUBQUERY IN FROM -->
+                            <li>
+                                <strong>Subquery in FROM Clause (Inline View)</strong><br>
+                                A subquery can be treated as a temporary table by placing it inside the
+                                <strong>FROM</strong> clause.
+                                This is useful for applying operations on derived results.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Purpose</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Inline Views</td>
+                                                <td>Use subquery output as a table</td>
+                                                <td><code>SELECT * FROM (SELECT salary FROM employees) AS temp;</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT emp_name, total_salary
+FROM (
+    SELECT name AS emp_name, salary * 12 AS total_salary
+    FROM employees
+) AS yearly_salaries
+WHERE total_salary > 500000;</code></pre>
+                            </li>
+
+                            <!-- SUBQUERY WITH IN -->
+                            <li>
+                                <strong>Subquery with IN</strong><br>
+                                A subquery can return multiple values, and the <strong>IN</strong> operator checks if a
+                                value matches
+                                any value from the subquery list.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Operator</th>
+                                                <th>Description</th>
+                                                <th>Example Subquery</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>IN</strong></td>
+                                                <td>Checks multiple returned values</td>
+                                                <td><code>SELECT dept_id FROM departments WHERE location='Hyderabad'</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>SELECT name, department
+FROM employees
+WHERE department IN (
+    SELECT dept_name FROM departments WHERE location = 'Hyderabad'
+);</code></pre>
+                            </li>
+
+                            <!-- SUBQUERY WITH EXISTS -->
+                            <li>
+                                <strong>Subquery with EXISTS</strong><br>
+                                The <strong>EXISTS</strong> operator checks if the subquery returns at least one row.
+                                Commonly used in correlated subqueries.
+
+                                <pre><code>SELECT name FROM employees e
+WHERE EXISTS (
+    SELECT * FROM salary_history s
+    WHERE s.emp_id = e.emp_id
+);</code></pre>
+                            </li>
+
+                            <!-- CORRELATED SUBQUERY -->
+                            <li>
+                                <strong>Correlated Subquery</strong><br>
+                                A correlated subquery depends on the outer query.
+                                It runs once for every row of the main query.
+
+                                <pre><code>SELECT e.name, e.salary
+FROM employees e
+WHERE e.salary > (
+    SELECT AVG(salary)
+    FROM employees
+    WHERE department = e.department
+);</code></pre>
+                            </li>
+
+                            <!-- REAL-WORLD USE CASES -->
+                            <li>
+                                <strong>Real-World Subquery Examples</strong>
+
+                                <pre><code>-- 1. Employees earning more than company average
+SELECT name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+-- 2. Students enrolled in active courses
+SELECT student_name
+FROM students
+WHERE course_id IN (
+    SELECT course_id FROM courses WHERE status='Active'
+);
+
+-- 3. Orders with highest amount per customer
+SELECT *
+FROM orders o
+WHERE amount = (
+    SELECT MAX(amount)
+    FROM orders
+    WHERE customer_id = o.customer_id
+);</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 9 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse9">
+                        Module 9: Views & Indexes
+                    </button>
+                </h2>
+
+                <div id="myCollapse9" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- CREATING A VIEW -->
+                            <li>
+                                <strong>Creating a View</strong><br>
+                                A <strong>View</strong> is a virtual table based on a SELECT query.
+                                It helps simplify complex queries and improves readability.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Purpose</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Simplify Query</td>
+                                                <td>Use a view instead of repeating long queries</td>
+                                                <td><code>CREATE VIEW high_salary AS SELECT name, salary FROM employees WHERE salary > 50000;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Security</td>
+                                                <td>Hide sensitive columns</td>
+                                                <td><code>CREATE VIEW public_employees AS SELECT name, department FROM employees;</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>CREATE VIEW high_salary_employees AS
+SELECT name, salary
+FROM employees
+WHERE salary > 60000;</code></pre>
+                            </li>
+
+                            <!-- USING A VIEW -->
+                            <li>
+                                <strong>Using a View</strong><br>
+                                Once created, views can be queried just like regular tables.
+
+                                <pre><code>SELECT * FROM high_salary_employees;</code></pre>
+
+                                <pre><code>-- You can also apply filters
+SELECT name FROM high_salary_employees
+WHERE salary > 80000;</code></pre>
+                            </li>
+
+                            <!-- UPDATABLE VS NON-UPDATABLE VIEWS -->
+                            <li>
+                                <strong>Updatable vs Non-Updatable Views</strong><br>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                                <th>Supports UPDATE?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Simple View</td>
+                                                <td>Based on a single table without functions or joins</td>
+                                                <td><strong>Yes</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complex View</td>
+                                                <td>Contains JOIN, GROUP BY, or aggregate functions</td>
+                                                <td><strong>No</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- CREATING AN INDEX -->
+                            <li>
+                                <strong>Creating an Index</strong><br>
+                                Indexes improve search performance by allowing MySQL to quickly locate data without
+                                scanning all rows.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Index Type</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Single Column Index</td>
+                                                <td>Speeds up searching in a specific column</td>
+                                                <td><code>CREATE INDEX idx_email ON users(email);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Composite Index</td>
+                                                <td>Index on multiple columns</td>
+                                                <td><code>CREATE INDEX idx_name_age ON employees(name, age);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Unique Index</td>
+                                                <td>Prevents duplicate values</td>
+                                                <td><code>CREATE UNIQUE INDEX idx_phone ON users(phone);</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>CREATE INDEX idx_department ON employees(department);</code></pre>
+                            </li>
+
+                            <!-- BENEFITS OF INDEXES -->
+                            <li>
+                                <strong>Benefits of Using Indexes</strong><br>
+
+                                <ul>
+                                    <li>Improves SELECT query performance</li>
+                                    <li>Speeds up searching and filtering</li>
+                                    <li>Reduces table scan time</li>
+                                    <li>Helps with sorting (ORDER BY)</li>
+                                </ul>
+
+                                <pre><code>SELECT * FROM employees
+WHERE department = 'IT';  -- Fast if department is indexed</code></pre>
+                            </li>
+
+                            <!-- DROPPING INDEX -->
+                            <li>
+                                <strong>Dropping an Index</strong><br>
+                                Indexes can be removed when no longer needed.
+
+                                <pre><code>DROP INDEX idx_department ON employees;</code></pre>
+                            </li>
+
+                            <!-- REAL WORLD USE CASES -->
+                            <li>
+                                <strong>Real-World View & Index Examples</strong>
+
+                                <pre><code>-- View for monthly sales
+CREATE VIEW monthly_sales AS
+SELECT MONTH(date) AS month, SUM(amount) AS total_amount
+FROM orders
+GROUP BY MONTH(date);
+
+-- Index to speed up email search
+CREATE INDEX idx_email ON customers(email);
+
+-- View for active users
+CREATE VIEW active_users AS
+SELECT name, email FROM users
+WHERE status = 'Active';
+
+-- Composite index for faster login lookup
+CREATE INDEX idx_login ON users(email, password);</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 10 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse10">
+                        Module 10: Stored Procedures & Functions
+                    </button>
+                </h2>
+
+                <div id="myCollapse10" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- STORED PROCEDURE -->
+                            <li>
+                                <strong>Stored Procedure</strong><br>
+                                A <strong>Stored Procedure</strong> is a saved block of SQL statements that you can
+                                execute whenever needed.
+                                Useful for automation, reducing repetition, and improving performance.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Feature</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Reusable</td>
+                                                <td>Write once, execute multiple times</td>
+                                                <td><code>CALL getEmployees();</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Accept Parameters</td>
+                                                <td>Pass values dynamically</td>
+                                                <td><code>CALL filterSalary(50000);</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Improves Performance</td>
+                                                <td>Stored and optimized by MySQL</td>
+                                                <td>N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>DELIMITER $$
+
+CREATE PROCEDURE getEmployees()
+BEGIN
+    SELECT name, department, salary FROM employees;
+END $$
+
+DELIMITER ;</code></pre>
+                            </li>
+
+                            <!-- CALLING PROCEDURE -->
+                            <li>
+                                <strong>Calling a Stored Procedure</strong><br>
+                                Execute the procedure using <code>CALL</code>.
+
+                                <pre><code>CALL getEmployees();</code></pre>
+                            </li>
+
+                            <!-- PROCEDURE WITH PARAMETERS -->
+                            <li>
+                                <strong>Stored Procedure with Parameters</strong><br>
+                                Accepts inputs to filter results dynamically.
+
+                                <pre><code>DELIMITER $$
+
+CREATE PROCEDURE getByDept(IN dept VARCHAR(50))
+BEGIN
+    SELECT * FROM employees
+    WHERE department = dept;
+END $$
+
+DELIMITER ;
+
+CALL getByDept('IT');</code></pre>
+                            </li>
+
+                            <!-- PROCEDURE WITH OUT PARAMETER -->
+                            <li>
+                                <strong>Procedure with OUT Parameter</strong><br>
+                                Returns values using <code>OUT</code> parameters.
+
+                                <pre><code>DELIMITER $$
+
+CREATE PROCEDURE countEmployees(OUT total INT)
+BEGIN
+    SELECT COUNT(*) INTO total FROM employees;
+END $$
+
+DELIMITER ;
+
+CALL countEmployees(@t);
+SELECT @t AS Total_Employees;</code></pre>
+                            </li>
+
+                            <!-- USER DEFINED FUNCTION -->
+                            <li>
+                                <strong>User-Defined Function (UDF)</strong><br>
+                                A <strong>Function</strong> always returns a value.
+                                Unlike procedures, functions are used inside SQL statements.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Difference</th>
+                                                <th>Stored Procedure</th>
+                                                <th>User-Defined Function</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Returns a value</td>
+                                                <td>No (unless using OUT)</td>
+                                                <td>Yes (always)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Used in SELECT</td>
+                                                <td>No</td>
+                                                <td>Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Complex operations</td>
+                                                <td>Yes</td>
+                                                <td>Limited (no transactions)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>DELIMITER $$
+
+CREATE FUNCTION fullName(fname VARCHAR(50), lname VARCHAR(50))
+RETURNS VARCHAR(100)
+BEGIN
+    RETURN CONCAT(fname, ' ', lname);
+END $$
+
+DELIMITER ;</code></pre>
+
+                                <pre><code>SELECT fullName('Rahul', 'Kumar');</code></pre>
+                            </li>
+
+                            <!-- FUNCTION FOR CALCULATIONS -->
+                            <li>
+                                <strong>Calculation Function Example</strong>
+
+                                <pre><code>DELIMITER $$
+
+CREATE FUNCTION yearlySalary(monthly INT)
+RETURNS INT
+BEGIN
+    RETURN monthly * 12;
+END $$
+
+DELIMITER ;
+
+SELECT name, yearlySalary(salary) FROM employees;</code></pre>
+                            </li>
+
+                            <!-- REAL WORLD EXAMPLES -->
+                            <li>
+                                <strong>Real-World Procedure & Function Examples</strong>
+
+                                <pre><code>-- 1. Procedure for adding new employee
+DELIMITER $$
+CREATE PROCEDURE addEmployee(IN name VARCHAR(50), IN dept VARCHAR(40), IN sal INT)
+BEGIN
+    INSERT INTO employees(name, department, salary)
+    VALUES(name, dept, sal);
+END $$
+DELIMITER ;
+
+CALL addEmployee('Sana', 'HR', 45000);
+
+
+-- 2. Function to calculate bonus
+DELIMITER $$
+CREATE FUNCTION calcBonus(salary INT)
+RETURNS INT
+BEGIN
+    RETURN salary * 0.10;
+END $$
+DELIMITER ;
+
+SELECT name, salary, calcBonus(salary) AS Bonus
+FROM employees;
+</code></pre>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 11 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse11">
+                        Module 11: Transactions & ACID Properties
+                    </button>
+                </h2>
+
+                <div id="myCollapse11" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- START TRANSACTION -->
+                            <li>
+                                <strong>START TRANSACTION</strong><br>
+                                Begins a new transaction.
+                                All statements after this point are treated as a single unit of work.
+
+                                <pre><code>START TRANSACTION;</code></pre>
+                            </li>
+
+                            <!-- COMMIT -->
+                            <li>
+                                <strong>COMMIT</strong><br>
+                                Permanently saves all changes made in the current transaction.
+
+                                <pre><code>COMMIT;</code></pre>
+                            </li>
+
+                            <!-- ROLLBACK -->
+                            <li>
+                                <strong>ROLLBACK</strong><br>
+                                Cancels the transaction and restores the database to the previous state.
+
+                                <pre><code>ROLLBACK;</code></pre>
+                            </li>
+
+                            <!-- ACID -->
+                            <li>
+                                <strong>ACID Properties of Transactions</strong><br>
+                                Transactions in MySQL follow the ACID properties to ensure data reliability.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Property</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Atomicity</strong></td>
+                                                <td>All steps in a transaction succeed or fail together.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Consistency</strong></td>
+                                                <td>Ensures all database rules and constraints remain valid.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Isolation</strong></td>
+                                                <td>Each transaction runs independently of others.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Durability</strong></td>
+                                                <td>After COMMIT, data is permanently saved to the database.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- REAL WORLD EXAMPLE  -->
+                            <li>
+                                <strong>Real-World Banking Example</strong><br>
+                                Transferring money between accounts requires all steps to succeed:
+
+                                <pre><code>START TRANSACTION;
+
+UPDATE accounts SET balance = balance - 500 WHERE account_no = 101;
+UPDATE accounts SET balance = balance + 500 WHERE account_no = 202;
+
+-- If both succeed
+COMMIT;
+
+-- If any error occurs
+ROLLBACK;</code></pre>
+                            </li>
+
+                            <!-- ADVANCED EXAMPLE -->
+                            <li>
+                                <strong>Advanced Example (Insert + Update + Delete)</strong>
+
+                                <pre><code>START TRANSACTION;
+
+INSERT INTO orders (order_id, amount) VALUES (501, 2500);
+UPDATE products SET stock = stock - 1 WHERE product_id = 10;
+DELETE FROM cart WHERE user_id = 7 AND product_id = 10;
+
+COMMIT;  -- Save all operations together</code></pre>
+
+                                <p>If any query fails (for example, if stock is insufficient), use:</p>
+
+                                <pre><code>ROLLBACK;</code></pre>
+                            </li>
+
+                            <!-- BENEFITS -->
+                            <li>
+                                <strong>Benefits of Transactions</strong>
+                                <ul>
+                                    <li>Protects data from incomplete or partial updates</li>
+                                    <li>Essential in banking, e-commerce, and ticket booking systems</li>
+                                    <li>Ensures stable and predictable database behavior</li>
+                                    <li>Maintains accuracy during multi-user access</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 12 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="my12">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#myCollapse12">
+                        Module 12: Final MySQL Project
+                    </button>
+                </h2>
+
+                <div id="myCollapse12" class="accordion-collapse collapse" data-bs-parent="#mysqlAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- PROJECT PLANNING -->
+                            <li>
+                                <strong>Project Planning</strong><br>
+                                A MySQL project requires proper planning before you start writing SQL queries.
+
+                                <ul>
+                                    <li>Identify project type and requirements</li>
+                                    <li>Design an ER diagram (entities + relationships)</li>
+                                    <li>Define tables, keys, and constraints</li>
+                                    <li>Insert sample or real dataset</li>
+                                    <li>Implement CRUD operations</li>
+                                    <li>Use Joins, Views, Functions, and Procedures</li>
+                                    <li>Generate analytical reports</li>
+                                </ul>
+                            </li>
+
+                            <!-- PROJECT IDEAS -->
+                            <li>
+                                <strong>Popular Project Ideas</strong><br>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Project Name</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Student Management System</td>
+                                                <td>Store students, marks, attendance, and department details</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hospital Management</td>
+                                                <td>Manage patients, doctors, appointments, billing</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-commerce Database</td>
+                                                <td>Products, customers, orders, carts, payments</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Banking Database</td>
+                                                <td>Customers, accounts, transactions, loans</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Library Management</td>
+                                                <td>Books, authors, users, issuing history</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- FINAL PROJECT DELIVERABLES -->
+                            <li>
+                                <strong>Final Project Deliverables</strong>
+
+                                <ul>
+                                    <li>Complete ER Diagram with relationships</li>
+                                    <li>All tables with PRIMARY, FOREIGN keys & constraints</li>
+                                    <li>CRUD operations for all main tables</li>
+                                    <li>Joins (Inner, Left, Right, Full)</li>
+                                    <li>Views for reports</li>
+                                    <li>Stored procedures and functions</li>
+                                    <li>GROUP BY reports (Monthly, Weekly, Category-wise)</li>
+                                </ul>
+                            </li>
+
+                            <!-- SAMPLE PROJECT STRUCTURE -->
+                            <li>
+                                <strong>Example Project Structure (Library Management System)</strong><br>
+
+                                <h6 class="fw-bold mt-2">1. Create Database</h6>
+                                <pre><code>CREATE DATABASE library_db;
+USE library_db;</code></pre>
+
+                                <h6 class="fw-bold mt-2">2. Create Tables</h6>
+                                <pre><code>CREATE TABLE books (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(100),
+    genre VARCHAR(50),
+    available_copies INT DEFAULT 1
+);
+
+CREATE TABLE members (
+    member_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(20)
+);
+
+CREATE TABLE issue_records (
+    issue_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT,
+    member_id INT,
+    issue_date DATE,
+    return_date DATE,
+    FOREIGN KEY(book_id) REFERENCES books(book_id),
+    FOREIGN KEY(member_id) REFERENCES members(member_id)
+);</code></pre>
+
+                                <h6 class="fw-bold mt-2">3. Insert Sample Data</h6>
+                                <pre><code>INSERT INTO books (title, author, genre, available_copies)
+VALUES 
+('The Alchemist', 'Paulo Coelho', 'Fiction', 5),
+('Atomic Habits', 'James Clear', 'Self Help', 3);
+
+INSERT INTO members (name, email, phone)
+VALUES 
+('Rahul Kumar', 'rahul@example.com', '9876543210'),
+('Neha Singh', 'neha@example.com', '9123456789');</code></pre>
+
+                                <h6 class="fw-bold mt-2">4. CRUD Operations</h6>
+                                <pre><code>-- Read all books
+SELECT * FROM books;
+
+-- Update book copies
+UPDATE books SET available_copies = 4 WHERE book_id = 1;
+
+-- Delete a member
+DELETE FROM members WHERE member_id = 2;</code></pre>
+
+                                <h6 class="fw-bold mt-2">5. Join Example</h6>
+                                <pre><code>SELECT members.name, books.title, issue_records.issue_date
+FROM issue_records
+INNER JOIN members ON issue_records.member_id = members.member_id
+INNER JOIN books ON issue_records.book_id = books.book_id;</code></pre>
+
+                                <h6 class="fw-bold mt-2">6. Create a View</h6>
+                                <pre><code>CREATE VIEW issued_books_view AS
+SELECT members.name, books.title, issue_records.issue_date
+FROM issue_records
+JOIN members ON issue_records.member_id = members.member_id
+JOIN books ON issue_records.book_id = books.book_id;</code></pre>
+
+                                <h6 class="fw-bold mt-2">7. Stored Procedure Example</h6>
+                                <pre><code>DELIMITER $$
+
+CREATE PROCEDURE issueBook(IN b_id INT, IN m_id INT)
+BEGIN
+    INSERT INTO issue_records (book_id, member_id, issue_date)
+    VALUES (b_id, m_id, CURDATE());
+
+    UPDATE books SET available_copies = available_copies - 1
+    WHERE book_id = b_id;
+END $$
+
+DELIMITER ;</code></pre>
+
+                                <h6 class="fw-bold mt-2">8. GROUP BY Report</h6>
+                                <pre><code>SELECT genre, COUNT(*) AS total_books
+FROM books
+GROUP BY genre;</code></pre>
+
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <hr>
+
+    <hr>
+
+    <section>
+        <h2 class="section-title">Quick Examples</h2>
+
+        <div class="row g-3 mt-2">
+
+            <!-- Create Database -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Create Database</h5>
+                    <pre><code>CREATE DATABASE learnifydb;</code></pre>
+                </div>
+            </div>
+
+            <!-- Create Table -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Create Table</h5>
+                    <pre><code>CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    age INT
+);</code></pre>
+                </div>
+            </div>
+
+            <!-- Insert Example -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Insert Example</h5>
+                    <pre><code>INSERT INTO students (name, age)
+VALUES ('Rahul', 20);</code></pre>
+                </div>
+            </div>
+
+            <!-- Select Example -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Select Example</h5>
+                    <pre><code>SELECT * FROM students;</code></pre>
+                </div>
+            </div>
+
+            <!-- Update Example -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Update Example</h5>
+                    <pre><code>UPDATE students
+SET age = 21
+WHERE id = 1;</code></pre>
+                </div>
+            </div>
+
+            <!-- Delete Example -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Delete Example</h5>
+                    <pre><code>DELETE FROM students
+WHERE id = 1;</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <hr>
+
+
+
+
+    <hr>
+
+    <!-- Outcomes -->
+    <section>
+        <h2 class="section-title">What You'll Be Able To Do</h2>
+
+        <ul class="learning-list">
+            <li>Create and manage MySQL databases from scratch</li>
+            <li>Design tables with proper data types and constraints</li>
+            <li>Insert, retrieve, update, and delete data using SQL (CRUD)</li>
+            <li>Use powerful SQL features like WHERE, ORDER BY, LIMIT, GROUP BY, HAVING</li>
+            <li>Work with joins to combine data from multiple tables</li>
+            <li>Use SQL functions (string, math, aggregate) effectively</li>
+            <li>Create views, indexes, stored procedures, and user-defined functions</li>
+            <li>Implement keys and constraints for data integrity</li>
+            <li>Handle subqueries, transactions, and ACID operations</li>
+            <li>Build complete database projects (Library DB, Student DB, Banking DB)</li>
+            <li>Optimize SQL queries for better performance</li>
+            <li>Debug, test, and structure queries for real-world applications</li>
+        </ul>
+    </section>
+
+
+    <hr>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">FAQ</h2>
+        <div class="accordion" id="faqHtml">
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                    <div class="accordion-body">No, this course starts from zero.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                    <div class="accordion-body">VS Code is recommended for beginners.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div> <!-- container -->
+
+
+<!-- FOOTER -->
+<footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+    <div class="container">
+        <!-- SHARE BUTTON  -->
+        <div class="text-end mb-3">
+            <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
+                <i class="bi bi-share-fill me-1"></i> Share Learnify
+            </button>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Logo + Description -->
+            <div class="col-md-4">
+                <h4 class="fw-bold">Learnify</h4>
+                <p class="small">
+                    A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                    MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                    <li><a href="../Instructors/Instructors.html"
+                            class="text-white text-decoration-none">Instructors</a></li>
+                    <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular Courses -->
+            <div class="col-md-3">
+                <h6 class="fw-bold mb-3">Popular Courses</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="./python.html" class="text-white text-decoration-none">Python</a></li>
+                    <li><a href="./html.html" class="text-white text-decoration-none">HTML</a></li>
+                    <li><a href="./css.html" class="text-white text-decoration-none">CSS</a></li>
+                    <li><a href="./javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CONTACT + TEAM + MENTORS -->
+            <div class="col-md-3">
+
+                <!-- CONTACT -->
+                <h6 class="fw-bold mb-3">Contact Us</h6>
+                <p class="small mb-3">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                        learnify.team03@gmail.com
+                    </a>
                 </p>
 
+                <div class="row">
+
+                    <!-- TEAM -->
+                    <div class="col-6">
+                        <h6 class="fw-bold mb-2">Team</h6>
+                        <ul class="list-unstyled small">
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Shaik Abdul Jabbar
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Panyala Nandini
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    N Anil Kumar
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- MENTORS -->
+                    <div class="col-6">
+                        <h6 class="fw-bold mb-2">Mentors</h6>
+                        <ul class="list-unstyled small">
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                    target="_blank" class="text-white text-decoration-none text-nowrap">
+                                    B Ambica Kiranmayee
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Uppugundla Sairam
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Saketh Kallepu
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+
             </div>
-        </footer>
 
+        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
+        <hr class="mt-4 border-light">
+        <p class="text-center small mb-0 opacity-75">
+            © 2025 Learnify. All Rights Reserved.
+        </p>
 
+    </div>
+</footer>
+  <div class="modal fade" id="shareModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius:18px;">
 
+                <div class="modal-header">
+                    <h4 class="modal-title fw-bold">Share Learnify</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-    </body>
+                <div class="modal-body text-center">
+
+                    <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
+
+                    <img src="../src/img/learnify_qr.png" class="img-fluid"
+                        style="max-width: 500px; width: 100%; border-radius: 14px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<body>
+
+</body>
 
 </html>

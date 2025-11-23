@@ -10,335 +10,3048 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link rel="icon" href="../src/img/logo.png">
+    <style>
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        pre code {
+            white-space: pre-wrap;
+        }
+
+        .card-course {
+            border-radius: 12px;
+        }
+    </style>
 </head>
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+    <div class="container-fluid">
 
-<body>
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+        </a>
 
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
-        <div class="container-fluid">
+        <!-- Toggle -->
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
-                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
-            </a>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-            <!-- Toggle -->
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link text-white active" href="../index.html">Home</a>
+                </li>
+
+                <!-- Courses Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Courses
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                        <li><a class="dropdown-item" href="./python.html">Python</a></li>
+                        <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
+                        <li><a class="dropdown-item" href="./css.html">CSS</a></li>
+                        <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
+                        <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
+                        <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
+                        <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
+                        <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
+                    </ul>
+                </li>
+
+                <!-- Instructors -->
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../Instructors/Instructors.html">Instructors</a>
+                </li>
+
+
+            </ul>
+
+            <!-- Login / Signup -->
+            <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Log In
             </button>
 
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                Join for Free
+            </button>
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </div>
 
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white active" href="../index.html">Home</a>
+
+    </div>
+
+</nav>
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+            <div class="modal-header border-0">
+                <h4 class="modal-title fw-bold text-primary">
+                    <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body px-4">
+
+                <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Enter your password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                        Log In
+                    </button>
+
+                    <p class="text-center small mt-3">
+                        Don't have an account?
+                        <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#signupModal"
+                            data-bs-dismiss="modal">Create Account</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- SIGNUP MODAL -->
+<div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+            <div class="modal-header border-0">
+                <h4 class="modal-title fw-bold text-primary">
+                    <i class="bi bi-person-plus me-2"></i> Create Your Account
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body px-4">
+
+                <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Choose a strong password">
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                            <input type="password" class="form-control" placeholder="Re-enter your password">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                        Create Account
+                    </button>
+
+                    <p class="text-center small mt-3">
+                        Already have an account?
+                        <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            data-bs-dismiss="modal">Log In</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Hero -->
+<header class="hero text-center">
+    <div class="container">
+        <h1 class="display-6 fw-bold">Learn Flask – Build Dynamic Web Applications</h1>
+        <p class="lead mb-0">
+            Master Flask development from the basics to real-world web applications.
+            Learn routing, templates, forms, databases, authentication, and API creation to build powerful web apps.
+            Perfect for beginners preparing for web development, backend programming, and deployment.
+        </p>
+    </div>
+</header>
+
+<div class="container my-5">
+
+    <!-- Intro -->
+    <section>
+        <h2 class="section-title">Course Introduction</h2>
+        <p class="mt-3">
+            This Learnify Flask course guides you from the fundamentals of web development to building real-world web
+            applications.
+            Start with understanding the Flask framework, routing, and templates, then move into forms, databases,
+            authentication,
+            APIs, and deployment.
+            Perfect for beginners who want to learn backend development, create dynamic websites, or build
+            production-ready
+            web applications using Python.
+        </p>
+    </section>
+
+
+    <hr>
+
+    <!-- Why Learn Flask -->
+    <section>
+        <h2 class="section-title">Why Learn Flask?</h2>
+        <ul>
+            <li>
+                <strong>Simple & Lightweight</strong> — Flask provides a clean and minimal structure, making it easy for
+                beginners to understand how web development works from the ground up.
+            </li>
+
+            <li>
+                <strong>Full Control Over Your Application</strong> — Unlike larger frameworks, Flask doesn’t force a
+                specific project structure.
+                You decide how your application should be organized, giving complete flexibility.
+            </li>
+
+            <li>
+                <strong>Perfect for APIs & Microservices</strong> — Flask is widely used for building REST APIs, backend
+                services, and microservice-based systems due to its speed and minimal overhead.
+            </li>
+
+            <li>
+                <strong>Highly Extensible</strong> — Need authentication? Database ORM? Form validation?
+                Flask has powerful extensions like Flask-SQLAlchemy, Flask-Login, Flask-WTF, and many more.
+            </li>
+
+            <li>
+                <strong>Fast Prototyping</strong> — Ideal for startups, hackathons, and student projects because you can
+                turn ideas into working applications very quickly.
+            </li>
+
+            <li>
+                <strong>Strong Industry Usage</strong> — Companies use Flask for dashboards, AI/ML model deployment,
+                admin panels, IoT apps, internal tools, and scalable backend services.
+            </li>
+
+            <li>
+                <strong>Great for Deploying Machine Learning Models</strong> — Flask is one of the most popular tools
+                for serving ML models as APIs or web apps.
+            </li>
+
+            <li>
+                <strong>Active Community & Resources</strong> — Thousands of tutorials, videos, GitHub projects, and
+                extensions help you learn and troubleshoot easily.
+            </li>
+        </ul>
+    </section>
+
+
+
+    <hr>
+
+    <!-- What You'll Learn -->
+    <section>
+        <h2 class="section-title">What You'll Learn</h2>
+        <div class="row g-3">
+
+            <!-- Left Side -->
+            <div class="col-md-6">
+                <ul>
+
+                    <li>
+                        <strong>Introduction to Flask</strong> — Learn how Flask works internally, understand the
+                        request–response cycle,
+                        and set up your complete development environment with virtual environments and proper project
+                        structure.
                     </li>
 
-                    <!-- Courses Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Courses
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
-                            <li><a class="dropdown-item" href="./python.html">Python</a></li>
-                            <li><a class=" dropdown-item" href="./html.html">HTML</a></li>
-                            <li><a class="dropdown-item" href="./css.html">CSS</a></li>
-                            <li><a class="dropdown-item" href="./bootstrap.html">Bootstrap</a></li>
-                            <li><a class="dropdown-item" href="./javascript.html">JavaScript</a></li>
-                            <li><a class="dropdown-item" href="./mysql.html">MySQL</a></li>
-                            <li><a class="dropdown-item" href="./flask.html">Flask</a></li>
-                            <li><a class="dropdown-item" href="./other.html">Other Resources</a></li>
-                        </ul>
+                    <li>
+                        <strong>Routing & URL Building</strong> — Create static and dynamic routes, pass parameters in
+                        URLs,
+                        and organize routes using Blueprints for scalable applications.
                     </li>
 
-                    <!-- Instructors -->
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Instructors</a>
+                    <li>
+                        <strong>Templates & Jinja2 Engine</strong> — Build dynamic pages using Jinja2, template
+                        inheritance,
+                        loops, conditions, filters, and reusable components to create clean and maintainable UIs.
                     </li>
 
+                    <li>
+                        <strong>Handling Forms & User Input</strong> — Process HTML form data, validate inputs with
+                        Flask-WTF,
+                        manage GET/POST requests, and safely handle user-submitted information.
+                    </li>
+
+                    <li>
+                        <strong>Working with Databases</strong> — Integrate Flask with SQLite/MySQL, design models,
+                        connect to databases,
+                        and perform full CRUD operations using both raw SQL and SQLAlchemy ORM.
+                    </li>
+
+                    <li>
+                        <strong>User Authentication & Sessions</strong> — Implement user login, logout, session
+                        management,
+                        password hashing, access control, and protected routes using Flask-Login.
+                    </li>
 
                 </ul>
-                <!-- Login / Signup -->
-                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Log In
-                </button>
-
-                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
-                    Join for Free
-                </button>
-
             </div>
 
+            <!-- Right Side -->
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <strong>Building REST APIs</strong> — Create powerful APIs, return JSON data, accept JSON input,
+                        and structure API endpoints for real-world backend services.
+                    </li>
 
-        </div>
+                    <li>
+                        <strong>Flask Extensions</strong> — Work with essential Flask extensions such as
+                        Flask-SQLAlchemy for databases,
+                        Flask-Migrate for migrations, Flask-WTF for forms, Flask-Login for authentication, and more.
+                    </li>
 
-    </nav>
-    <!-- LOGIN MODAL -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+                    <li>
+                        <strong>Advanced Database Operations</strong> — Build relational models, define one-to-many and
+                        many-to-many relationships,
+                        apply migrations, write efficient queries, and maintain clean database schemas.
+                    </li>
 
-                <div class="modal-header border-0">
-                    <h4 class="modal-title fw-bold text-primary">
-                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+                    <li>
+                        <strong>API Development & Integration</strong> — Build RESTful APIs, integrate them with
+                        JavaScript or mobile apps,
+                        and learn how to handle pagination, serialization, and error handling.
+                    </li>
 
-                <div class="modal-body px-4">
+                    <li>
+                        <strong>Application Deployment</strong> — Learn to deploy Flask applications on platforms like
+                        Render, Railway, Vercel (with adapter),
+                        PythonAnywhere, or even VPS servers using Gunicorn and Nginx.
+                    </li>
 
-                    <p class="text-muted">Welcome back! Please enter your details.</p>
+                    <li>
+                        <strong>Mini & Major Projects</strong> — Build multiple real-world apps including a blog system,
+                        a task manager, an authentication system, an API-based app, and a full-scale Flask project
+                        combining all learned concepts.
+                    </li>
 
-                    <form>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                            </div>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Enter your password">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
-                            Log In
-                        </button>
-
-                        <p class="text-center small mt-3">
-                            Don't have an account?
-                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
-                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
-                        </p>
-
-                    </form>
-
-                </div>
-
+                </ul>
             </div>
+
         </div>
-    </div>
-    <!-- SIGNUP MODAL -->
-    <div class="modal fade" id="signupModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
-
-                <div class="modal-header border-0">
-                    <h4 class="modal-title fw-bold text-primary">
-                        <i class="bi bi-person-plus me-2"></i> Create Your Account
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body px-4">
-
-                    <p class="text-muted">Start your learning journey with Learnify.</p>
-
-                    <form>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Full Name</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-person"></i></span>
-                                <input type="text" class="form-control" placeholder="Enter your name">
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                            </div>
-                        </div>
-
-                        <!-- Password -->
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Choose a strong password">
-                            </div>
-                        </div>
-
-                        <!-- Confirm Password -->
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold">Confirm Password</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
-                                <input type="password" class="form-control" placeholder="Re-enter your password">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
-                            Create Account
-                        </button>
-
-                        <p class="text-center small mt-3">
-                            Already have an account?
-                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
-                                data-bs-dismiss="modal">Log In</a>
-                        </p>
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <h1>flask</h1>
+    </section>
 
 
-    <!-- FOOTER -->
-    <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
-        <div class="container">
+    <hr>
 
-            <div class="row g-4">
+    <!-- Syllabus Accordion -->
+    <!-- Flask Syllabus Accordion -->
+    <section>
+        <h2 class="section-title">Flask Course Syllabus</h2>
+        <div class="accordion" id="flaskAccordion">
 
-                <!-- Logo + Description -->
-                <div class="col-md-4">
-                    <h4 class="fw-bold">Learnify</h4>
-                    <p class="small">
-                        A simple and structured platform to learn Python, HTML, CSS, JavaScript,
-                        MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
-                    </p>
-                </div>
+            <!-- Module 1 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse1">
+                        Module 1: Introduction to Flask
+                    </button>
+                </h2>
 
-                <!-- Quick Links -->
-                <div class="col-md-2">
-                    <h6 class="fw-bold mb-3">Quick Links</h6>
-                    <ul class="list-unstyled small">
-                        <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
-                        <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
-                        <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
-                    </ul>
-                </div>
+                <div id="flCollapse1" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
 
-                <!-- Popular Courses -->
-                <div class="col-md-3">
-                    <h6 class="fw-bold mb-3">Popular Courses</h6>
-                    <ul class="list-unstyled small">
-                        <li><a href="./python.html" class="text-white text-decoration-none">Python</a></li>
-                        <li><a href="./html.html" class="text-white text-decoration-none">HTML</a></li>
-                        <li><a href="./css.html" class="text-white text-decoration-none">CSS</a></li>
-                        <li><a href="./javascript.html" class="text-white text-decoration-none">JavaScript</a>
-                        </li>
-                    </ul>
-                </div>
+                        <ul class="learning-list">
 
-                <!-- CONTACT + TEAM + MENTORS -->
-                <div class="col-md-3">
+                            <!-- What is Flask -->
+                            <li>
+                                <strong>What is Flask?</strong><br>
+                                Flask is a lightweight, modular, and powerful Python web framework that follows the
+                                <strong>micro-framework</strong>
+                                architecture. It allows you to build everything from simple web pages to full REST APIs,
+                                backend systems,
+                                dashboards, and microservices with minimal setup.
+                                <br><br>
+                                Flask gives developers full control over project structure, making it ideal for
+                                learning, experimenting, and
+                                deploying real-world applications.
+                            </li>
 
-                    <!-- CONTACT -->
-                    <h6 class="fw-bold mb-3">Contact Us</h6>
-                    <p class="small mb-3">
-                        <i class="bi bi-envelope-fill me-2"></i>
-                        <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
-                            learnify.team03@gmail.com
-                        </a>
-                    </p>
+                            <!-- Why Flask -->
+                            <li>
+                                <strong>Why Flask?</strong>
+                                <ul>
+                                    <li>Lightweight & extremely flexible</li>
+                                    <li>Perfect for beginners and professionals</li>
+                                    <li>Supports REST API development easily</li>
+                                    <li>Large ecosystem of extensions (SQLAlchemy, Flask-Login, Flask-WTF)</li>
+                                    <li>Widely used in ML model deployment & backend development</li>
+                                    <li>Simple to integrate with databases, templates, and front-end frameworks</li>
+                                </ul>
+                            </li>
 
-                    <div class="row">
+                            <!-- Installation -->
+                            <li>
+                                <strong>Installing Python, Virtual Environment & Flask:</strong>
 
-                        <!-- TEAM -->
-                        <div class="col-6">
-                            <h6 class="fw-bold mb-2">Team</h6>
-                            <ul class="list-unstyled small">
+                                <p>Create a virtual environment (recommended):</p>
+                                <pre><code>python -m venv venv</code></pre>
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-people-fill me-2"></i>
-                                    <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
-                                        class="text-white text-decoration-none text-nowrap">
-                                        Shaik Abdul Jabbar
-                                    </a>
-                                </li>
+                                <p>Activate it:</p>
+                                <pre><code># Windows
+venv\Scripts\activate
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-people-fill me-2"></i>
-                                    <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
-                                        class="text-white text-decoration-none text-nowrap">
-                                        Panyala Nandini
-                                    </a>
-                                </li>
+# Mac/Linux
+source venv/bin/activate</code></pre>
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-people-fill me-2"></i>
-                                    <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
-                                        target="_blank" class="text-white text-decoration-none text-nowrap">
-                                        N Anil Kumar
-                                    </a>
-                                </li>
+                                <p>Install Flask:</p>
+                                <pre><code>pip install flask</code></pre>
 
-                            </ul>
-                        </div>
+                                <p>Check installation:</p>
+                                <pre><code>pip show flask</code></pre>
+                            </li>
 
-                        <!-- MENTORS -->
-                        <div class="col-6">
-                            <h6 class="fw-bold mb-2">Mentors</h6>
-                            <ul class="list-unstyled small">
+                            <!-- First App -->
+                            <li>
+                                <strong>Your First Flask Application:</strong><br>
+                                This is the simplest Flask program that runs a basic website.
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-person-badge me-2"></i>
-                                    <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
-                                        target="_blank" class="text-white text-decoration-none text-nowrap">
-                                        B Ambica Kiranmayee
-                                    </a>
-                                </li>
+                                <pre><code>from flask import Flask
+app = Flask(__name__)
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-person-badge me-2"></i>
-                                    <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
-                                        class="text-white text-decoration-none text-nowrap">
-                                        Uppugundla Sairam
-                                    </a>
-                                </li>
+@app.route("/")
+def home():
+    return "Welcome to Flask Learning!"
 
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-person-badge me-2"></i>
-                                    <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
-                                        class="text-white text-decoration-none text-nowrap">
-                                        Saketh Kallepu
-                                    </a>
-                                </li>
+if __name__ == "__main__":
+    app.run(debug=True)</code></pre>
 
-                            </ul>
-                        </div>
+                                <p><strong>How to run:</strong></p>
+                                <pre><code>python app.py</code></pre>
 
+                                <p>Open your browser:</p>
+                                <pre><code>http://127.0.0.1:5000/</code></pre>
+                            </li>
+
+                            <!-- Routing Examples -->
+                            <li>
+                                <strong>Routing Basics (More Examples):</strong><br>
+                                Routes tell Flask which function to run when a URL is visited.
+
+                                <pre><code>@app.route("/about")
+def about():
+    return "This is the About Page"
+
+@app.route("/user/&lt;name&gt;")
+def user(name):
+    return f"Hello, {name}!"</code></pre>
+
+                                <p><strong>Dynamic Route Example:</strong></p>
+                                <pre><code>http://127.0.0.1:5000/user/Saketh</code></pre>
+                            </li>
+
+                            <!-- Project Structure -->
+                            <li>
+                                <strong>Standard Flask Project Structure:</strong>
+
+                                <pre><code>project/
+│── app.py
+│── static/        # CSS, JS, images
+│── templates/     # HTML files (Jinja2 templates)
+│── requirements.txt
+│── config.py
+│── instance/
+</code></pre>
+
+                                <p>This structure helps build scalable Flask applications and separate logic cleanly.
+                                </p>
+                            </li>
+
+                            <!-- HTML Rendering -->
+                            <li>
+                                <strong>Rendering HTML Templates:</strong><br>
+                                Flask uses Jinja2 template engine to load HTML files.
+
+                                <p><strong>app.py</strong></p>
+                                <pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")</code></pre>
+
+                                <p><strong>templates/index.html</strong></p>
+                                <pre><code>&lt;h1&gt;Welcome to Flask Templates!&lt;/h1&gt;</code></pre>
+                            </li>
+
+                            <!-- Serving Static Files -->
+                            <li>
+                                <strong>Serving Static Files (CSS/JS/Images):</strong>
+
+                                <p><strong>Folder structure:</strong></p>
+                                <pre><code>static/
+│── style.css
+│── script.js</code></pre>
+
+                                <p><strong>Using CSS in HTML:</strong></p>
+                                <pre><code>&lt;link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"&gt;</code></pre>
+                            </li>
+
+                        </ul>
 
 
                     </div>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse2">
+                        Module 2: Routing & URL Building
+                    </button>
+                </h2>
+
+                <div id="flCollapse2" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- What is Routing -->
+                            <li>
+                                <strong>What is Routing?</strong><br>
+                                Routing is the process of connecting a URL (such as <code>/home</code> or
+                                <code>/login</code>)
+                                to a specific function in your Flask application.
+                                Whenever a user visits a URL, Flask executes the function associated with that route.
+                                <br><br>
+                                Routing forms the backbone of every Flask application — from simple websites to full API
+                                systems.
+                            </li>
+
+                            <!-- Basic Route -->
+                            <li>
+                                <strong>Basic Route Example</strong><br>
+                                This route displays text when the root URL (<code>/</code>) is visited.
+
+                                <pre><code>@app.route("/")
+def home():
+    return "Welcome to Flask Routing!"</code></pre>
+
+                                <p><strong>Visit in browser:</strong></p>
+                                <pre><code>http://127.0.0.1:5000/</code></pre>
+                            </li>
+
+                            <!-- Dynamic Routes -->
+                            <li>
+                                <strong>Dynamic Routes (Passing Values)</strong><br>
+                                Flask allows adding variables to URLs and reading them inside functions.
+
+                                <pre><code>@app.route("/profile/&lt;username&gt;")
+def profile(username):
+    return f"User Profile: {username}"</code></pre>
+
+                                <p><strong>Example URL:</strong></p>
+                                <pre><code>http://127.0.0.1:5000/profile/Saketh</code></pre>
+
+                                <strong>Types of dynamic parameters:</strong>
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Usage</th>
+                                                <th>Example Route</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>string</td>
+                                                <td>Default type (text)</td>
+                                                <td><code>/user/&lt;string:name&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>int</td>
+                                                <td>Accepts only integers</td>
+                                                <td><code>/product/&lt;int:id&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>float</td>
+                                                <td>Accepts decimal values</td>
+                                                <td><code>/price/&lt;float:value&gt;</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>path</td>
+                                                <td>Accepts full paths</td>
+                                                <td><code>/file/&lt;path:filepath&gt;</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>Example using int:</strong></p>
+                                <pre><code>@app.route("/product/&lt;int:pid&gt;")
+def product(pid):
+    return f"Product ID: {pid}"</code></pre>
+                            </li>
+
+                            <!-- URL Building -->
+                            <li>
+                                <strong>URL Building using url_for()</strong><br>
+                                <code>url_for()</code> helps generate URLs dynamically based on function names rather
+                                than hardcoding paths.
+
+                                <pre><code>from flask import Flask, url_for
+
+@app.route("/")
+def home():
+    return "Homepage"
+
+@app.route("/contact")
+def contact():
+    return "Contact Page"
+
+print(url_for("home"))      # / 
+print(url_for("contact"))   # /contact
+</code></pre>
+
+                                <p><strong>Benefits of url_for():</strong></p>
+                                <ul>
+                                    <li>Avoids hardcoding URLs</li>
+                                    <li>Automatically updates when routes change</li>
+                                    <li>Useful when passing parameters</li>
+                                </ul>
+
+                                <p><strong>Example with parameters:</strong></p>
+                                <pre><code>url_for("profile", username="jabba")</code></pre>
+                            </li>
+
+                            <!-- HTTP Methods -->
+                            <li>
+                                <strong>HTTP Methods (GET, POST, PUT, DELETE)</strong><br>
+                                Flask routes can accept different HTTP request types.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Purpose</th>
+                                                <th>Example Usage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>GET</td>
+                                                <td>Fetch data</td>
+                                                <td>Loading a web page</td>
+                                            </tr>
+                                            <tr>
+                                                <td>POST</td>
+                                                <td>Send data to the server</td>
+                                                <td>Form submissions</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PUT</td>
+                                                <td>Update existing data</td>
+                                                <td>Editing records via API</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DELETE</td>
+                                                <td>Remove data</td>
+                                                <td>Deleting users or posts</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <strong>Example Route with GET & POST:</strong>
+                                <pre><code>@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        return "Form Submitted"
+    return "Login Page"</code></pre>
+
+                                <p><strong>Example API with PUT & DELETE:</strong></p>
+                                <pre><code>@app.route("/update/&lt;int:id&gt;", methods=["PUT"])
+def update(id):
+    return f"Updated record {id}"
+
+@app.route("/delete/&lt;int:id&gt;", methods=["DELETE"])
+def delete(id):
+    return f"Deleted record {id}"</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse3">
+                        Module 3: Templates & Jinja2
+                    </button>
+                </h2>
+
+                <div id="flCollapse3" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- What Are Templates -->
+                            <li>
+                                <strong>What Are Templates?</strong><br>
+                                Templates are HTML files that allow you to display dynamic content using Flask’s
+                                template engine
+                                <strong>Jinja2</strong>.
+                                Instead of writing static HTML, you can inject variables, loops, conditions, and
+                                reusable layouts.
+                                <br><br>
+                                Templates help separate:
+                                <ul>
+                                    <li><strong>Backend (Python logic)</strong></li>
+                                    <li><strong>Frontend (HTML layout)</strong></li>
+                                </ul>
+                                This makes your application cleaner and easier to maintain.
+                            </li>
+
+                            <!-- Rendering Template -->
+                            <li>
+                                <strong>Rendering a Template</strong><br>
+                                The <code>render_template()</code> function loads HTML files from the
+                                <code>templates/</code> folder.
+
+                                <pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/home")
+def home():
+    return render_template("home.html")</code></pre>
+
+                                <p><strong>Folder Structure:</strong></p>
+                                <pre><code>project/
+│── app.py
+│── templates/
+    │── home.html
+    │── profile.html</code></pre>
+                            </li>
+
+                            <!-- Jinja2 Syntax -->
+                            <li>
+                                <strong>Jinja2 Syntax (Important Commands)</strong><br>
+                                Jinja2 lets you embed dynamic Python-like expressions inside HTML.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Feature</th>
+                                                <th>Syntax</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Variable</td>
+                                                <td><code>{{ variable }}</code></td>
+                                                <td>Prints Python variable inside HTML</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Condition</td>
+                                                <td><code>{% if condition %} ... {% endif %}</code></td>
+                                                <td>Conditional rendering</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Loop</td>
+                                                <td><code>{% for item in list %} ... {% endfor %}</code></td>
+                                                <td>Iterates through items</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Comments</td>
+                                                <td><code>{# comment #}</code></td>
+                                                <td>HTML comments inside Jinja2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Filters</td>
+                                                <td><code>{{ name|upper }}</code></td>
+                                                <td>Modify output (uppercase, lower, title, length)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>Example:</strong></p>
+                                <pre><code>&lt;h1&gt;Welcome, {{ user }}&lt;/h1&gt;
+
+{% if age >= 18 %}
+    &lt;p&gt;You are an adult.&lt;/p&gt;
+{% else %}
+    &lt;p&gt;You are under 18.&lt;/p&gt;
+{% endif %}
+
+&lt;ul&gt;
+{% for fruit in fruits %}
+    &lt;li&gt;{{ fruit }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+                            </li>
+
+                            <!-- Passing Data -->
+                            <li>
+                                <strong>Passing Data to Templates</strong><br>
+                                You can send variables, lists, dictionaries, and objects from Flask to the HTML file.
+
+                                <pre><code>@app.route("/profile")
+def profile():
+    user_info = {"name": "Jabbar", "age": 21}
+    return render_template("profile.html", user=user_info)</code></pre>
+
+                                <p><strong>Inside profile.html:</strong></p>
+                                <pre><code>&lt;h2&gt;Name: {{ user.name }}&lt;/h2&gt;
+&lt;h3&gt;Age: {{ user.age }}&lt;/h3&gt;</code></pre>
+
+                                <p><strong>Passing Lists:</strong></p>
+                                <pre><code>@app.route("/products")
+def products():
+    items = ["Laptop", "Keyboard", "Mouse"]
+    return render_template("products.html", items=items)</code></pre>
+                            </li>
+
+                            <!-- Template Inheritance -->
+                            <li>
+                                <strong>Template Inheritance (Base Templates)</strong><br>
+                                Instead of repeating the same HTML (header, footer, layout), Flask allows a base
+                                template from which pages inherit.
+
+                                <p><strong>base.html</strong></p>
+                                <pre><code>&lt;html&gt;
+&lt;body&gt;
+    &lt;header&gt;My Flask App&lt;/header&gt;
+
+    {% block content %}
+    {% endblock %}
+
+    &lt;footer&gt;Footer section&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                                <p><strong>home.html</strong></p>
+                                <pre><code>{% extends "base.html" %}
+
+{% block content %}
+    &lt;h1&gt;Welcome to the Homepage!&lt;/h1&gt;
+{% endblock %}</code></pre>
+
+                                <p>
+                                    Template inheritance helps maintain a uniform layout across all pages, and makes
+                                    your project easier to manage.
+                                </p>
+                            </li>
+
+                            <!-- Include Example -->
+                            <li>
+                                <strong>Using {% include %} for Reusable Components</strong>
+
+                                <p><strong>navbar.html:</strong></p>
+                                <pre><code>&lt;nav&gt;Navigation Bar&lt;/nav&gt;</code></pre>
+
+                                <p><strong>In any page:</strong></p>
+                                <pre><code>{% include "navbar.html" %}</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse4">
+                        Module 4: Static Files (CSS, JS, Images)
+                    </button>
+                </h2>
+
+                <div id="flCollapse4" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- Static Folder Structure -->
+                            <li>
+                                <strong>Static Folder Structure</strong><br>
+                                Flask automatically serves files from the <code>static/</code> directory.
+                                It is used for CSS, JavaScript, images, fonts, and other assets.
+
+                                <pre><code>static/
+│── css/
+│   └── style.css
+│── js/
+│   └── app.js
+│── images/
+│   └── logo.png
+│── fonts/
+└── uploads/</code></pre>
+
+                                <p>The structure can be customized, but this organization keeps your project clean and
+                                    scalable.</p>
+                            </li>
+
+                            <!-- How Flask Uses Static Files -->
+                            <li>
+                                <strong>How Flask Uses Static Files</strong><br>
+                                Flask generates static file URLs using the <code>url_for()</code> function to avoid
+                                broken links.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Asset Type</th>
+                                                <th>Folder</th>
+                                                <th>Example Path</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CSS</td>
+                                                <td>static/css/</td>
+                                                <td><code>css/style.css</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JavaScript</td>
+                                                <td>static/js/</td>
+                                                <td><code>js/app.js</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Images</td>
+                                                <td>static/images/</td>
+                                                <td><code>images/banner.jpg</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fonts</td>
+                                                <td>static/fonts/</td>
+                                                <td><code>fonts/Roboto.ttf</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Linking CSS -->
+                            <li>
+                                <strong>Linking CSS</strong><br>
+                                Load style sheets in your HTML template using <code>url_for</code>:
+
+                                <pre><code>&lt;link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"&gt;</code></pre>
+
+                                <p><strong>Example in HTML:</strong></p>
+                                <pre><code>&lt;head&gt;
+    &lt;title&gt;My Flask App&lt;/title&gt;
+    &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"&gt;
+&lt;/head&gt;</code></pre>
+                            </li>
+
+                            <!-- Linking JS -->
+                            <li>
+                                <strong>Linking JavaScript</strong><br>
+                                Add custom JavaScript files using the same <code>url_for</code> method.
+
+                                <pre><code>&lt;script src="{{ url_for('static', filename='js/app.js') }}"&gt;&lt;/script&gt;</code></pre>
+
+                                <p><strong>Example inside HTML:</strong></p>
+                                <pre><code>&lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+
+    &lt;script src="{{ url_for('static', filename='js/app.js') }}"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                            </li>
+
+                            <!-- Displaying Images -->
+                            <li>
+                                <strong>Displaying Images</strong><br>
+                                Use <code>&lt;img&gt;</code> tags to show images stored inside the
+                                <code>static/images</code> folder.
+
+                                <pre><code>&lt;img src="{{ url_for('static', filename='images/logo.png') }}" alt="Site Logo"&gt;</code></pre>
+
+                                <p><strong>Example:</strong></p>
+                                <pre><code>&lt;div class="banner"&gt;
+    &lt;img src="{{ url_for('static', filename='images/banner.jpg') }}" width="300"&gt;
+&lt;/div&gt;</code></pre>
+                            </li>
+
+                            <!-- Using Bootstrap -->
+                            <li>
+                                <strong>Using Bootstrap with Flask</strong><br>
+                                You can integrate Bootstrap via CDN or by placing files inside the <code>static/</code>
+                                folder.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CDN (Recommended)</td>
+                                                <td>Fastest way; no file download</td>
+                                                <td><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/.../bootstrap.min.css"&gt;</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Local Bootstrap</td>
+                                                <td>Store Bootstrap inside static folder</td>
+                                                <td><code>{{ url_for('static', filename='css/bootstrap.min.css') }}</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>Example (using CDN):</strong></p>
+                                <pre><code>&lt;head&gt;
+    &lt;link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+
+                                <p><strong>Example (Using Local Bootstrap Files):</strong></p>
+                                <pre><code>&lt;link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"&gt;</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse5">
+                        Module 5: Forms & User Input
+                    </button>
+                </h2>
+
+                <div id="flCollapse5" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- HTML Form Submission -->
+                            <li>
+                                <strong>HTML Form Submission</strong><br>
+                                Flask handles form data sent from HTML using GET or POST methods.
+                                A basic HTML form inside a template:
+
+                                <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;input type="text" name="username" placeholder="Enter username"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+                                <p><strong>Key Points:</strong></p>
+                                <ul>
+                                    <li>Form must include <code>name</code> attributes</li>
+                                    <li>Default method is GET if not specified</li>
+                                    <li>POST method is used for sensitive data</li>
+                                </ul>
+                            </li>
+
+                            <!-- Accessing Form Data -->
+                            <li>
+                                <strong>Accessing Form Data in Flask</strong><br>
+                                Use Flask's <code>request</code> object to retrieve submitted values.
+
+                                <pre><code>from flask import request
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    username = request.form["username"]
+    return f"Hello, {username}"</code></pre>
+
+                                <p><strong>Alternative (safer) method using get():</strong></p>
+                                <pre><code>username = request.form.get("username")</code></pre>
+                            </li>
+
+                            <!-- GET vs POST -->
+                            <li>
+                                <strong>GET vs POST (Important Differences)</strong>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Description</th>
+                                                <th>Use Case</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>GET</td>
+                                                <td>Data is visible in URL</td>
+                                                <td>Searching, filtering, navigation</td>
+                                            </tr>
+                                            <tr>
+                                                <td>POST</td>
+                                                <td>Data is sent securely in the request body</td>
+                                                <td>Login forms, uploads, sensitive input</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>GET Example:</strong></p>
+                                <pre><code>@app.route("/search")
+def search():
+    keyword = request.args.get("q")
+    return f"Results for {keyword}"</code></pre>
+
+                                <p><strong>POST Example:</strong></p>
+                                <pre><code>@app.route("/login", methods=["POST"])
+def login():
+    username = request.form.get("user")
+    password = request.form.get("pass")
+    return f"Welcome {username}"</code></pre>
+                            </li>
+
+                            <!-- Form Validation -->
+                            <li>
+                                <strong>Form Validation Basics</strong><br>
+                                Validation ensures the user enters correct and safe data before processing.
+
+                                <p><strong>Manual Validation Example:</strong></p>
+                                <pre><code>@app.route("/register", methods=["POST"])
+def register():
+    username = request.form.get("username")
+    email = request.form.get("email")
+
+    if not username or not email:
+        return "All fields are required!"
+
+    if "@" not in email:
+        return "Invalid email format"
+
+    return "Registration successful"</code></pre>
+
+                                <p><strong>Common Validation Rules:</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Validation Type</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Required</td>
+                                                <td>Field must not be empty</td>
+                                                <td><code>if not field:</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email Format</td>
+                                                <td>Must contain @ and domain</td>
+                                                <td><code>"@" in email</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Length Check</td>
+                                                <td>Minimum or maximum characters</td>
+                                                <td><code>len(username) &gt;= 3</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number Validation</td>
+                                                <td>Check if input is numeric</td>
+                                                <td><code>age.isdigit()</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Flask Form Handling Example -->
+                            <li>
+                                <strong>Complete Flask Form Handling Example</strong>
+
+                                <p><strong>HTML Form:</strong></p>
+                                <pre><code>&lt;form action="/feedback" method="POST"&gt;
+    &lt;input name="name" placeholder="Your Name"&gt;
+    &lt;textarea name="message"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                                <p><strong>Backend Code:</strong></p>
+                                <pre><code>@app.route("/feedback", methods=["POST"])
+def feedback():
+    name = request.form.get("name")
+    message = request.form.get("message")
+
+    if not name or not message:
+        return "Please fill out all fields"
+
+    return f"Thanks {name}, we received your message!"</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Module 6 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse6">
+                        Module 6: Sessions, Cookies & User Data Handling
+                    </button>
+                </h2>
+
+                <div id="flCollapse6" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- What Are Cookies -->
+                            <li>
+                                <strong>What Are Cookies?</strong><br>
+                                Cookies are small pieces of data stored in the user's browser.
+                                They help identify users, save preferences, and track activity across requests.
+
+                                <p><strong>Common uses of cookies:</strong></p>
+                                <ul>
+                                    <li>Remembering login info</li>
+                                    <li>Saving theme preferences (dark/light mode)</li>
+                                    <li>Tracking user sessions</li>
+                                    <li>Storing cart items for online shopping</li>
+                                </ul>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Property</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Name</strong></td>
+                                                <td>Key of the cookie</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Value</strong></td>
+                                                <td>Data stored (string only)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Expiry</strong></td>
+                                                <td>How long the cookie stays in browser</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Path</strong></td>
+                                                <td>Which routes can access the cookie</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Setting Cookies -->
+                            <li>
+                                <strong>Setting a Cookie in Flask</strong><br>
+                                Cookies are set using <code>set_cookie()</code> on the response object.
+
+                                <pre><code>from flask import make_response
+
+@app.route("/setcookie")
+def setcookie():
+    resp = make_response("Cookie has been set")
+    resp.set_cookie("username", "Jabbar", max_age=3600)
+    return resp</code></pre>
+
+                                <p><strong>Parameters of set_cookie():</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>max_age</td>
+                                                <td>Cookie expiry time (in seconds)</td>
+                                                <td><code>max_age=3600</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>path</td>
+                                                <td>Accessible URL path</td>
+                                                <td><code>path="/"</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>httponly</td>
+                                                <td>Protects cookie from JavaScript</td>
+                                                <td><code>httponly=True</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>secure</td>
+                                                <td>Sends cookie only over HTTPS</td>
+                                                <td><code>secure=True</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Getting Cookies -->
+                            <li>
+                                <strong>Reading Cookies</strong><br>
+
+                                <pre><code>@app.route("/getcookie")
+def getcookie():
+    user = request.cookies.get("username")
+    return f"Logged in as {user}"</code></pre>
+                            </li>
+
+                            <!-- Sessions -->
+                            <li>
+                                <strong>What Are Sessions?</strong><br>
+                                Sessions store data on the server instead of the browser.
+                                Flask uses a secret key to encrypt session data and identify users.
+
+                                <p><strong>Why use sessions?</strong></p>
+                                <ul>
+                                    <li>More secure than cookies</li>
+                                    <li>Can store complex data (dict, list)</li>
+                                    <li>Used for login systems and dashboards</li>
+                                </ul>
+
+                                <p><strong>Example: Setting secret key</strong></p>
+                                <pre><code>app.secret_key = "mysecretkey"</code></pre>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Feature</th>
+                                                <th>Cookies</th>
+                                                <th>Sessions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Stored Location</td>
+                                                <td>Client Browser</td>
+                                                <td>Server</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Security</td>
+                                                <td>Less secure</td>
+                                                <td>More secure</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Data Type</td>
+                                                <td>Only string</td>
+                                                <td>Any Python object</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Use Case</td>
+                                                <td>Themes, small preferences</td>
+                                                <td>Authentication, dashboard data</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Setting Sessions -->
+                            <li>
+                                <strong>Setting Session Data</strong>
+
+                                <pre><code>from flask import session
+
+@app.route("/login")
+def login():
+    session["user"] = "Jabbar"
+    return "Session Set"</code></pre>
+
+                                <p><strong>Storing multiple values:</strong></p>
+                                <pre><code>session["cart"] = ["laptop", "mouse", "keyboard"]</code></pre>
+                            </li>
+
+                            <!-- Accessing Session -->
+                            <li>
+                                <strong>Accessing Session Data</strong>
+
+                                <pre><code>@app.route("/dashboard")
+def dashboard():
+    user = session.get("user")
+    return f"Welcome, {user}"</code></pre>
+                            </li>
+
+                            <!-- Removing Session -->
+                            <li>
+                                <strong>Removing Session Data</strong><br>
+
+                                <pre><code>session.pop("user", None)</code></pre>
+
+                                <p><strong>Clear entire session:</strong></p>
+                                <pre><code>session.clear()</code></pre>
+                            </li>
+
+                            <!-- Full Example -->
+                            <li>
+                                <strong>Complete Login Example Using Sessions</strong>
+
+                                <pre><code>@app.route("/login", methods=["POST"])
+def login():
+    username = request.form.get("username")
+    session["user"] = username
+    return "Login Successful"
+
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return "Logged Out"</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse7">
+                        Module 7: Database Integration (SQLite + SQLAlchemy)
+                    </button>
+                </h2>
+
+                <div id="flCollapse7" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- Why Use Databases -->
+                            <li>
+                                <strong>Why Use Databases?</strong><br>
+                                Databases store structured information that your Flask app can read, update, and manage.
+                                They are essential for building real applications such as:
+                                <ul>
+                                    <li>User authentication systems</li>
+                                    <li>Blog posts, comments, likes</li>
+                                    <li>E-commerce products, orders, cart</li>
+                                    <li>Employee or student records</li>
+                                    <li>Task managers and dashboards</li>
+                                </ul>
+
+                                <p><strong>Types of Databases used with Flask:</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Database Type</th>
+                                                <th>Examples</th>
+                                                <th>Best For</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SQL (Relational)</td>
+                                                <td>SQLite, MySQL, PostgreSQL</td>
+                                                <td>Structured, relationships, large applications</td>
+                                            </tr>
+                                            <tr>
+                                                <td>NoSQL</td>
+                                                <td>MongoDB, Firebase</td>
+                                                <td>Flexible, unstructured data</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Setting Up SQLite -->
+                            <li>
+                                <strong>Setting Up SQLite Database</strong><br>
+                                SQLAlchemy integrates easily with SQLite (default for Flask development).
+
+                                <pre><code>app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///mydb.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False</code></pre>
+
+                                <p><strong>SQLite Advantages:</strong></p>
+                                <ul>
+                                    <li>Lightweight & requires no server</li>
+                                    <li>Perfect for development and testing</li>
+                                    <li>Database stored in a single <code>.db</code> file</li>
+                                </ul>
+                            </li>
+
+                            <!-- Creating a Database Model -->
+                            <li>
+                                <strong>Creating a Database Model</strong><br>
+                                A model represents a table inside the database.
+
+                                <pre><code>from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(120), unique=True)
+    age = db.Column(db.Integer)</code></pre>
+
+                                <p><strong>Model → Table Mapping</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Model Attribute</th>
+                                                <th>DB Column Type</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>id</code></td>
+                                                <td>Integer (Primary Key)</td>
+                                                <td>Unique ID for each user</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>name</code></td>
+                                                <td>String(100)</td>
+                                                <td>Name of the user</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>email</code></td>
+                                                <td>String(120)</td>
+                                                <td>Must be unique</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>age</code></td>
+                                                <td>Integer</td>
+                                                <td>User's age</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>Create all tables:</strong></p>
+                                <pre><code>with app.app_context():
+    db.create_all()</code></pre>
+                            </li>
+
+                            <!-- Inserting Data -->
+                            <li>
+                                <strong>Inserting Data into Table</strong><br>
+
+                                <pre><code>new_user = User(name="Jabbar", email="jabbar@example.com", age=21)
+db.session.add(new_user)
+db.session.commit()</code></pre>
+
+                                <p><strong>Insert multiple records:</strong></p>
+                                <pre><code>user1 = User(name="Ali", email="ali@example.com", age=20)
+user2 = User(name="Ravi", email="ravi@example.com", age=25)
+db.session.add_all([user1, user2])
+db.session.commit()</code></pre>
+                            </li>
+
+                            <!-- Fetching Data -->
+                            <li>
+                                <strong>Fetching Data</strong><br>
+                                SQLAlchemy provides simple query methods.
+
+                                <pre><code># Get all users
+users = User.query.all()
+
+# Get first user
+first_user = User.query.first()
+
+# Get by ID
+user = User.query.get(1)
+
+# Filter
+young = User.query.filter_by(age=20).all()</code></pre>
+
+                                <p><strong>Filter Methods Table:</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>filter_by()</code></td>
+                                                <td>Filter using exact match</td>
+                                                <td><code>User.query.filter_by(age=21)</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>filter()</code></td>
+                                                <td>Use conditions like &gt;, &lt;, !=</td>
+                                                <td><code>User.query.filter(User.age &gt; 18)</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>order_by()</code></td>
+                                                <td>Sort results</td>
+                                                <td><code>User.query.order_by(User.name)</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Updating Data -->
+                            <li>
+                                <strong>Updating Data</strong><br>
+
+                                <pre><code>user = User.query.get(1)
+user.name = "Updated Name"
+db.session.commit()</code></pre>
+
+                                <p><strong>Update multiple fields:</strong></p>
+                                <pre><code>user.age = 30
+user.email = "updated@example.com"</code></pre>
+                            </li>
+
+                            <!-- Deleting Data -->
+                            <li>
+                                <strong>Deleting Data</strong><br>
+
+                                <pre><code>user = User.query.get(1)
+db.session.delete(user)
+db.session.commit()</code></pre>
+
+                                <p><strong>Delete using filter:</strong></p>
+                                <pre><code>User.query.filter_by(name="Ali").delete()
+db.session.commit()</code></pre>
+                            </li>
+
+                            <!-- Full Example -->
+                            <li>
+                                <strong>Complete CRUD Example</strong>
+
+                                <pre><code># CREATE
+user = User(name="Sam", email="sam@example.com", age=22)
+db.session.add(user)
+db.session.commit()
+
+# READ
+all_users = User.query.all()
+
+# UPDATE
+user = User.query.get(1)
+user.age = 25
+db.session.commit()
+
+# DELETE
+db.session.delete(user)
+db.session.commit()</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse8">
+                        Module 8: Authentication (Login, Logout, Signup)
+                    </button>
+                </h2>
+
+                <div id="flCollapse8" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- User Registration Form -->
+                            <li>
+                                <strong>User Registration Form</strong><br>
+                                Registration requires users to provide a username and password.
+                                A basic HTML signup form:
+
+                                <pre><code>&lt;form action="/signup" method="POST"&gt;
+    &lt;input name="username" placeholder="Enter Username"&gt;
+    &lt;input name="password" type="password" placeholder="Create Password"&gt;
+    &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                                <p><strong>Important points:</strong></p>
+                                <ul>
+                                    <li>Use <code>POST</code> for security</li>
+                                    <li>Each input must have a <code>name</code> attribute</li>
+                                    <li>Server receives data via <code>request.form</code></li>
+                                </ul>
+                            </li>
+
+                            <!-- Handling Signup -->
+                            <li>
+                                <strong>Handling Signup Data</strong><br>
+                                Flask receives form data through the <code>request</code> object.
+
+                                <pre><code>@app.route("/signup", methods=["POST"])
+def signup():
+    username = request.form.get("username")
+    password = request.form.get("password")
+    # Process registration
+</code></pre>
+
+                                <p><strong>Validation Checks:</strong></p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Check</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Empty fields</td>
+                                                <td><code>if not username or not password</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Username length</td>
+                                                <td><code>len(username) &gt;= 3</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password strength</td>
+                                                <td><code>len(password) &gt;= 6</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Check if user exists</td>
+                                                <td><code>User.query.filter_by(username=username).first()</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Password Hashing -->
+                            <li>
+                                <strong>Password Hashing (Security)</strong><br>
+                                Passwords must **never** be stored as plain text.
+                                Flask uses Werkzeug's hashing functions.
+
+                                <pre><code>from werkzeug.security import generate_password_hash
+
+hashed_pw = generate_password_hash(password, method="sha256")</code></pre>
+
+                                <p><strong>Why hashing?</strong></p>
+                                <ul>
+                                    <li>Prevents attackers from reading user passwords</li>
+                                    <li>Even developers can’t see original password</li>
+                                    <li>Hashing is one-way and irreversible</li>
+                                </ul>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Security Level</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>sha256</td>
+                                                <td>Strong</td>
+                                            </tr>
+                                            <tr>
+                                                <td>pbkdf2:sha256</td>
+                                                <td>Very strong (recommended)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Login Logic -->
+                            <li>
+                                <strong>Login Logic (Password Verification)</strong><br>
+                                When a user logs in, compare the stored hashed password with the entered password.
+
+                                <pre><code>from werkzeug.security import check_password_hash
+
+if check_password_hash(stored_password, password):
+    session["user"] = username
+    return redirect("/dashboard")
+else:
+    return "Invalid Credentials"</code></pre>
+
+                                <p><strong>Checklist before login succeeds:</strong></p>
+                                <ul>
+                                    <li>User exists in database</li>
+                                    <li>Password matches hashed password</li>
+                                    <li>Session is created after login</li>
+                                </ul>
+                            </li>
+
+                            <!-- Logout -->
+                            <li>
+                                <strong>Logout Functionality</strong><br>
+                                Logging out removes the session data.
+
+                                <pre><code>@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect("/login")
+</code></pre>
+                            </li>
+
+                            <!-- Protecting Routes -->
+                            <li>
+                                <strong>Protecting Routes</strong><br>
+                                Some routes should only be accessible after login.
+
+                                <pre><code>@app.route("/dashboard")
+def dashboard():
+    if "user" not in session:
+        return redirect("/login")
+    return "Welcome to Dashboard"</code></pre>
+
+                                <p><strong>Common Protected Routes:</strong></p>
+                                <ul>
+                                    <li>Admin Panels</li>
+                                    <li>User Dashboards</li>
+                                    <li>Settings Pages</li>
+                                    <li>Order History</li>
+                                </ul>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Authentication Component</th>
+                                                <th>Purpose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Signup</td>
+                                                <td>Create new account</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Login</td>
+                                                <td>Verify credentials and create session</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Session</td>
+                                                <td>Store info about logged-in user</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Logout</td>
+                                                <td>Remove session and log out</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Route Protection</td>
+                                                <td>Restrict access to logged-in users</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Full Example -->
+                            <li>
+                                <strong>Complete Authentication Flow Example</strong>
+
+                                <pre><code># SIGNUP
+@app.route("/signup", methods=["POST"])
+def signup():
+    username = request.form["username"]
+    password = request.form["password"]
+    hashed = generate_password_hash(password)
+    user = User(username=username, password=hashed)
+    db.session.add(user)
+    db.session.commit()
+    return "User Registered"
+
+# LOGIN
+@app.route("/login", methods=["POST"])
+def login():
+    username = request.form["username"]
+    password = request.form["password"]
+    user = User.query.filter_by(username=username).first()
+
+    if user and check_password_hash(user.password, password):
+        session["user"] = username
+        return "Logged In"
+    return "Invalid Login"
+
+# LOGOUT
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return "Logged Out"</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 9 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse9">
+                        Module 9: Building REST APIs with Flask
+                    </button>
+                </h2>
+
+                <div id="flCollapse9" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- What is an API -->
+                            <li>
+                                <strong>What is an API?</strong><br>
+                                An API (Application Programming Interface) allows different applications to communicate
+                                with each other.
+                                In Flask, APIs mainly exchange data in <strong>JSON format</strong> using HTTP methods.
+
+                                <p><strong>Key Features of APIs:</strong></p>
+                                <ul>
+                                    <li>Language independent</li>
+                                    <li>Lightweight and fast</li>
+                                    <li>Used in mobile apps, web apps, and microservices</li>
+                                    <li>Communicates using JSON, XML (JSON preferred)</li>
+                                </ul>
+                            </li>
+
+                            <!-- JSON Response -->
+                            <li>
+                                <strong>Returning JSON Response</strong><br>
+                                Use <code>jsonify()</code> to return JSON from a Flask route.
+
+                                <pre><code>from flask import jsonify
+
+@app.route("/api/info")
+def info():
+    return jsonify({
+        "app": "Learnify API",
+        "version": 1.0
+    })</code></pre>
+
+                                <p><strong>Response Format:</strong></p>
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Example Output</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>JSON Object</td>
+                                                <td><code>{"name": "Jabbar", "age": 21}</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>JSON List</td>
+                                                <td><code>[1, 2, 3]</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- POST API -->
+                            <li>
+                                <strong>Handling POST Request</strong><br>
+                                POST is used to send data to the server, usually in JSON format.
+
+                                <pre><code>@app.route("/api/add-user", methods=["POST"])
+def add_user():
+    data = request.get_json()
+    return jsonify({
+        "message": "User received",
+        "data": data
+    })</code></pre>
+
+                                <p><strong>Example JSON Body:</strong></p>
+                                <pre><code>{
+    "name": "Rahul",
+    "age": 22
+}</code></pre>
+                            </li>
+
+                            <!-- API Methods -->
+                            <li>
+                                <strong>API Methods (HTTP Verbs)</strong><br>
+                                These define what operation the API performs.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Method</th>
+                                                <th>Purpose</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>GET</td>
+                                                <td>Retrieve data</td>
+                                                <td><code>/api/users</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>POST</td>
+                                                <td>Create new data</td>
+                                                <td><code>/api/users</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PUT</td>
+                                                <td>Update existing data</td>
+                                                <td><code>/api/users/10</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>DELETE</td>
+                                                <td>Remove data</td>
+                                                <td><code>/api/users/10</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- Simple CRUD API -->
+                            <li>
+                                <strong>Simple CRUD API Example</strong><br>
+                                Below is a mini CRUD API using Python list as temporary storage.
+
+                                <pre><code>users = [
+    {"id": 1, "name": "Jabbar"},
+    {"id": 2, "name": "Amit"}
+]
+
+# GET - Fetch all users
+@app.route("/api/users", methods=["GET"])
+def get_users():
+    return jsonify(users)
+
+# POST - Add new user
+@app.route("/api/users", methods=["POST"])
+def create_user():
+    data = request.get_json()
+    users.append(data)
+    return jsonify({"message": "User created", "data": data})
+
+# PUT - Update user
+@app.route("/api/users/&lt;int:uid&gt;", methods=["PUT"])
+def update_user(uid):
+    data = request.get_json()
+    for u in users:
+        if u["id"] == uid:
+            u.update(data)
+            return jsonify({"message": "User updated", "data": u})
+    return jsonify({"error": "User not found"})
+
+# DELETE - Remove user
+@app.route("/api/users/&lt;int:uid&gt;", methods=["DELETE"])
+def delete_user(uid):
+    for u in users:
+        if u["id"] == uid:
+            users.remove(u)
+            return jsonify({"message": "User deleted"})
+    return jsonify({"error": "User not found"})</code></pre>
+                            </li>
+
+                            <!-- API Response Formats -->
+                            <li>
+                                <strong>API Response Formats</strong><br>
+                                APIs must return meaningful responses.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Status</th>
+                                                <th>Code</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Success</td>
+                                                <td>200</td>
+                                                <td>Request processed successfully</td>
+                                                <td><code>{"message": "OK"}</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Created</td>
+                                                <td>201</td>
+                                                <td>New data created</td>
+                                                <td><code>{"message": "User created"}</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bad Request</td>
+                                                <td>400</td>
+                                                <td>Missing or invalid data</td>
+                                                <td><code>{"error": "Invalid data"}</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Not Found</td>
+                                                <td>404</td>
+                                                <td>Resource not found</td>
+                                                <td><code>{"error": "User not found"}</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 10 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse10">
+                        Module 10: File Uploads & Downloads
+                    </button>
+                </h2>
+
+                <div id="flCollapse10" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- WHY FILE UPLOADS -->
+                            <li>
+                                <strong>Why File Uploads in Flask?</strong><br>
+                                File uploads allow users to submit documents, images, reports, profile pictures, CSV
+                                files, etc.
+                                Flask provides a simple way to upload, validate, save, and download files securely.
+                            </li>
+
+                            <!-- ENABLE UPLOADS -->
+                            <li>
+                                <strong>Configuring Upload Folder</strong><br>
+                                You must set a folder where all uploaded files will be stored.
+
+                                <pre><code>app.config["UPLOAD_FOLDER"] = "uploads/"</code></pre>
+
+                                <p>Make sure the folder exists:</p>
+
+                                <pre><code>project/
+│── app.py
+│── uploads/   ← uploaded files saved here
+└── templates/</code></pre>
+                            </li>
+
+                            <!-- HTML FORM -->
+                            <li>
+                                <strong>HTML File Upload Form</strong><br>
+                                Must include <code>enctype="multipart/form-data"</code> to send files.
+
+                                <pre><code>&lt;form method="POST" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="uploadfile"&gt;
+    &lt;button type="submit"&gt;Upload&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                            </li>
+
+                            <!-- ACCESSING FILE -->
+                            <li>
+                                <strong>Accessing Uploaded File in Flask</strong>
+
+                                <pre><code>file = request.files["uploadfile"]
+print(file.filename)</code></pre>
+
+                                <p>If no file was uploaded:</p>
+
+                                <pre><code>if file.filename == "":
+    return "No file selected"</code></pre>
+                            </li>
+
+                            <!-- SAVING FILE -->
+                            <li>
+                                <strong>Saving Uploaded File</strong><br>
+                                Flask allows you to store the uploaded file inside your upload directory.
+
+                                <pre><code>file.save(os.path.join(app.config["UPLOAD_FOLDER"], file.filename))</code></pre>
+
+                                <p><strong>Full Example:</strong></p>
+                                <pre><code>@app.route("/upload", methods=["POST"])
+def upload():
+    file = request.files["uploadfile"]
+    file.save(os.path.join(app.config["UPLOAD_FOLDER"], file.filename))
+    return "File uploaded successfully!"</code></pre>
+                            </li>
+
+                            <!-- ALLOWED FILE TYPES -->
+                            <li>
+                                <strong>Allowed File Types</strong><br>
+                                Use this to restrict uploads to safe formats.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Extensions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Images</td>
+                                                <td><code>png, jpg, jpeg</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Documents</td>
+                                                <td><code>pdf, txt, docx</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Data Files</td>
+                                                <td><code>csv, json</code></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <pre><code>ALLOWED_EXT = {"png", "jpg", "pdf", "txt"}</code></pre>
+
+                                <p><strong>Checking file extension:</strong></p>
+
+                                <pre><code>def allowed(filename):
+    ext = filename.rsplit(".", 1)[1].lower()
+    return ext in ALLOWED_EXT</code></pre>
+                            </li>
+
+                            <!-- VALIDATED UPLOAD -->
+                            <li>
+                                <strong>Secure File Upload Example (Validation Included)</strong>
+
+                                <pre><code>@app.route("/upload", methods=["POST"])
+def upload_file():
+    file = request.files["uploadfile"]
+
+    if file.filename == "":
+        return "No file selected"
+
+    if not allowed(file.filename):
+        return "File type not allowed"
+
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
+    file.save(filepath)
+
+    return f"File saved at {filepath}"</code></pre>
+                            </li>
+
+                            <!-- DOWNLOADING FILES -->
+                            <li>
+                                <strong>Downloading Files</strong><br>
+                                Use <code>send_file()</code> or <code>send_from_directory()</code>.
+
+                                <pre><code>from flask import send_from_directory
+
+@app.route("/download/&lt;filename&gt;")
+def download(filename):
+    return send_from_directory("uploads", filename)</code></pre>
+
+                                <p><strong>Example:</strong> Download <em>data.csv</em></p>
+
+                                <pre><code>/download/data.csv</code></pre>
+                            </li>
+
+                            <!-- SECURITY -->
+                            <li>
+                                <strong>Important Security Tips</strong>
+                                <ul>
+                                    <li>Always validate file extensions</li>
+                                    <li>Never trust user file names</li>
+                                    <li>Consider renaming files before saving</li>
+                                    <li>Store uploaded files outside the project root in production</li>
+                                </ul>
+
+                                <p><strong>Safe renaming example:</strong></p>
+
+                                <pre><code>import uuid
+
+new_name = str(uuid.uuid4()) + ".png"
+file.save(os.path.join(app.config["UPLOAD_FOLDER"], new_name))</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 11 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse11">
+                        Module 11: Deployment (Render, Vercel, PythonAnywhere)
+                    </button>
+                </h2>
+
+                <div id="flCollapse11" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- WHY DEPLOY -->
+                            <li>
+                                <strong>Why Deploy a Flask App?</strong><br>
+                                Deployment makes your Flask project available on the internet so users can access it
+                                through a browser.
+                                You’ll learn how to prepare your project, configure servers, and publish your
+                                application online.
+                            </li>
+
+                            <!-- REQUIREMENTS FILE -->
+                            <li>
+                                <strong>Generating Requirements File</strong><br>
+                                Before deployment, create a <code>requirements.txt</code> that lists all packages your
+                                app uses.
+
+                                <pre><code>pip freeze > requirements.txt</code></pre>
+
+                                <p><strong>Example Output:</strong></p>
+                                <pre><code>Flask==3.0.0
+Werkzeug==3.0.1
+Jinja2==3.1.3
+gunicorn==21.2.0</code></pre>
+                            </li>
+
+                            <!-- DEPLOYMENT TABLE -->
+                            <li>
+                                <strong>Popular Deployment Platforms</strong>
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Platform</th>
+                                                <th>Best For</th>
+                                                <th>Difficulty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Render</td>
+                                                <td>Modern deployments, scalable apps</td>
+                                                <td>Easy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PythonAnywhere</td>
+                                                <td>Beginners & educational projects</td>
+                                                <td>Very Easy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Railway</td>
+                                                <td>Quick deploys for small apps</td>
+                                                <td>Easy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>VPS (Ubuntu + Gunicorn + Nginx)</td>
+                                                <td>Production-level deployments</td>
+                                                <td>Hard</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- RENDER DEPLOYMENT STEPS -->
+                            <li>
+                                <strong>Deploying on Render (Recommended)</strong>
+                                <ul>
+                                    <li>Create an account at Render</li>
+                                    <li>Click <strong>“New Web Service”</strong></li>
+                                    <li>Connect GitHub repository</li>
+                                    <li>Add build & run commands</li>
+                                </ul>
+
+                                <p><strong>Example Render Commands:</strong></p>
+                                <pre><code>Build Command:  pip install -r requirements.txt
+Start Command:  gunicorn app:app</code></pre>
+
+                                <p>Make sure your project has:</p>
+                                <pre><code>requirements.txt
+app.py
+Procfile (optional)
+templates/
+static/</code></pre>
+                            </li>
+
+                            <!-- PYTHONANYWHERE -->
+                            <li>
+                                <strong>Deploy on PythonAnywhere (Beginner-Friendly)</strong><br>
+                                PythonAnywhere lets you upload files through browser or clone via Git.
+
+                                <p><strong>Steps:</strong></p>
+                                <ul>
+                                    <li>Upload your Flask project</li>
+                                    <li>Set working directory</li>
+                                    <li>Configure WSGI file</li>
+                                    <li>Reload the app</li>
+                                </ul>
+
+                                <p><strong>Example WSGI File Entry:</strong></p>
+                                <pre><code>import sys
+path = '/home/username/myflaskapp'
+if path not in sys.path:
+    sys.path.append(path)
+
+from app import app as application</code></pre>
+                            </li>
+
+                            <!-- GUNICORN -->
+                            <li>
+                                <strong>Using Gunicorn for Production</strong><br>
+                                Gunicorn is a powerful WSGI server used for hosting Flask apps in production.
+
+                                <pre><code>gunicorn app:app</code></pre>
+
+                                <p><strong>Running with Workers:</strong></p>
+                                <pre><code>gunicorn --workers 4 app:app</code></pre>
+
+                                <p><strong>Project Structure:</strong></p>
+                                <pre><code>project/
+│── app.py
+│── requirements.txt
+│── static/
+└── templates/</code></pre>
+                            </li>
+
+                            <!-- ENV VARIABLES -->
+                            <li>
+                                <strong>Setting Environment Variables</strong><br>
+                                Environment variables store sensitive information like API keys and secrets.
+
+                                <pre><code>export SECRET_KEY="mysecretkey"</code></pre>
+
+                                <p><strong>Accessing in Flask:</strong></p>
+                                <pre><code>import os
+app.secret_key = os.getenv("SECRET_KEY")</code></pre>
+
+                                <p><strong>Store these in:</strong></p>
+                                <ul>
+                                    <li>.env (local)</li>
+                                    <li>Render Dashboard → Environment Variables</li>
+                                    <li>VPS → .bashrc or systemd</li>
+                                </ul>
+                            </li>
+
+                            <!-- VPS DEPLOYMENT -->
+                            <li>
+                                <strong>Deploy on VPS (Ubuntu) — Advanced</strong>
+                                <p>Full production setup includes:</p>
+                                <ul>
+                                    <li>Install Python & pip</li>
+                                    <li>Install Gunicorn</li>
+                                    <li>Configure Nginx reverse proxy</li>
+                                    <li>Create a systemd service</li>
+                                </ul>
+
+                                <p><strong>Example Nginx Config:</strong></p>
+                                <pre><code>location / {
+    proxy_pass http://127.0.0.1:8000;
+}</code></pre>
+                            </li>
+
+                            <!-- PROCFILE EXAMPLE -->
+                            <li>
+                                <strong>Optional: Procfile for Deployment Platforms</strong><br>
+
+                                <pre><code>web: gunicorn app:app</code></pre>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 12 -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="fl12">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flCollapse12">
+                        Module 12: Final Flask Project
+                    </button>
+                </h2>
+
+                <div id="flCollapse12" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+                        <ul class="learning-list">
+
+                            <!-- PROJECT PLANNING -->
+                            <li>
+                                <strong>Project Planning & Structure</strong><br>
+                                The final project brings together everything learned in Flask. Before building, plan
+                                your project clearly.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Step</th>
+                                                <th>Description</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Define Purpose</td>
+                                                <td>Identify what your app will solve</td>
+                                                <td>Task manager for students</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Feature List</td>
+                                                <td>Plan core app features</td>
+                                                <td>Add tasks, update, delete, user login</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Design UI</td>
+                                                <td>Sketch pages and components</td>
+                                                <td>Home, Login, Dashboard, Profile</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Database Schema</td>
+                                                <td>Plan tables, keys & relationships</td>
+                                                <td>User table, Task table, Category table</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- COMBINE ALL CONCEPTS -->
+                            <li>
+                                <strong>Combining All Flask Concepts</strong><br>
+                                Your final project should integrate multiple Flask features together:
+
+                                <ul>
+                                    <li>Routing & URL handling</li>
+                                    <li>Template rendering (Jinja2)</li>
+                                    <li>Static files (CSS, JS, Images)</li>
+                                    <li>Sessions & Authentication</li>
+                                    <li>Database integration (SQLAlchemy)</li>
+                                    <li>CRUD operations</li>
+                                    <li>API endpoints (optional)</li>
+                                    <li>File uploads (optional)</li>
+                                </ul>
+
+                                <p><strong>Example: Route + Template + Database + Session Combined</strong></p>
+
+                                <pre><code>@app.route("/dashboard")
+def dashboard():
+    if "user_id" not in session:
+        return redirect("/login")
+
+    tasks = Task.query.filter_by(user_id=session["user_id"]).all()
+    return render_template("dashboard.html", tasks=tasks)</code></pre>
+                            </li>
+
+                            <!-- PROJECT IDEAS -->
+                            <li>
+                                <strong>Final Project Ideas</strong><br>
+                                You can choose any of the following as your final major project. Each uses full Flask
+                                concepts.
+
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-bordered table-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Project Name</th>
+                                                <th>Main Features</th>
+                                                <th>Difficulty</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Student Management System</td>
+                                                <td>Student CRUD, authentication, admin panel</td>
+                                                <td>Medium</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Blog Application</td>
+                                                <td>Posts, comments, categories, users</td>
+                                                <td>Medium</td>
+                                            </tr>
+                                            <tr>
+                                                <td>To-Do Manager</td>
+                                                <td>Add task, update, delete, mark complete</td>
+                                                <td>Easy</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Expense Tracker</td>
+                                                <td>Daily entries, summary charts, login</td>
+                                                <td>Medium–High</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Authentication System</td>
+                                                <td>Signup, login, logout, hashing</td>
+                                                <td>Easy</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <!-- FILE STRUCTURE -->
+                            <li>
+                                <strong>Recommended Flask Project File Structure</strong>
+
+                                <pre><code>my_flask_app/
+│── app.py
+│── config.py
+│── models.py
+│── routes/
+│     ├── auth_routes.py
+│     ├── user_routes.py
+│     └── task_routes.py
+│── templates/
+│     ├── base.html
+│     ├── login.html
+│     └── dashboard.html
+│── static/
+│     ├── css/
+│     ├── js/
+│     └── images/
+│── migrations/
+│── database.db
+└── requirements.txt</code></pre>
+                            </li>
+
+                            <!-- EXAMPLE DATABASE SCHEMA -->
+                            <li>
+                                <strong>Example Database Schema (SQLAlchemy Models)</strong>
+
+                                <pre><code>class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), unique=True)
+    password = db.Column(db.String(200))
+
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200))
+    completed = db.Column(db.Boolean, default=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))</code></pre>
+                            </li>
+
+                            <!-- FINAL OUTPUT -->
+                            <li>
+                                <strong>Final Output</strong><br>
+                                By the end, you will build a complete Flask web application including:
+
+                                <ul>
+                                    <li>User authentication system</li>
+                                    <li>Database models + CRUD operations</li>
+                                    <li>Templates with dynamic content</li>
+                                    <li>Session management</li>
+                                    <li>Clean folder structure</li>
+                                    <li>Deployment-ready project</li>
+                                </ul>
+
+                                <p>✔ Perfect for your resume and portfolio.</p>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <hr>
+
+    <hr>
+
+    <section>
+        <h2 class="section-title">Quick Examples (Flask)</h2>
+
+        <div class="row g-3 mt-2">
+
+            <!-- Basic Flask App -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Basic Flask App</h5>
+                    <pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
+app.run(debug=True)</code></pre>
+                </div>
+            </div>
+
+            <!-- Route Example -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Route Example</h5>
+                    <pre><code>@app.route("/about")
+def about():
+    return "About Page"</code></pre>
+                </div>
+            </div>
+
+            <!-- Dynamic Route -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Dynamic Route</h5>
+                    <pre><code>@app.route("/user/&lt;name&gt;")
+def user(name):
+    return f"Hello, {name}"</code></pre>
+                </div>
+            </div>
+
+            <!-- Template Rendering -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Render Template</h5>
+                    <pre><code>from flask import render_template
+
+@app.route("/home")
+def home():
+    return render_template("index.html")</code></pre>
+                </div>
+            </div>
+
+            <!-- Form Handling -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">Form Handling</h5>
+                    <pre><code>@app.route("/login", methods=["POST"])
+def login():
+    user = request.form["username"]
+    return "Hello " + user</code></pre>
+                </div>
+            </div>
+
+            <!-- JSON Response -->
+            <div class="col-md-6">
+                <div class="card card-course p-3 h-100">
+                    <h5 class="fw-bold">JSON Response</h5>
+                    <pre><code>from flask import jsonify
+
+@app.route("/api/data")
+def data():
+    return jsonify({"course": "Flask", "status": "Success"})</code></pre>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <hr>
+
+
+
+
+    <hr>
+
+    <!-- Outcomes -->
+    <section>
+        <h2 class="section-title">What You'll Be Able To Do</h2>
+
+        <ul class="learning-list">
+            <li>Build complete web applications using Flask</li>
+            <li>Create routes, dynamic pages, and user-friendly web interfaces</li>
+            <li>Work with HTML templates using Jinja2</li>
+            <li>Handle forms, user input, and process data securely</li>
+            <li>Use sessions & cookies for login systems</li>
+            <li>Connect Flask apps with SQLite databases using SQLAlchemy</li>
+            <li>Build REST APIs that return JSON data</li>
+            <li>Upload files, manage static assets, and serve images</li>
+            <li>Create authentication systems (Login, Logout, Signup)</li>
+            <li>Deploy Flask applications to cloud platforms like Render, PythonAnywhere</li>
+            <li>Build portfolio-level projects (Blog App, To-Do App, User Auth System)</li>
+            <li>Debug, test, and structure Flask apps for real-world use</li>
+        </ul>
+    </section>
+
+
+    <hr>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title">FAQ</h2>
+        <div class="accordion" id="faqHtml">
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqH1">Do I need prior experience?</button></h2>
+                <div id="faqH1" class="accordion-collapse collapse show" data-bs-parent="#faqHtml">
+                    <div class="accordion-body">No, this course starts from zero.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#faqH2">Which editor should I use?</button></h2>
+                <div id="faqH2" class="accordion-collapse collapse" data-bs-parent="#faqHtml">
+                    <div class="accordion-body">VS Code is recommended for beginners.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div> <!-- container -->
+
+
+<!-- FOOTER -->
+<footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+    <div class="container">
+  <!-- SHARE BUTTON  -->
+            <div class="text-end mb-3">
+                <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
+                    <i class="bi bi-share-fill me-1"></i> Share Learnify
+                </button>
+            </div>
+
+        <div class="row g-4">
+
+            <!-- Logo + Description -->
+            <div class="col-md-4">
+                <h4 class="fw-bold">Learnify</h4>
+                <p class="small">
+                    A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                    MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                    <li><a href="../Instructors/Instructors.html"
+                            class="text-white text-decoration-none">Instructors</a></li>
+                    <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular Courses -->
+            <div class="col-md-3">
+                <h6 class="fw-bold mb-3">Popular Courses</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="./python.html" class="text-white text-decoration-none">Python</a></li>
+                    <li><a href="./html.html" class="text-white text-decoration-none">HTML</a></li>
+                    <li><a href="./css.html" class="text-white text-decoration-none">CSS</a></li>
+                    <li><a href="./javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CONTACT + TEAM + MENTORS -->
+            <div class="col-md-3">
+
+                <!-- CONTACT -->
+                <h6 class="fw-bold mb-3">Contact Us</h6>
+                <p class="small mb-3">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                        learnify.team03@gmail.com
+                    </a>
+                </p>
+
+                <div class="row">
+
+                    <!-- TEAM -->
+                    <div class="col-6">
+                        <h6 class="fw-bold mb-2">Team</h6>
+                        <ul class="list-unstyled small">
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Shaik Abdul Jabbar
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Panyala Nandini
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    N Anil Kumar
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- MENTORS -->
+                    <div class="col-6">
+                        <h6 class="fw-bold mb-2">Mentors</h6>
+                        <ul class="list-unstyled small">
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                    target="_blank" class="text-white text-decoration-none text-nowrap">
+                                    B Ambica Kiranmayee
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Uppugundla Sairam
+                                </a>
+                            </li>
+
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-badge me-2"></i>
+                                <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                    class="text-white text-decoration-none text-nowrap">
+                                    Saketh Kallepu
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
 
                 </div>
 
             </div>
 
-            <hr class="mt-4 border-light">
-            <p class="text-center small mb-0 opacity-75">
-                © 2025 Learnify. All Rights Reserved.
-            </p>
-
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
 
+        <hr class="mt-4 border-light">
+        <p class="text-center small mb-0 opacity-75">
+            © 2025 Learnify. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+  <div class="modal fade" id="shareModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius:18px;">
+
+                <div class="modal-header">
+                    <h4 class="modal-title fw-bold">Share Learnify</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
+
+                    <img src="../src/img/learnify_qr.png" class="img-fluid"
+                        style="max-width: 500px; width: 100%; border-radius: 14px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<body>
 
 </body>
 

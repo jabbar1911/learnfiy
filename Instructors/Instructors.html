@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learnify | Simplify Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+    <link rel="icon" href="../src/img/logo.png">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            transition: 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../src/img/nav-logo.png" alt="Learnify Logo"
+                    style="width: 100px; height: auto; object-fit: contain;" class="me-2">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="../index.html">Home</a>
+                    </li>
+
+                    <!-- Courses Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="coursesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown" style="background-color: white;">
+                            <li><a class="dropdown-item" href="../courses/python.html">Python</a></li>
+                            <li><a class=" dropdown-item" href="../courses/html.html">HTML</a></li>
+                            <li><a class="dropdown-item" href="../courses/css.html">CSS</a></li>
+                            <li><a class="dropdown-item" href="../courses/bootstrap.html">Bootstrap</a></li>
+                            <li><a class="dropdown-item" href="../courses/javascript.html">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="../courses/mysql.html">MySQL</a></li>
+                            <li><a class="dropdown-item" href="../courses/flask.html">Flask</a></li>
+                            <li><a class="dropdown-item" href="../courses/other.html">Other Resources</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Instructors -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Instructors</a>
+                    </li>
+
+
+                </ul>
+
+                <!-- Login / Signup -->
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Log In
+                </button>
+
+                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    Join for Free
+                </button>
+
+
+            </div>
+        </div>
+
+
+
+    </nav>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Welcome back! Please enter your details.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Log In
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Don't have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal"
+                                data-bs-target="#signupModal" data-bs-dismiss="modal">Create Account</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- SIGNUP MODAL -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius:15px;">
+
+                <div class="modal-header border-0">
+                    <h4 class="modal-title fw-bold text-primary">
+                        <i class="bi bi-person-plus me-2"></i> Create Your Account
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body px-4">
+
+                    <p class="text-muted">Start your learning journey with Learnify.</p>
+
+                    <form>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Choose a strong password">
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-shield-check"></i></span>
+                                <input type="password" class="form-control" placeholder="Re-enter your password">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            Create Account
+                        </button>
+
+                        <p class="text-center small mt-3">
+                            Already have an account?
+                            <a href="#" class="fw-bold text-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                data-bs-dismiss="modal">Log In</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero text-center">
+        <h1 class="fw-bold">Meet Top YouTube Instructors</h1>
+        <p class="lead mt-3">
+            Learn from the most trusted and high-quality educators across English, Hindi, and Telugu.
+        </p>
+    </div>
+
+    <div class="container my-5">
+
+        <h2 class="fw-bold mb-4">Top Creators – English</h2>
+        <div class="row g-4">
+
+            <!-- 1. Bro Code -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator1.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Bro Code</h5>
+                        <p class="small">Funny & clear programming tutorials for Python, Java & basics.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">Basics</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Beginner-friendly</li>
+                            <li>Short crisp videos</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@BroCodez" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Programming With Mosh -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator2.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Programming With Mosh</h5>
+                        <p class="small">World-class Python, JavaScript, and web development tutorials.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">JavaScript</span>
+                            <span class="topic-badge">Web Dev</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Professional teaching</li>
+                            <li>Clean visuals</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@programmingwithmosh" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. FreeCodeCamp -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator3.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">freeCodeCamp</h5>
+                        <p class="small">Long, detailed, and complete course videos for all technologies.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JS</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Full courses</li>
+                            <li>No ads</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@freecodecamp" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Traversy Media -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator4.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Traversy Media</h5>
+                        <p class="small">Covers full-stack, frontend, backend, and modern frameworks.</p>
+
+                        <div>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JavaScript</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Clear explanations</li>
+                            <li>Real projects</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@TraversyMedia" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Web Dev Simplified -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator5.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Web Dev Simplified</h5>
+                        <p class="small">JS, CSS, and web concepts explained in the simplest way.</p>
+
+                        <div>
+                            <span class="topic-badge">JS</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">Web Dev</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Short tutorials</li>
+                            <li>Beginner friendly</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@WebDevSimplified" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Tech With Tim -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator6.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Tech With Tim</h5>
+                        <p class="small">Python, AI, machine learning, and game dev tutorials.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">AI</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Project-based</li>
+                            <li>Student friendly</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@TechWithTim" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. CS Dojo -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator7.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">CS Dojo</h5>
+                        <p class="small">Great explainer videos for Python and data structures.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">DSA</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Beginner friendly</li>
+                            <li>Concept-first</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@CSDojo" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Net Ninja -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator8.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Net Ninja</h5>
+                        <p class="small">Structured playlists for HTML, CSS, JS, Node, and frameworks.</p>
+
+                        <div>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JS</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Clear playlists</li>
+                            <li>Easy to follow</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@NetNinja" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 9. Fireship -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator9.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Fireship</h5>
+                        <p class="small">High-speed explanations for modern web dev, JS, Cloud, and frameworks.</p>
+
+                        <div>
+                            <span class="topic-badge">JavaScript</span>
+                            <span class="topic-badge">Firebase</span>
+                            <span class="topic-badge">Web Dev</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Fast & engaging videos</li>
+                            <li>Great developer insights</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@Fireship" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 10. Clever Programmer -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator10.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Clever Programmer</h5>
+                        <p class="small">JavaScript, React, and full-stack tutorials explained visually.</p>
+
+                        <div>
+                            <span class="topic-badge">React</span>
+                            <span class="topic-badge">JavaScript</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Modern dev tutorials</li>
+                            <li>Easy visuals</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@CleverProgrammer" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <h2 class="fw-bold mb-4">Top Creators – Hindi</h2>
+
+        <div class="row g-4">
+
+            <!-- 1. CodeWithHarry -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator11.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">CodeWithHarry</h5>
+                        <p class="small">India’s most popular Hindi tech educator with beginner-friendly tutorials.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JavaScript</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Explains clean & simple</li>
+                            <li>Perfect for beginners</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@CodeWithHarry" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Apna College -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator12.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Apna College</h5>
+                        <p class="small">Top Hindi channel for Java, DSA & placement preparation.</p>
+
+                        <div>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">DSA</span>
+                            <span class="topic-badge">Placement</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>India’s favorite coding duo</li>
+                            <li>Clear & simple Hindi</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Thapa Technical -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator13.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Thapa Technical</h5>
+                        <p class="small">Loved for frontend tutorials in pure Hindi.</p>
+
+                        <div>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JavaScript</span>
+                            <span class="topic-badge">React</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Real-world projects</li>
+                            <li>Beginner friendly</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@ThapaTechnical" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. WsCube Tech -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator14.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">WsCube Tech</h5>
+                        <p class="small">Detailed Hindi courses on web dev, Python, Java & more.</p>
+
+                        <div>
+                            <span class="topic-badge">Web Dev</span>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Java</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Easy language</li>
+                            <li>Long full courses</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@wscubetech" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Hitesh Choudhary -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator15.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Hitesh Choudhary</h5>
+                        <p class="small">Industry-level web dev & career guidance in Hindi.</p>
+
+                        <div>
+                            <span class="topic-badge">Web Dev</span>
+                            <span class="topic-badge">React</span>
+                            <span class="topic-badge">Career</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Advanced topics</li>
+                            <li>Industry-ready teaching</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/c/HiteshChoudharydotcom" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Love Babbar -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator16.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Love Babbar</h5>
+                        <p class="small">Top DSA instructor & placement guru in Hindi.</p>
+
+                        <div>
+                            <span class="topic-badge">DSA</span>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">Placement</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Most trusted for interviews</li>
+                            <li>Strong concepts</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@LoveBabbar" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Jenny’s Lectures -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator17.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Jenny’s Lectures</h5>
+                        <p class="small">Clear Hindi tutorials for C, C++, DSA, OS & DBMS.</p>
+
+                        <div>
+                            <span class="topic-badge">C</span>
+                            <span class="topic-badge">C++</span>
+                            <span class="topic-badge">DSA</span>
+                            <span class="topic-badge">DBMS</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Very easy Hindi</li>
+                            <li>Great for college students</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@JennyslecturesCSIT" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Anuj Bhaiya -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator18.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Anuj Bhaiya</h5>
+                        <p class="small">High-quality DSA & Java concepts in beginner-friendly Hindi.</p>
+
+                        <div>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">DSA</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Placement-focused</li>
+                            <li>Simplified approach</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@AnujBhaiya" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. College Wallah -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator19.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">College Wallah</h5>
+                        <p class="small">Complete Hindi courses for Java, DSA & placements (by PW).</p>
+
+                        <div>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">DSA</span>
+                            <span class="topic-badge">Placement</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Best for beginners</li>
+                            <li>Very clear Hindi</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@CollegeWallahbyPW" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Harshit Vashisth -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator20.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Harshit Vashisth</h5>
+                        <p class="small">Modern HTML, CSS & JS tutorials in pure Hindi.</p>
+
+                        <div>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JavaScript</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Clear & simple</li>
+                            <li>Great for students</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@harshitVashisth" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <hr class="my-5">
+
+        <h2 class="fw-bold mb-4">Top Creators – Telugu</h2>
+
+        <div class="row g-4">
+
+            <!-- 21. Telugu Web Guru -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator21.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Telugu Web Guru</h5>
+                        <p class="small">Popular Telugu channel for Python, web development and databases.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">SQL</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Structured playlists</li>
+                            <li>Beginner-friendly Telugu</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/c/teluguwebguru" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 22. SoftwareSchool – Coding in Telugu -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator22.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">SoftwareSchool</h5>
+                        <p class="small">Coding tutorials in Telugu for modern web and app development.</p>
+
+                        <div>
+                            <span class="topic-badge">JavaScript</span>
+                            <span class="topic-badge">React</span>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Java</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Project-based learning</li>
+                            <li>Clear and practical</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/channel/UCbBI_p0ZtBQeDwRdOzPjARw" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 23. Durga Software Solutions (Telugu) -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator23.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Durga Software (Telugu)</h5>
+                        <p class="small">Legendary Telugu trainer for Java, C and core programming.</p>
+
+                        <div>
+                            <span class="topic-badge">Core Java</span>
+                            <span class="topic-badge">C</span>
+                            <span class="topic-badge">Python</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Strong fundamentals</li>
+                            <li>Exam & interview friendly</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/channel/UCbjozK_PYCTLEluFlrJ8UZg" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24. Swaroop VITB -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator24.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Swaroop VITB</h5>
+                        <p class="small">Telugu tutorials for Python, C and web dev from scratch.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">C</span>
+                            <span class="topic-badge">HTML</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Zero-to-hero courses</li>
+                            <li>Very simple Telugu</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@SwaroopVITB" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 25. Sundeep Saradhi Kanthety -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator25.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Sundeep Saradhi</h5>
+                        <p class="small">Computer science concepts and coding in clear Telugu.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">C</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Good for BTech students</li>
+                            <li>Concept-first approach</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@sundeepsaradhi" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 26. Dodagatta Nihar -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator26.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Dodagatta Nihar</h5>
+                        <p class="small">Coding tutorials and interview-oriented content in Telugu.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Java</span>
+                            <span class="topic-badge">Web Dev</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Placement guidance</li>
+                            <li>Practical explanations</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@niharrdg" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 27. Vamsi Bhavani -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator27.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Vamsi Bhavani</h5>
+                        <p class="small">Famous for C language and programming basics in Telugu.</p>
+
+                        <div>
+                            <span class="topic-badge">C</span>
+                            <span class="topic-badge">Python</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Strong C foundations</li>
+                            <li>Easy-to-follow style</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@VamsiBhavani" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 28. Python Life Telugu -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator28.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Python Life Telugu</h5>
+                        <p class="small">Dedicated Telugu channel for Python and mini projects.</p>
+
+                        <div>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Projects</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Hands-on coding</li>
+                            <li>Beginner friendly</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@PythonLifetelugu" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 29. Purna Chandra Bandaru Official -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator29.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Purna Chandra Bandaru</h5>
+                        <p class="small">Programming and web development explained in Telugu.</p>
+
+                        <div>
+                            <span class="topic-badge">C</span>
+                            <span class="topic-badge">Python</span>
+                            <span class="topic-badge">Web Dev</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Concept clarity</li>
+                            <li>Real examples</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@PurnaChandraBandaru_official" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 30. CS World Telugu -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 shadow border-0">
+                    <img src="./src/img/creator30.jpg" class="profile-img">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">CS World Telugu</h5>
+                        <p class="small">Frontend and CS topics like HTML, CSS, JS & React in Telugu.</p>
+
+                        <div>
+                            <span class="topic-badge">HTML</span>
+                            <span class="topic-badge">CSS</span>
+                            <span class="topic-badge">JavaScript</span>
+                            <span class="topic-badge">React</span>
+                        </div>
+
+                        <ul class="small mt-2">
+                            <li>Good for web dev</li>
+                            <li>Step-by-step series</li>
+                        </ul>
+
+                        <a href="https://www.youtube.com/@csworldtelugu" target="_blank"
+                            class="btn btn-primary w-100 mt-2">Visit Channel</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
+        <div class="container">
+            <!-- SHARE BUTTON  -->
+            <div class="text-end mb-3">
+                <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
+                    <i class="bi bi-share-fill me-1"></i> Share Learnify
+                </button>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Logo + Description -->
+                <div class="col-md-4">
+                    <h4 class="fw-bold">Learnify</h4>
+                    <p class="small">
+                        A simple and structured platform to learn Python, HTML, CSS, JavaScript,
+                        MySQL, Flask and more — with modules, notes, resources and one short explanatory video.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
+                        <li><a href="./courses/other.html" class="text-white text-decoration-none">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Popular Courses</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="./courses/python.html" class="text-white text-decoration-none">Python</a></li>
+                        <li><a href="./courses/html.html" class="text-white text-decoration-none">HTML</a></li>
+                        <li><a href="./courses/css.html" class="text-white text-decoration-none">CSS</a></li>
+                        <li><a href="./courses/javascript.html" class="text-white text-decoration-none">JavaScript</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT + TEAM + MENTORS -->
+                <div class="col-md-3">
+
+                    <!-- CONTACT -->
+                    <h6 class="fw-bold mb-3">Contact Us</h6>
+                    <p class="small mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i>
+                        <a href="mailto:learnify.team03@gmail.com" class="text-white fw-semibold text-decoration-none">
+                            learnify.team03@gmail.com
+                        </a>
+                    </p>
+
+                    <div class="row">
+
+                        <!-- TEAM -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Team</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/shaik-abdul-jabbar/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Shaik Abdul Jabbar
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandini-panyala-21dec2003/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Panyala Nandini
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <a href="https://www.linkedin.com/in/nandamudi-anil-kumar-49b0bb377/"
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
+                                        N Anil Kumar
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!-- MENTORS -->
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2">Mentors</h6>
+                            <ul class="list-unstyled small">
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/ambica-kiranmayee-bellamkonda-203861200/"
+                                        target="_blank" class="text-white text-decoration-none text-nowrap">
+                                        B Ambica Kiranmayee
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/sairam-uppugundla/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Uppugundla Sairam
+                                    </a>
+                                </li>
+
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-person-badge me-2"></i>
+                                    <a href="https://www.linkedin.com/in/saketh-codegnan/" target="_blank"
+                                        class="text-white text-decoration-none text-nowrap">
+                                        Saketh Kallepu
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="mt-4 border-light">
+            <p class="text-center small mb-0 opacity-75">
+                © 2025 Learnify. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <div class="modal fade" id="shareModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius:18px;">
+
+                <div class="modal-header">
+                    <h4 class="modal-title fw-bold">Share Learnify</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
+
+                    <img src="../src/img/learnify_qr.png" class="img-fluid"
+                        style="max-width: 500px; width: 100%; border-radius: 14px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -9,8 +9,37 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../src/img/logo.png">
+
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-top: 36px;
+        }
+
+        .hero {
+            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            color: #fff;
+            padding: 56px 20px;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            transition: 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -61,7 +90,7 @@
 
                     <!-- Instructors -->
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Instructors</a>
+                        <a class="nav-link text-white" href="../Instructors/Instructors.html">Instructors</a>
                     </li>
 
 
@@ -202,13 +231,600 @@
             </div>
         </div>
     </div>
-    <h1>other.</h1>
+
+    <div class="hero text-center py-5 bg-light">
+        <div class="container">
+
+            <h1 class="display-5 fw-bold ">Other Resources – From Basics to Better Understanding
+            </h1>
+
+            <p class="lead mt-3 ">
+                Explore high-quality YouTube resources that guide you from foundational concepts to deeper explanations.
+                Learn through simple videos, practical examples, and structured playlists. Ideal for learners aiming to
+                strengthen their fundamentals and improve clarity. </p>
+
+
+
+        </div>
+    </div>
+
+    <div class="container my-5">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Course Introduction</h2>
+            <p class="mt-3">
+                Learnify Other Resources gives you additional study support through curated YouTube playlists and
+                recommended channels. These resources help bridge the gap between theory and practice by offering
+                visual demonstrations, structured explanations, and topic-wise playlists.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Why Explore These Resources -->
+        <section>
+            <h2 class="section-title">Why Explore These Resources?</h2>
+            <ul>
+                <li><strong>Clear Learning</strong> — Videos simplify tough concepts.</li>
+                <li><strong>Well Structured</strong> — Topics arranged in the right learning order.</li>
+                <li><strong>Reliable Creators</strong> — Only trusted, high-quality content included.</li>
+                <li><strong>Multi-Language Content</strong> — Learn in English, Hindi, or Telugu easily.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- What You'll Learn -->
+        <section>
+            <h2 class="section-title">What You'll Learn</h2>
+            <ul>
+                <li>Topic fundamentals explained clearly.</li>
+                <li>Real-world examples and visual demonstrations.</li>
+                <li>Step-by-step concept breakdowns.</li>
+                <li>Playlists organized subject-wise for easy learning.</li>
+                <li>Revision-friendly videos for quick understanding.</li>
+                <li>Extra guidance to boost confidence and clarity.</li>
+            </ul>
+        </section>
+
+    </div>
+
+
+    <div class="container mt-5 mb-5">
+        <h1 class=" mt-5 mb-4 fw-bold">Courses</h1>
+
+        <div class="row g-4">
+
+            <!-- ============================================= -->
+            <!-- ================= PYTHON ===================== -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/python.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Python</h5>
+
+                        <div class="accordion mt-3" id="pyAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#pyEng">English</button>
+                                </h2>
+                                <div id="pyEng" class="accordion-collapse collapse" data-bs-parent="#pyAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=ix9cRaBkVe0"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=K5KVEU3aaeQ"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=47708s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#pyHin">Hindi</button>
+                                </h2>
+                                <div id="pyHin" class="accordion-collapse collapse" data-bs-parent="#pyAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=UrsmFxEIp5k&t=6097s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=vLqTf2b6GZw&t=98s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=XnSasPR2KJI&t=75s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#pyTel">Telugu</button>
+                                </h2>
+                                <div id="pyTel" class="accordion-collapse collapse" data-bs-parent="#pyAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=fHKPQEVCX-s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=9hVzEKZQyMU"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=LuuJOoESq2Y"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= HTML ======================= -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/html.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">HTML</h5>
+
+                        <div class="accordion mt-3" id="htmlAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#htmlEng">English</button>
+                                </h2>
+                                <div id="htmlEng" class="accordion-collapse collapse" data-bs-parent="#htmlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=G3e-cpL7ofc&t=10216s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=kUMe1FH4CHE"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=mJgBOIoGihA&t=12301s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#htmlHin">Hindi</button>
+                                </h2>
+                                <div id="htmlHin" class="accordion-collapse collapse" data-bs-parent="#htmlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=k2DSi1zGEc8"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=HcOc7P5BMi4"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=zysUIv0-xak&t=3126s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#htmlTel">Telugu</button>
+                                </h2>
+                                <div id="htmlTel" class="accordion-collapse collapse" data-bs-parent="#htmlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=lGKGDxwvrEQ"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=dU1Gr3M2XBI"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=a8W952NBZUE"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= CSS ======================== -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/css.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">CSS</h5>
+
+                        <div class="accordion mt-3" id="cssAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#cssEng">English</button>
+                                </h2>
+                                <div id="cssEng" class="accordion-collapse collapse" data-bs-parent="#cssAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=G3e-cpL7ofc&t=10217s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=HGTJBPNC-Gw&t=14s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=OXGznpKZ_sA"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#cssHin">Hindi</button>
+                                </h2>
+                                <div id="cssHin" class="accordion-collapse collapse" data-bs-parent="#cssAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Edsxf_NBFrw"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=ESnrn1kAD4E"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=OpWjt_wbV4E&t=973s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#cssTel">Telugu</button>
+                                </h2>
+                                <div id="cssTel" class="accordion-collapse collapse" data-bs-parent="#cssAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Oi9QvyK8zvk"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=I6sD16dnS7o"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=vcjXeqUJUYU"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= JAVASCRIPT ================= -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/javascript.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">JavaScript</h5>
+
+                        <div class="accordion mt-3" id="jsAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#jsEng">English</button>
+                                </h2>
+                                <div id="jsEng" class="accordion-collapse collapse" data-bs-parent="#jsAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=EerdGm-ehJQ&t=18s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=PkZNo7MFNFg"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=lfmg-EJ8gm4"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#jsHin">Hindi</button>
+                                </h2>
+                                <div id="jsHin" class="accordion-collapse collapse" data-bs-parent="#jsAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=VlPiVmYuoqw"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=sscX432bMZo"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank"
+                                            href="https://www.youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR"
+                                            class="btn btn-light video-btn w-100">Playlist</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#jsTel">Telugu</button>
+                                </h2>
+                                <div id="jsTel" class="accordion-collapse collapse" data-bs-parent="#jsAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=JVTZb4YvKjM"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=I7VNBalcDAc"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Flkm2aear6A"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= BOOTSTRAP ================== -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/bootstrap.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Bootstrap</h5>
+
+                        <div class="accordion mt-3" id="bootAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#bootEng">English</button>
+                                </h2>
+                                <div id="bootEng" class="accordion-collapse collapse" data-bs-parent="#bootAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=-qfEOE4vtxE"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Jyvffr3aCp0"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=4sosXZsdy-s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#bootHin">Hindi</button>
+                                </h2>
+                                <div id="bootHin" class="accordion-collapse collapse" data-bs-parent="#bootAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=vpAJ0s5S2t0"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=nPxCYOO1e44"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=QBCNO9M2_ds"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#bootTel">Telugu</button>
+                                </h2>
+                                <div id="bootTel" class="accordion-collapse collapse" data-bs-parent="#bootAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Jd4SKMugUQ8"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=S-ri_In6qcA"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank"
+                                            href="https://www.youtube.com/playlist?list=PLzdWZT-ZJD0_nZewQICMCr0w3qYQla2Xk"
+                                            class="btn btn-light video-btn w-100">Playlist</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= FLASK ====================== -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/flask.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">Flask</h5>
+
+                        <div class="accordion mt-3" id="flaskAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#flaskEng">English</button>
+                                </h2>
+                                <div id="flaskEng" class="accordion-collapse collapse" data-bs-parent="#flaskAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Qr4QMBUPxWo"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=dam0GPOAvVI"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=oQ5UfJqW5Jo"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#flaskHin">Hindi</button>
+                                </h2>
+                                <div id="flaskHin" class="accordion-collapse collapse" data-bs-parent="#flaskAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=oA8brF3w5XQ"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=KF-rDqQfqz0"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=zPUB3_AnRTQ"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#flaskTel">Telugu</button>
+                                </h2>
+                                <div id="flaskTel" class="accordion-collapse collapse" data-bs-parent="#flaskAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=oQWkuJhSMCQ"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=oNOwlQkUdeo"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank"
+                                            href="https://www.youtube.com/playlist?list=PLh3yfqb72uVawJ_-Rxnc9nT4m2FnC6Qlu"
+                                            class="btn btn-light video-btn w-100">Playlist</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================= -->
+            <!-- ================= MYSQL ====================== -->
+            <!-- ============================================= -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card border-0 shadow course-card h-100">
+                    <img src="../src/img/mysql.png" class="card-img-top"
+                        style="height:160px; object-fit:contain; background:#f1f3f5; padding:18px;">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-center">MySQL</h5>
+
+                        <div class="accordion mt-3" id="sqlAcc">
+
+                            <!-- English -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#sqlEng">English</button>
+                                </h2>
+                                <div id="sqlEng" class="accordion-collapse collapse" data-bs-parent="#sqlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=5OdVJbNCSso"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=7S_tz1z_5bA&t=290s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=HXV3zeQKqGY&t=3146s"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hindi -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#sqlHin">Hindi</button>
+                                </h2>
+                                <div id="sqlHin" class="accordion-collapse collapse" data-bs-parent="#sqlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=yE6tIle64tU"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=hlGoQC332VM"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=Hy3qbMAoEJk"
+                                            class="btn btn-light video-btn w-100">Video 3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Telugu -->
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed py-2" data-bs-toggle="collapse"
+                                        data-bs-target="#sqlTel">Telugu</button>
+                                </h2>
+                                <div id="sqlTel" class="accordion-collapse collapse" data-bs-parent="#sqlAcc">
+                                    <div class="accordion-body p-2">
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=4yEIZ9KZ_aQ&t=35s"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 1</a>
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=rOXhnIKmRDE"
+                                            class="btn btn-light video-btn w-100 mb-2">Video 2</a>
+                                        <a target="_blank"
+                                            href="https://www.youtube.com/watch?v=IiaRNmyxDAk&list=PLMsoMlKiKdU2bsNa141yxL77ce3Q22WyD"
+                                            class="btn btn-light video-btn w-100">Playlist</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- END ROW -->
+    </div>
+
 
 
 
     <!-- FOOTER -->
     <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
         <div class="container">
+            <!-- SHARE BUTTON  -->
+            <div class="text-end mb-3">
+                <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
+                    <i class="bi bi-share-fill me-1"></i> Share Learnify
+                </button>
+            </div>
 
             <div class="row g-4">
 
@@ -227,7 +843,8 @@
                     <ul class="list-unstyled small">
                         <li><a href="../index.html" class="text-white text-decoration-none">Home</a></li>
                         <li><a href="../index.html#courses" class="text-white text-decoration-none">Courses</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Instructors</a></li>
+                        <li><a href="../Instructors/Instructors.html"
+                                class="text-white text-decoration-none">Instructors</a></li>
                         <li><a href="./other.html" class="text-white text-decoration-none">Resources</a></li>
                     </ul>
                 </div>
@@ -337,6 +954,27 @@
 
         </div>
     </footer>
+   <div class="modal fade" id="shareModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius:18px;">
+
+                <div class="modal-header">
+                    <h4 class="modal-title fw-bold">Share Learnify</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
+
+                    <img src="../src/img/learnify_qr.png" class="img-fluid"
+                        style="max-width: 500px; width: 100%; border-radius: 14px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
