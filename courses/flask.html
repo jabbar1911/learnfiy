@@ -2745,6 +2745,131 @@ class Task(db.Model):
                 </div>
             </div>
 
+            <!-- FLASK RESOURCES -->
+            <div class="accordion-item card-course">
+                <h2 class="accordion-header" id="flaskResources">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flaskCollapseResources">
+                        Flask Notes & Resources
+                    </button>
+                </h2>
+
+                <div id="flaskCollapseResources" class="accordion-collapse collapse" data-bs-parent="#flaskAccordion">
+                    <div class="accordion-body">
+
+                        <ul class="learning-list">
+
+                            <!-- Official Docs -->
+                            <li>
+                                <strong>Official Documentation:</strong>
+                                <ul>
+                                    <li><a href="https://flask.palletsprojects.com/" target="_blank">
+                                            Flask Official Documentation
+                                        </a></li>
+                                    <li><a href="https://palletsprojects.com/p/flask/" target="_blank">
+                                            Pallets (Flask Maintainers)
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Notes PDFs -->
+                            <li>
+                                <strong>Downloadable Notes & PDFs:</strong>
+                                <ul>
+                                    <li><a href="https://www.tutorialspoint.com/flask/flask_tutorial.pdf"
+                                            target="_blank">
+                                            Flask Notes – TutorialsPoint PDF
+                                        </a></li>
+                                    <li><a href="https://web.stanford.edu/group/csp/cs21/flask-cheatsheet.pdf"
+                                            target="_blank">
+                                            Flask Cheat Sheet (PDF)
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Practice Platforms -->
+                            <li>
+                                <strong>Practice & Learning Platforms:</strong>
+                                <ul>
+                                    <li><a href="https://www.w3schools.com/python/python_flask.asp" target="_blank">
+                                            W3Schools Flask Intro
+                                        </a></li>
+                                    <li><a href="https://realpython.com/tutorials/flask/" target="_blank">
+                                            RealPython Flask Tutorials
+                                        </a></li>
+                                    <li><a href="https://flaskmega-tutorial.readthedocs.io/en/latest/" target="_blank">
+                                            Flask Mega Tutorial
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- GitHub Repositories -->
+                            <li>
+                                <strong>GitHub Learning Repositories:</strong>
+                                <ul>
+                                    <li><a href="https://github.com/pallets/flask" target="_blank">
+                                            Flask Official GitHub Repo
+                                        </a></li>
+                                    <li><a href="https://github.com/topics/flask-project" target="_blank">
+                                            Flask Beginner Projects
+                                        </a></li>
+                                    <li><a href="https://github.com/miguelgrinberg/flasky" target="_blank">
+                                            Flasky (Popular Flask Learning Project)
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Tools -->
+                            <li>
+                                <strong>Useful Flask Tools:</strong>
+                                <ul>
+                                    <li><a href="https://jinja.palletsprojects.com" target="_blank">Jinja2 Template
+                                            Docs</a></li>
+                                    <li><a href="https://werkzeug.palletsprojects.com" target="_blank">Werkzeug Docs</a>
+                                    </li>
+                                    <li><a href="https://flask.palletsprojects.com/en/latest/patterns/packages/"
+                                            target="_blank">
+                                            Flask Project Structure Guide
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Cheat Sheets -->
+                            <li>
+                                <strong>Flask Cheat Sheets:</strong>
+                                <ul>
+                                    <li><a href="https://quickref.me/flask" target="_blank">
+                                            Flask Quick Reference
+                                        </a></li>
+                                    <li><a href="https://htmlcheatsheet.com/flask/" target="_blank">
+                                            Interactive Flask Cheat Sheet
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Interview Prep -->
+                            <li>
+                                <strong>Interview Preparation:</strong>
+                                <ul>
+                                    <li><a href="https://www.interviewbit.com/flask-interview-questions/"
+                                            target="_blank">
+                                            InterviewBit Flask Questions
+                                        </a></li>
+                                    <li><a href="https://www.javatpoint.com/flask-interview-questions" target="_blank">
+                                            Javatpoint Flask Q&A
+                                        </a></li>
+                                    <li><a href="https://www.geeksforgeeks.org/flask-interview-questions/"
+                                            target="_blank">
+                                            GFG Flask Interview Prep
+                                        </a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2890,12 +3015,12 @@ def data():
 <!-- FOOTER -->
 <footer class="text-white pt-5 pb-3" style="background:#0d6efd;">
     <div class="container">
-  <!-- SHARE BUTTON  -->
-            <div class="text-end mb-3">
-                <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
-                    <i class="bi bi-share-fill me-1"></i> Share Learnify
-                </button>
-            </div>
+        <!-- SHARE BUTTON  -->
+        <div class="text-end mb-3">
+            <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#shareModal">
+                <i class="bi bi-share-fill me-1"></i> Share Learnify
+            </button>
+        </div>
 
         <div class="row g-4">
 
@@ -3025,27 +3150,27 @@ def data():
 
     </div>
 </footer>
-  <div class="modal fade" id="shareModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content" style="border-radius:18px;">
+<div class="modal fade" id="shareModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="border-radius:18px;">
 
-                <div class="modal-header">
-                    <h4 class="modal-title fw-bold">Share Learnify</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
+            <div class="modal-header">
+                <h4 class="modal-title fw-bold">Share Learnify</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-                <div class="modal-body text-center">
+            <div class="modal-body text-center">
 
-                    <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
+                <p class="small mb-3 fs-5">Scan this QR code to share Learnify with your friends!</p>
 
-                    <img src="../src/img/learnify_qr.png" class="img-fluid"
-                        style="max-width: 500px; width: 100%; border-radius: 14px;">
-
-                </div>
+                <img src="../src/img/learnify_qr.png" class="img-fluid"
+                    style="max-width: 500px; width: 100%; border-radius: 14px;">
 
             </div>
+
         </div>
     </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
