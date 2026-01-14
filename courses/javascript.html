@@ -11,31 +11,126 @@
 
     <link rel="icon" href="../src/img/logo.png">
     <style>
+        :root {
+            --brand-primary: #1a73e8;
+            --brand-primary-hover: #1557b0;
+            --brand-dark: #0b1e3f;
+            --brand-subtle: #e8f0fe;
+            --text-heading: #172b4d;
+            --text-body: #444;
+            --text-secondary: #5e6c84;
+            --bg-light: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-primary);
+            border-radius: 10px;
+            border: 3px solid var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary-hover);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #444;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(26, 115, 232, 0.95) !important;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 10px;
+        }
+
         .hero {
-            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-primary) 100%);
             color: #fff;
-            padding: 56px 20px;
-            border-radius: 0 0 18px 18px;
+            padding: 80px 0;
+            border-radius: 0 0 50px 50px;
+            box-shadow: var(--shadow-md);
         }
 
         .section-title {
             font-weight: 700;
             margin-top: 36px;
+            color: var(--text-heading);
         }
 
         pre code {
             white-space: pre-wrap;
+            background: #1e1e1e;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 12px;
+            display: block;
+            padding: 20px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .card-course {
-            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-radius: 16px !important;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--brand-subtle);
+            color: var(--brand-primary);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top" style="background-color:#0d6efd;">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
 
             <!-- Logo -->
@@ -423,7 +518,7 @@
                                 <!-- How browsers run JS -->
                                 <li class="mt-4">
                                     <strong>How Browsers Execute JavaScript</strong>
-                                    <p>Browers use several internal components to handle JavaScript execution:</p>
+                                    <p>Browsers use several internal components to handle JavaScript execution:</p>
 
                                     <ul>
                                         <li>JavaScript Engine – Interprets and executes JavaScript code.</li>
@@ -5807,11 +5902,6 @@ console.log(student.name);   // Rahul</code></pre>
 
         <hr>
 
-
-
-
-        <hr>
-
         <!-- Outcomes -->
         <section>
             <h2 class="section-title">What You'll Be Able To Do</h2>
@@ -5944,7 +6034,7 @@ console.log(student.name);   // Rahul</code></pre>
 
 
     <!-- FOOTER -->
-    <footer class="text-white pt-5 pb-4" style="background:#0d6efd;">
+    <footer class="text-white pt-5 pb-4" style="background: var(--brand-dark);">
         <div class="container">
 
             <!-- SHARE BUTTON -->

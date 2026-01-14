@@ -11,11 +11,46 @@
 
     <link rel="icon" href="../src/img/logo.png">
     <style>
+        :root {
+            --brand-primary: #1a73e8;
+            --brand-primary-hover: #1557b0;
+            --brand-dark: #0b1e3f;
+            --brand-subtle: #e8f0fe;
+            --text-heading: #172b4d;
+            --text-body: #444;
+            --text-secondary: #5e6c84;
+            --bg-light: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-primary);
+            border-radius: 10px;
+            border: 3px solid var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary-hover);
+        }
+
         .hero {
-            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-primary) 100%);
             color: #fff;
-            padding: 56px 20px;
-            border-radius: 0 0 18px 18px;
+            padding: 80px 0;
+            border-radius: 0 0 50px 50px;
+            box-shadow: var(--shadow-md);
         }
 
         .section-title {
@@ -25,10 +60,72 @@
 
         pre code {
             white-space: pre-wrap;
+            background: #1e1e1e;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 12px;
+            display: block;
+            padding: 20px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .card-course {
-            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-radius: 16px !important;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--brand-subtle);
+            color: var(--brand-primary);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        /* Demo Preview Container */
+        .demo-preview {
+            background-color: #f8f9fa;
+            border: 1px solid var(--brand-subtle);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .demo-preview-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .demo-preview-title i {
+            margin-right: 10px;
+            color: var(--brand-primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -436,11 +533,58 @@ STATUS;                -- View server status
 
                             <li>
                                 <strong>Types of Databases:</strong>
-                                <ul>
-                                    <li><strong>Relational Databases (RDBMS)</strong> — MySQL, PostgreSQL, Oracle</li>
-                                    <li><strong>NoSQL Databases</strong> — MongoDB, Cassandra, Firebase</li>
-                                    <li><strong>Cloud Databases</strong> — AWS RDS, Google Cloud SQL, Azure SQL</li>
-                                </ul>
+                                <p>Modern applications use different types of databases based on the structure of data
+                                    they handle.</p>
+
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Feature</th>
+                                                <th>RDBMS (SQL)</th>
+                                                <th>NoSQL</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Structure</strong></td>
+                                                <td>Tabular (Rows & Columns)</td>
+                                                <td>Document, Key-Value, Graph</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Schema</strong></td>
+                                                <td>Pre-defined (Fixed)</td>
+                                                <td>Dynamic (Flexible)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Scaling</strong></td>
+                                                <td>Vertical (Bigger Server)</td>
+                                                <td>Horizontal (More Servers)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Relationships</strong></td>
+                                                <td>Strong (Foreign Keys)</td>
+                                                <td>Weak (Data Linking)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Example</strong></td>
+                                                <td>MySQL, PostgreSQL</td>
+                                                <td>MongoDB, Firebase</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+
+                            <li class="mt-4">
+                                <strong>The RDBMS Advantage:</strong>
+                                <div class="alert alert-info small">
+                                    <strong>ACID Properties:</strong> RDBMS ensure data integrity through Atomicity,
+                                    Consistency,
+                                    Isolation, and Durability. This makes them the first choice for banking and
+                                    mission-critical
+                                    systems.
+                                </div>
                             </li>
 
                         </ul>
@@ -607,6 +751,26 @@ DROP DATABASE companydb;</code></pre>
                                 </div>
                             </li>
 
+                            <li class="mt-4">
+                                <strong>Database Normalization:</strong>
+                                <p>Normalization is the process of organizing data to minimize redundancy (duplication)
+                                    and avoid data anomalies during updates.</p>
+
+                                <ul>
+                                    <li><strong>1NF (First Normal Form):</strong> Each column must contain atomic
+                                        (unique) values. No repeating groups or arrays.</li>
+                                    <li><strong>2NF (Second Normal Form):</strong> Must be in 1NF and all non-key
+                                        attributes must be fully functional dependent on the primary key.</li>
+                                    <li><strong>3NF (Third Normal Form):</strong> Must be in 2NF and there should be no
+                                        transitive dependency (no non-key attribute depends on another non-key
+                                        attribute).</li>
+                                </ul>
+
+                                <div class="alert alert-warning small mt-3">
+                                    <strong>Pro Tip:</strong> In real projects, 3NF is usually considered the industry
+                                    standard for balancing performance and integrity.
+                                </div>
+                            </li>
                         </ul>
 
 
@@ -921,239 +1085,111 @@ SELECT * FROM employees WHERE name LIKE 'S%';   -- starts with S
 
                         <ul class="learning-list">
 
-                            <!-- Aggregate Functions -->
+                            <!-- What are Joins -->
                             <li>
-                                <strong>Aggregate Functions</strong><br>
-                                Aggregate functions summarize multiple rows of data into a single output. They are
-                                widely used in reports, analytics, and dashboards.
-
-                                <div class="table-responsive mt-2">
-                                    <table class="table table-bordered table-sm">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Function</th>
-                                                <th>Description</th>
-                                                <th>Example</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><code>COUNT()</code></td>
-                                                <td>Counts number of rows</td>
-                                                <td><code>SELECT COUNT(*) FROM orders;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>AVG()</code></td>
-                                                <td>Returns average value</td>
-                                                <td><code>SELECT AVG(price) FROM products;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>MAX()</code></td>
-                                                <td>Finds highest value</td>
-                                                <td><code>SELECT MAX(salary) FROM employees;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>MIN()</code></td>
-                                                <td>Finds lowest value</td>
-                                                <td><code>SELECT MIN(stock) FROM products;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>SUM()</code></td>
-                                                <td>Adds all values</td>
-                                                <td><code>SELECT SUM(amount) FROM payments;</code></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <pre><code>SELECT COUNT(*) FROM orders;
-SELECT AVG(price) FROM products;
-SELECT MAX(salary), MIN(salary) FROM employees;
-SELECT SUM(quantity) FROM sales;</code></pre>
+                                <strong>What are Joins?</strong><br>
+                                A <strong>JOIN</strong> clause is used to combine rows from two or more tables, based on
+                                a related column between them.
+                                This is essential for working with relational databases where data is spread across
+                                multiple tables (normalized).
                             </li>
 
-                            <!-- String Functions -->
+                            <!-- INNER JOIN -->
                             <li>
-                                <strong>String Functions</strong><br>
-                                String functions help clean, search, and format text values inside tables.
+                                <strong>INNER JOIN</strong><br>
+                                Returns records that have matching values in both tables.
 
-                                <div class="table-responsive mt-2">
-                                    <table class="table table-bordered table-sm">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Function</th>
-                                                <th>Description</th>
-                                                <th>Example</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><code>UPPER()</code></td>
-                                                <td>Converts text to uppercase</td>
-                                                <td><code>SELECT UPPER(city) FROM customers;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>LOWER()</code></td>
-                                                <td>Converts text to lowercase</td>
-                                                <td><code>SELECT LOWER(email) FROM users;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>CONCAT()</code></td>
-                                                <td>Combines two or more strings</td>
-                                                <td><code>SELECT CONCAT(first_name, ' ', last_name) FROM users;</code>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>SUBSTRING()</code></td>
-                                                <td>Extracts part of a string</td>
-                                                <td><code>SELECT SUBSTRING(name, 1, 3) FROM products;</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>TRIM()</code></td>
-                                                <td>Removes spaces</td>
-                                                <td><code>SELECT TRIM('  Learnify  ');</code></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="demo-preview">
+                                    <div class="demo-preview-title"><i class="bi bi-play-circle"></i> SQL Query Preview
+                                    </div>
+                                    <pre><code>SELECT employees.emp_name, departments.dept_name
+FROM employees
+INNER JOIN departments ON employees.dept_id = departments.dept_id;</code></pre>
                                 </div>
 
-                                <pre><code>SELECT CONCAT(first_name, ' ', last_name) FROM users;
-SELECT SUBSTRING(product_name, 1, 5) FROM products;
-SELECT TRIM('   Hello SQL   ');</code></pre>
+                                <p><strong>Result:</strong> Only employees who are assigned to a valid department will
+                                    be shown.</p>
                             </li>
 
-                            <!-- Math Functions -->
+                            <!-- LEFT JOIN -->
                             <li>
-                                <strong>Math Functions</strong><br>
-                                Math functions allow calculations directly inside SQL queries for analytics and
-                                dashboards.
+                                <strong>LEFT JOIN (or LEFT OUTER JOIN)</strong><br>
+                                Returns all records from the left table, and the matched records from the right table.
+                                If there is no match on the right side, the result is <code>NULL</code>.
 
-                                <div class="table-responsive mt-2">
-                                    <table class="table table-bordered table-sm">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Function</th>
-                                                <th>Description</th>
-                                                <th>Example</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><code>ABS()</code></td>
-                                                <td>Returns absolute (positive) value</td>
-                                                <td><code>SELECT ABS(-75);</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>ROUND()</code></td>
-                                                <td>Rounds number to given decimals</td>
-                                                <td><code>SELECT ROUND(99.567, 1);</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>CEIL()</code></td>
-                                                <td>Rounds number up</td>
-                                                <td><code>SELECT CEIL(5.2);</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>FLOOR()</code></td>
-                                                <td>Rounds number down</td>
-                                                <td><code>SELECT FLOOR(8.9);</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>MOD()</code></td>
-                                                <td>Returns remainder</td>
-                                                <td><code>SELECT MOD(17, 5);</code></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="demo-preview">
+                                    <div class="demo-preview-title"><i class="bi bi-play-circle"></i> SQL Query Preview
+                                    </div>
+                                    <pre><code>SELECT employees.emp_name, departments.dept_name
+FROM employees
+LEFT JOIN departments ON employees.dept_id = departments.dept_id;</code></pre>
                                 </div>
 
-                                <pre><code>SELECT ABS(-42);
-SELECT ROUND(13.899, 2);
-SELECT CEIL(3.2), FLOOR(3.9);
-SELECT MOD(17, 5);</code></pre>
+                                <p><strong>Result:</strong> All employees appear, even those not yet assigned to a
+                                    department (they will have NULL as their department name).</p>
                             </li>
 
-                            <!-- Logical Operators -->
+                            <!-- RIGHT JOIN -->
                             <li>
-                                <strong>Logical Operators</strong><br>
-                                Logical operators help combine multiple conditions for powerful filtering.
+                                <strong>RIGHT JOIN (or RIGHT OUTER JOIN)</strong><br>
+                                Returns all records from the right table, and the matched records from the left table.
+                                If there is no match on the left side, the result is <code>NULL</code>.
 
-                                <div class="table-responsive mt-2">
-                                    <table class="table table-bordered table-sm">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Operator</th>
-                                                <th>Description</th>
-                                                <th>Example Condition</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><code>AND</code></td>
-                                                <td>All conditions must be true</td>
-                                                <td><code>salary > 30000 AND department='IT'</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>OR</code></td>
-                                                <td>Any one condition true</td>
-                                                <td><code>city='Delhi' OR city='Mumbai'</code></td>
-                                            </tr>
-                                            <tr>
-                                                <td><code>NOT</code></td>
-                                                <td>Reverses condition</td>
-                                                <td><code>NOT (age < 18)</code></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <pre><code>SELECT employees.emp_name, departments.dept_name
+FROM employees
+RIGHT JOIN departments ON employees.dept_id = departments.dept_id;</code></pre>
 
-                                <pre><code>SELECT * FROM employees
-WHERE salary > 40000 AND department = 'IT';
-
-SELECT * FROM customers
-WHERE city = 'Mumbai' OR city = 'Chennai';
-
-SELECT * FROM users
-WHERE NOT (role = 'admin');</code></pre>
+                                <p><strong>Result:</strong> All departments appear, even if they have no employees
+                                    currently assigned.</p>
                             </li>
 
-                            <!-- BETWEEN, IN, LIKE -->
+                            <!-- Join Types Summary Table -->
                             <li>
-                                <strong>BETWEEN, IN, LIKE Operators</strong><br>
-                                These operators are essential for advanced search and filtering in SQL.
-
+                                <strong>Join Types Summary</strong>
                                 <div class="table-responsive mt-2">
                                     <table class="table table-bordered table-sm">
                                         <thead class="table-light">
                                             <tr>
-                                                <th>Operator</th>
-                                                <th>Description</th>
-                                                <th>Example</th>
+                                                <th>Join Type</th>
+                                                <th>Logic</th>
+                                                <th>Visibility</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td><code>BETWEEN</code></td>
-                                                <td>Search within a range</td>
-                                                <td><code>price BETWEEN 100 AND 500</code></td>
+                                                <td><code>INNER JOIN</code></td>
+                                                <td>Match in both tables</td>
+                                                <td>Only matching rows</td>
                                             </tr>
                                             <tr>
-                                                <td><code>IN</code></td>
-                                                <td>Match one from a list</td>
-                                                <td><code>status IN ('Pending', 'Completed')</code></td>
+                                                <td><code>LEFT JOIN</code></td>
+                                                <td>All from Left + matches from Right</td>
+                                                <td>Left table entries guaranteed</td>
                                             </tr>
                                             <tr>
-                                                <td><code>LIKE</code></td>
-                                                <td>Search using patterns</td>
-                                                <td><code>email LIKE '%gmail.com'</code></td>
+                                                <td><code>RIGHT JOIN</code></td>
+                                                <td>All from Right + matches from Left</td>
+                                                <td>Right table entries guaranteed</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CROSS JOIN</code></td>
+                                                <td>Cartesian product</td>
+                                                <td>Matches every row from Table A with Table B</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                            </li>
 
-                                <pre><code>SELECT * FROM products WHERE price BETWEEN 500 AND 1500;
-SELECT * FROM orders WHERE status IN ('Pending', 'Shipped');
-SELECT * FROM users WHERE email LIKE '%@yahoo.com';</code></pre>
+                            <!-- Multiple Joins -->
+                            <li>
+                                <strong>Joining More Than Two Tables</strong><br>
+                                Multiple Joins can be chained to retrieve data from three or more related tables.
+
+                                <pre><code>SELECT orders.order_id, customers.name, products.product_name
+FROM orders
+INNER JOIN customers ON orders.cust_id = customers.cust_id
+INNER JOIN products ON orders.prod_id = products.prod_id;</code></pre>
                             </li>
 
                         </ul>
@@ -2507,7 +2543,6 @@ GROUP BY genre;</code></pre>
 
     <hr>
 
-    <hr>
 
     <section>
         <h2 class="section-title">Quick Examples</h2>
@@ -2576,11 +2611,6 @@ WHERE id = 1;</code></pre>
 
     <hr>
 
-
-
-
-    <hr>
-
     <!-- Outcomes -->
     <section>
         <h2 class="section-title">What You'll Be Able To Do</h2>
@@ -2628,7 +2658,7 @@ WHERE id = 1;</code></pre>
 </div> <!-- container -->
 
 
-<footer class="text-white pt-5 pb-4" style="background:#0d6efd;">
+<footer class="text-white pt-5 pb-4" style="background: var(--brand-dark);">
     <div class="container">
 
         <!-- SHARE BUTTON -->

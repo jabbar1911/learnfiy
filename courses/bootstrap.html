@@ -12,11 +12,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="icon" href="../src/img/logo.png">
     <style>
+        :root {
+            --brand-primary: #1a73e8;
+            --brand-primary-hover: #1557b0;
+            --brand-dark: #0b1e3f;
+            --brand-subtle: #e8f0fe;
+            --text-heading: #172b4d;
+            --text-body: #444;
+            --text-secondary: #5e6c84;
+            --bg-light: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-primary);
+            border-radius: 10px;
+            border: 3px solid var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary-hover);
+        }
+
         .hero {
-            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-primary) 100%);
             color: #fff;
-            padding: 56px 20px;
-            border-radius: 0 0 18px 18px;
+            padding: 80px 0;
+            border-radius: 0 0 50px 50px;
+            box-shadow: var(--shadow-md);
         }
 
         .section-title {
@@ -26,10 +61,72 @@
 
         pre code {
             white-space: pre-wrap;
+            background: #f8f9fa;
+            color: #24292e;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            display: block;
+            padding: 20px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .card-course {
-            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-radius: 16px !important;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--brand-subtle);
+            color: var(--brand-primary);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        /* STANDARDIZED DEMO STYLES */
+        .demo-preview {
+            background-color: #ffffff;
+            border: 1px solid var(--brand-subtle);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .demo-preview::before {
+            content: "Interactive Preview";
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: var(--brand-primary);
+            color: white;
+            padding: 4px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -495,10 +592,12 @@
                                     Every screen size adjusts automatically.
 
                                     <br><br><strong>Example (Real Layout):</strong>
-                                    <div class="container border p-2 mt-2">
-                                        <div class="row">
-                                            <div class="col bg-light p-2 m-1">Column 1</div>
-                                            <div class="col bg-light p-2 m-1">Column 2</div>
+                                    <div class="demo-preview">
+                                        <div class="container border p-2">
+                                            <div class="row">
+                                                <div class="col bg-light p-2 m-1">Column 1</div>
+                                                <div class="col bg-light p-2 m-1">Column 2</div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -561,11 +660,17 @@ xxl : ≥ 1400px
 
                                     <br><br><strong>Real Example (Auto-adjusting grid):</strong>
 
-                                    <div class="row mt-2 text-center">
-                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 1</div>
-                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 2</div>
-                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 3</div>
-                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 m-1">Box 4</div>
+                                    <div class="demo-preview">
+                                        <div class="row text-center">
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 border">Box 1
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 border">Box 2
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 border">Box 3
+                                            </div>
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 bg-light p-3 border">Box 4
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <pre><code>&lt;div class="row"&gt;
@@ -2601,7 +2706,7 @@ opacity-100
 
 
     <!-- FOOTER -->
-    <footer class="text-white pt-5 pb-4" style="background:#0d6efd;">
+    <footer class="text-white pt-5 pb-4" style="background: var(--brand-dark);">
         <div class="container">
 
             <!-- SHARE BUTTON -->

@@ -12,14 +12,44 @@
     <link rel="icon" href="../src/img/logo.png">
 
     <style>
-        * {
-            scroll-behavior: smooth;
+        :root {
+            --brand-primary: #1a73e8;
+            --brand-primary-hover: #1557b0;
+            --brand-dark: #0b1e3f;
+            --brand-subtle: #e8f0fe;
+            --text-heading: #172b4d;
+            --text-body: #444;
+            --text-secondary: #5e6c84;
+            --bg-light: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
         }
 
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-primary);
+            border-radius: 10px;
+            border: 3px solid var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-primary-hover);
+        }
 
         .dropdown-menu .dropdown-item:hover {
-            background-color: #e7f1ff;
-            color: #0d6efd;
+            background-color: var(--brand-subtle);
+            color: var(--brand-primary);
+            transform: translateX(5px);
         }
 
         .section-title {
@@ -28,16 +58,38 @@
         }
 
         .hero {
-            background: linear-gradient(90deg, #0b1e3f 0%, #0d6efd 100%);
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-primary) 100%);
             color: #fff;
-            padding: 56px 20px;
-            border-radius: 0 0 18px 18px;
+            padding: 80px 0;
+            border-radius: 0 0 50px 50px;
+            box-shadow: var(--shadow-md);
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            transition: 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg) !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--brand-subtle);
+            color: var(--brand-primary);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0, 0, 0, .125);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -817,7 +869,7 @@
 
 
     <!-- FOOTER -->
-    <footer class="text-white pt-5 pb-4" style="background:#0d6efd;">
+    <footer class="text-white pt-5 pb-4" style="background: var(--brand-dark);">
         <div class="container">
 
             <!-- SHARE BUTTON -->
